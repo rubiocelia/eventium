@@ -16,7 +16,7 @@
 
                 <li> <a href="eventos.php">Eventos</a></li>
 
-                <li> <a href="perfil.php">Perfil</a></li>
+                <li> <a href="perfil.php">Contacto</a></li>
             </ul>
 
             <!-- Botones -->
