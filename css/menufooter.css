@@ -1,0 +1,239 @@
+/* Incorporar la tipografía personalizada */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+
+:root {
+  /* Variables de tipografía */
+  --titulo: "Nunito", sans-serif;
+  --texto: "Cantarell", sans-serif;
+  /* Variables de color */
+  --color-primario: #5b89c3;
+  --color-primario-oscuro: #4e83ad;
+  --color-primario-claro: #9adede;
+  --color-contraste-primario: #ffec88;
+  --color-contraste-primario-oscuro: #f2d47f;
+  --color-contraste-primario-claro: #ffdc96;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo general del header */
+.header {
+  font-family: var(--texto);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5em;
+}
+
+.logo {
+  margin-top: 1.5em;
+  margin-left: 2em;
+  height: 7em;
+  width: auto; /* Mantener la proporción del logo */
+}
+
+.hamburger {
+  display: none; /* Oculto por defecto */
+  cursor: pointer;
+  color: black;
+  font-size: 24px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.inicioRegistro {
+  list-style: none;
+  display: flex;
+  margin-right: 15px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Centrar el menú en el espacio disponible */
+  flex-grow: 1;
+  margin: 0 20px; /* Añade margen lateral para separación */
+  padding: 0;
+}
+
+.menu li {
+  padding: 0 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  padding: 8px 15px;
+}
+
+.inicioRegistro li a {
+  text-decoration: none;
+  padding: 8px 15px;
+}
+
+.menu a:hover {
+  border-bottom: 3px solid var(--color-contraste-primario-oscuro);
+}
+
+.iniciarSesion {
+  padding-right: 15px;
+}
+
+.iniciarSesion a {
+  background-color: transparent;
+  border: 2px solid var(--color-contraste-primario);
+  border-radius: 10px;
+  color: white;
+}
+
+.iniciarSesion a:hover {
+  background-color: var(--color-contraste-primario-oscuro);
+  border: 2px solid white;
+  color: var(--azulQQ);
+  cursor: pointer;
+}
+
+.registro a {
+  background-color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  border-radius: 10px;
+  color: white;
+}
+
+.registro a:hover {
+  background-color: var(--color-contraste-primario-oscuro);
+  border: 2px solid white;
+  color: black;
+  cursor: pointer;
+}
+
+/* footer */
+
+.footer {
+  font-family: var(--texto);
+  font-size: 20px;
+  background: var(--color-primario);
+  color: white;
+  font-family: var(--texto);
+  padding-top: 50px;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+}
+
+.logoTexto {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo {
+  border-radius: 10px;
+  align-content: center;
+  width: 9em;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.footer-text {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+.socials a {
+  display: inline-block;
+  margin: 0 0.5em;
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: translateY(-0.5em);
+}
+
+.rrss {
+  border: 3px solid var(--color-contraste-primario);
+  border-radius: 50%;
+  width: 2em;
+  height: auto;
+}
+
+.footer-section h2 {
+  margin-bottom: 20px;
+  font-family: var(--titulo);
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul a {
+  display: block;
+  color: white;
+  padding: 0.5em;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.footer-section ul a:hover {
+  background-color: var(--color-contraste-primario);
+  color: black;
+}
+
+.contact-form p {
+  padding: 0.5em;
+}
+
+.iconoFooter {
+  width: 1em;
+  height: auto;
+  padding-right: 0.5em;
+}
+
+.footer-bottom p {
+  background-color: var(--color-primario-oscuro);
+  color: #cac8c8;
+  font-family: var(--texto);
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.5em;
+}
+
+.footer-bottom a {
+  color: #cac8c8;
+  font-family: var(--texto);
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: var(--color-contraste-primario-oscuro);
+  transition: background-color 0.3s;
+}
