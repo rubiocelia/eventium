@@ -1,0 +1,227 @@
+/* Incorporar la tipografía personalizada */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+
+:root {
+  /* Variables de tipografía */
+  --titulo: "Nunito", sans-serif;
+  --texto: "Cantarell", sans-serif;
+  /* Variables de color */
+  --color-primario: #5b89c3;
+  --color-primario-oscuro: #4e83ad;
+  --color-primario-claro: #9adede;
+  --color-contraste-primario: #ffec88;
+  --color-contraste-primario-oscuro: #f2d47f;
+  --color-contraste-primario-claro: #ffdc96;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0; /* Inicialmente, el popup estará oculto */
+  transition: opacity 0.3s ease; /* Agrega una transición de opacidad */
+}
+
+.popup-content {
+  background-color: #fef5cb;
+  margin: 5% auto;
+  width: 80%;
+  height: 79%;
+  display: flex;
+  flex-direction: row;
+}
+
+.popup-content img {
+  width: 100%;
+  height: 100%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  height: fit-content;
+  margin-right: 1em;
+  margin-top: 0.5em;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  height: auto;
+}
+
+.PanelIzquierdo {
+  width: 30%;
+}
+
+.PanelDerecho {
+  width: 68%;
+  display: flex;
+  flex-direction: column;
+}
+
+.linksReedireccion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em 2em;
+}
+
+.loginJoin {
+  align-self: flex-end;
+}
+
+.CuerpoLogin {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  margin-top: 1em;
+}
+
+.tituloBienvenido {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 1%;
+  font-family: var(--titulo);
+}
+
+.Subtitulo {
+  font-family: var(--titulo);
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.tituloUnete {
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  font-family: var(--titulo);
+}
+
+.FormularioLogin {
+  width: 70%;
+}
+
+.FormularioLogin input {
+  margin-bottom: 5%;
+  width: 100%;
+  border-radius: 5px;
+  font-family: var(--texto);
+  font-size: 0.8em;
+}
+
+.inputLogin {
+  height: 40px;
+  padding: 5px;
+  border: 2px solid var(--color-contraste-primario);
+}
+
+.boton {
+  text-align: center;
+}
+
+.botonAcceder {
+  width: 50%;
+}
+
+/* Animación Botón */
+.botonAcceder {
+  background: var(--color-contraste-primario-oscuro);
+  border: 2px solid white;
+  border-radius: 5px;
+  font-family: var(--texto);
+  color: white;
+  position: relative;
+  height: 50px;
+  font-size: 1.4em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.botonAcceder:hover {
+  background: var(--color-primario-claro);
+  color: black;
+}
+
+.botonAcceder:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.botonAcceder:hover:before,
+.botonAcceder:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.CuerpoSign {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+
+.FormularioRegistro {
+  width: 70%;
+}
+
+.formularioRegistroFlex {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.FormularioRegistro input {
+  margin-bottom: 5%;
+  width: 100%;
+  border-radius: 5px;
+  font-family: var(--texto);
+  font-size: 0.8em;
+}
+
+.columnaPrimeraFormularioRegistro {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.columnaSegundaFormularioRegistro {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+#JoinNow {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+#volverRegistrar {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+#volverBtn {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}

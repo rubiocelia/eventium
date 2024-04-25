@@ -80,6 +80,8 @@
         porta diam sollicitudin a. Cursus vitae pulvinar ullamcorper ac phasellus porta luctus leo, odio dis ut
         tincidunt torquent taciti posuere, ridiculus volutpat libero venenatis ad elementum vivamus.</p>
     <br><br><br><br><br>
+    <script src="scripts/scriptPopUp.js"></script>
+
     <?php include('footer.php'); ?>
 
 </body>
