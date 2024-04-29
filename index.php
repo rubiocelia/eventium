@@ -9,7 +9,7 @@
 
 </head>
 
-<body bgcolor="grey">
+<body class="index">
 
     <?php include('menu.php'); ?>
     <br><br><br><br><br><br>
@@ -19,7 +19,7 @@
         facilisi litora mi magna vivamus euismod volutpat purus fames auctor, venenatis rhoncus sapien leo enim vehicula
         dui lacus gravida risus. Quisque est neque arcu pellentesque porta tincidunt massa mollis egestas, augue ligula
         lacinia purus dis auctor inceptos parturient justo, in nisi porttitor nullam commodo fames faucibus nam.
-
+        r><br><br><br>
         Integer augue facilisi neque parturient enim lobortis magnis, metus arcu nullam conubia nibh odio primis, class
         mollis tortor suspendisse eros turpis. Aliquet magnis aenean nam ad vulputate cubilia rutrum, rhoncus praesent
         porta diam sollicitudin a. Cursus vitae pulvinar ullamcorper ac phasellus porta luctus leo, odio dis ut
@@ -30,7 +30,7 @@
         vivamus euismod volutpat purus fames auctor, venenatis rhoncus sapien leo enim vehicula dui lacus gravida risus.
         Quisque est neque arcu pellentesque porta tincidunt massa mollis egestas, augue ligula lacinia purus dis auctor
         inceptos parturient justo, in nisi porttitor nullam commodo fames faucibus nam.
-
+        r><br><br><br>r><br><br><br>
         Integer augue facilisi neque parturient enim lobortis magnis, metus arcu nullam conubia nibh odio primis, class
         mollis tortor suspendisse eros turpis. Aliquet magnis aenean nam ad vulputate cubilia rutrum, rhoncus praesent
         porta diam sollicitudin a. Cursus vitae pulvinar ullamcorper ac phasellus porta luctus leo, odio dis ut

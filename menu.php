@@ -4,7 +4,7 @@
     ?>
     <header class="header">
         <a href="index.php">
-            <img class="logo" src="img/EventiumPNG.png" alt="logo Eventium">
+            <img class="logo" src="img/EventiumLogo.png" alt="logo Eventium">
         </a>
 
         <nav>
@@ -57,6 +57,7 @@
                             <div class="boton">
                                 <button class="botonAcceder" type="submit">Acceder</button>
                             </div>
+                            <div class="mensajeError" style="color: red; font-weight: bold;"></div>
                         </form>
                     </div>
                 </div>
@@ -71,11 +72,11 @@
                 <div class="PanelDerecho">
                     <div class="linksReedireccion">
                         <div class="Loginvolver">
-                            <a id="volverBtn">
+                            <a id="volverBtnRegistrarse">
                                 ← Atrás</a>
                         </div>
                         <div class="loginJoin">
-                            <a id="volverRegistrar"> Inicia sesión aquí si ya tienes una cuenta</a>
+                            <a id="loginRedireccion"> Inicia sesión aquí si ya tienes una cuenta</a>
                         </div>
                     </div>
                     <div class="CuerpoSign">

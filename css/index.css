@@ -1,0 +1,22 @@
+/* Incorporar la tipografía personalizada */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
+
+:root {
+  /* Variables de tipografía */
+  --titulo: "Nunito", sans-serif;
+  --texto: "Cantarell", sans-serif;
+  /* Variables de color */
+  --color-primario: #5b89c3;
+  --color-primario-oscuro: #11446e;
+  --color-primario-claro: #9adede;
+  --color-contraste-primario: #ffec88;
+  --color-contraste-primario-oscuro: #f2d47f;
+  --color-contraste-primario-claro: #ffdc96;
+}
+
+.index {
+  background-color: var(--color-primario-oscuro);
+  color: white;
+  font-family: var(--texto);
+}

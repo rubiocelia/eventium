@@ -8,7 +8,7 @@
   --texto: "Cantarell", sans-serif;
   /* Variables de color */
   --color-primario: #5b89c3;
-  --color-primario-oscuro: #4e83ad;
+  --color-primario-oscuro: #11446e;
   --color-primario-claro: #9adede;
   --color-contraste-primario: #ffec88;
   --color-contraste-primario-oscuro: #f2d47f;
@@ -31,10 +31,11 @@
 }
 
 .logo {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   margin-left: 2em;
   height: 7em;
-  width: auto; /* Mantener la proporción del logo */
+  width: 125px;
+  height: auto; /* Mantener la proporción del logo */
 }
 
 .hamburger {
@@ -76,6 +77,7 @@ nav {
   text-decoration: none;
   color: white;
   padding: 8px 15px;
+  transition: border-bottom 0.1s ease;
 }
 
 .inicioRegistro li a {
@@ -96,12 +98,13 @@ nav {
   border: 2px solid var(--color-contraste-primario);
   border-radius: 10px;
   color: white;
+  transition: background-color 0.3s ease;
 }
 
 .iniciarSesion a:hover {
   background-color: var(--color-contraste-primario-oscuro);
   border: 2px solid white;
-  color: var(--azulQQ);
+  color: black;
   cursor: pointer;
 }
 
@@ -110,6 +113,7 @@ nav {
   border: 2px solid var(--color-primario);
   border-radius: 10px;
   color: white;
+  transition: background-color 0.3s ease;
 }
 
 .registro a:hover {

@@ -8,7 +8,7 @@
   --texto: "Cantarell", sans-serif;
   /* Variables de color */
   --color-primario: #5b89c3;
-  --color-primario-oscuro: #4e83ad;
+  --color-primario-oscuro: #11446e;
   --color-primario-claro: #9adede;
   --color-contraste-primario: #ffec88;
   --color-contraste-primario-oscuro: #f2d47f;
@@ -49,8 +49,7 @@
   font-size: 28px;
   font-weight: bold;
   height: fit-content;
-  margin-right: 1em;
-  margin-top: 0.5em;
+  margin-right: 1%;
 }
 
 .close:hover,
@@ -224,4 +223,31 @@
   text-decoration: none;
   color: black;
   cursor: pointer;
+}
+
+#volverBtnRegistrarse {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+#loginRedireccion {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.errorMensaje {
+  color: var(--rojoQQ);
+  font-size: 0.7em;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
