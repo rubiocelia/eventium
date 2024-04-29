@@ -12,16 +12,16 @@ function getConexion() {
     }
 
     // Comprobamos si existe la BBDD "Equilibria"
-    $verificarBD = $conexion->query("SHOW DATABASES LIKE 'Equilibria'");
+    $verificarBD = $conexion->query("SHOW DATABASES LIKE 'Eventium'");
     if ($verificarBD->num_rows > 0) {
         // Conectamos con la BBDD
-        $conexion->select_db("Equilibria");
+        $conexion->select_db("Eventium");
     } else {
-        if (!$conexion->query("CREATE DATABASE Equilibria")) {
+        if (!$conexion->query("CREATE DATABASE Eventium")) {
             die("Error al crear la base de datos: " . $conexion->error);
         }
         //agrega la conexión a la base de datos
-        $conexion->select_db("Equilibria");
+        $conexion->select_db("Eventium");
     }
     return $conexion;
 }
