@@ -44,8 +44,7 @@
                     <div class="CuerpoLogin">
                         <h2 class="tituloBienvenido">¡BIENVENIDO DE VUELTA!</h2>
                         <h3 class="Subtitulo">Explora y reserva eventos ahora</h3>
-                        <form class="FormularioLogin" action="/submit-your-form-handler" method="POST"
-                            enctype="multipart/form-data">
+                        <form class="FormularioLogin" action="login.php" method="POST" enctype="multipart/form-data">
                             <div>
                                 <input type="text" class="inputLogin" name="Nombre de usuario"
                                     placeholder="Nombre de usuario" required>
@@ -57,7 +56,7 @@
                             <div class="boton">
                                 <button class="botonAcceder" type="submit">Acceder</button>
                             </div>
-                            <div class="mensajeError" style="color: red; font-weight: bold;"></div>
+
                         </form>
                     </div>
                 </div>

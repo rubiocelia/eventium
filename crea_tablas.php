@@ -154,12 +154,12 @@ if ($conexion->query($sql_createOpinionEvento) === TRUE) {
 echo "--------------------------------------------------------------------------<br>";
 
 // *** Preparamos los HASH de las contraseñas de los usuario de prueba
-$passUser1= password_hash('asdf1234', PASSWORD_DEFAULT);
-$passUser2= password_hash('asdf1234', PASSWORD_DEFAULT);
-$passUser3= password_hash('asdf1234', PASSWORD_DEFAULT);
-$passUser4= password_hash('asdf1234', PASSWORD_DEFAULT);
-$passUser5= password_hash('asdf1234', PASSWORD_DEFAULT);
-$passUser6= password_hash('asdf1234', PASSWORD_DEFAULT);
+$passUser1= password_hash('12345678', PASSWORD_DEFAULT);
+$passUser2= password_hash('12345678', PASSWORD_DEFAULT);
+$passUser3= password_hash('12345678', PASSWORD_DEFAULT);
+$passUser4= password_hash('12345678', PASSWORD_DEFAULT);
+$passUser5= password_hash('12345678', PASSWORD_DEFAULT);
+$passUser6= password_hash('12345678', PASSWORD_DEFAULT);
 
 // Sentencia INSERT - Tabla [usuario]
 $sql_ins_usuario = "INSERT INTO usuario (NIF,nombre_usuario,apellidos_usuario,mail_usuario,telefono_usuario,fecha_nacimiento,password_usuario) VALUES
