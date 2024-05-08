@@ -5,8 +5,8 @@ require_once("conecta.php");
 $conexion = getConexion();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = isset($_POST['username']) ? mysqli_real_escape_string($conexion, $_POST['username']) : null;
-    $password = isset($_POST['password']) ? mysqli_real_escape_string($conexion, $_POST['password']) : null;
+    $username = isset($_POST['usuario']) ? mysqli_real_escape_string($conexion, $_POST['usuario']) : null;
+    $password = isset($_POST['contrasena']) ? mysqli_real_escape_string($conexion, $_POST['contrasena']) : null;
 
     if ($username && $password) {
         $sql = "SELECT password_usuario FROM usuario WHERE nombre_usuario = '$username'";
@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password_usuario'])) {
-                $_SESSION['username'] = $username;
-                header("Location: welcome.php");
+                $_SESSION['usuario'] = $username;
+                echo "La contraseña es correcta, bienvenido.";
                 exit;
             } else {
                 echo "La contraseña no es correcta.";

@@ -2,6 +2,72 @@
     <?php echo '<link rel="stylesheet" type="text/css" href="css/menufooter.css">';
     echo '<link rel="stylesheet" type="text/css" href="css/PopUpLoginSignUp.css">';
     ?>
+    <?php
+require_once("conecta.php");
+
+$conexion = getConexion();
+
+// Iniciamos sesión
+session_start();
+//Recuperamos la url de destino tras el inicio de sesion
+$urlDestino="";
+if (isset($_GET['sendTo'])) {
+    $urlDestino = $_GET['sendTo'];
+}
+
+// Verificamos el inicio de sesión del paciente
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recuperamos la url de destino al hacer login
+    $urlDestino= $_POST['sendTo'];
+    // Validamos que llamada al metodo POST venga del boton login para realizar el inicio de sesión
+    if (isset($_POST['Login'])) {
+        // Obtenemos los datos del formulario
+        $nombre_usuario = $_POST["nombre_usuario"];
+        $password_usuario = $_POST["password_usuario"];
+
+        // Consultamos la base de datos para verificar el inicio de sesión
+        $sql_verificar_usuario = "SELECT * FROM usuario WHERE nombre_usuario = ?";
+        $stmt = $conexion->prepare($sql_verificar_usuario);
+        $stmt->bind_param("s", $nombre_usuario);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+        // Valimos que se hayan devuelto resultados para incluirlos en la sesion
+        if ($resultado->num_rows > 0) {
+            // Recuperamos los datos del paciente encontrado.
+            $datosUsuario = $resultado->fetch_assoc();
+            // Verificamos la contraseña
+            if (password_verify($password_usuario, $datosUsuario['password_usuario'])) {
+                //Contraseña valida - Iniciamos la sesión
+                // Inicio de sesión exitoso, almacenamos datos del paciente en la sesión
+                $_SESSION["idUsuarioLogin"] = $datosUsuario['NIF'];
+                // Redirigimos a la página de perfil incluyendo el ID del usuario en la URL
+                if($urlDestino==''){
+                    header("Location: index.php");
+                } else {
+                    header("Location: ".$urlDestino.".php");
+                }
+                exit();
+            } else {
+                //Contraseña no valida
+                echo "<script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        validarFormularioInicio();
+                    });
+                </script>";
+            }
+        } else {
+            echo "<script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    validarFormularioInicio();
+                });
+            </script>";
+        }
+    }
+}
+
+// Cerramos conexión
+mysqli_close($conexion);
+?>
     <header class="header">
         <a href="index.php">
             <img class="logo" src="img/EventiumLogo.png" alt="logo Eventium">
@@ -46,7 +112,7 @@
                         <h3 class="Subtitulo">Explora y reserva eventos ahora</h3>
                         <form class="FormularioLogin" action="login.php" method="POST" enctype="multipart/form-data">
                             <div>
-                                <input type="text" class="inputLogin" name="Nombre de usuario"
+                                <input type="text" class="inputLogin" name="usuario"
                                     placeholder="Nombre de usuario" required>
                             </div>
                             <div>
