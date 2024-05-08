@@ -9,26 +9,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = isset($_POST['contrasena']) ? mysqli_real_escape_string($conexion, $_POST['contrasena']) : null;
 
     if ($username && $password) {
-        $sql = "SELECT password_usuario FROM usuario WHERE nombre_usuario = '$username'";
-        $result = $conexion->query($sql);
+        // Cambio aquí: Usamos 'username' en lugar de 'nombre_usuario'
+        $sql = "SELECT id, password_usuario FROM usuario WHERE username = ?";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password_usuario'])) {
-                $_SESSION['usuario'] = $username;
-                echo "La contraseña es correcta, bienvenido.";
+                $_SESSION['id_usuario'] = $row['id'];  // Almacenamos el ID del usuario en la sesión
+                header("Location: perfil.php");
                 exit;
             } else {
-                echo "La contraseña no es correcta.";
+                // Mensaje de error por contraseña incorrecta
+                echo "<script>alert('La contraseña no es correcta.'); window.location.href = 'index.php';</script>";
             }
         } else {
-            echo "No se encontró ningún usuario con ese nombre.";
+            // Mensaje de error por no encontrar el usuario
+            echo "<script>alert('No se encontró ningún usuario con ese nombre.'); window.location.href = 'index.php';</script>";
         }
     } else {
-        echo "Por favor complete ambos campos.";
+        echo "<script>alert('Por favor complete ambos campos.'); window.location.href = 'index.php';</script>";
     }
     $conexion->close();
 } else {
-    echo "Acceso no autorizado.";
+    echo "<script>alert('Acceso no autorizado.'); window.location.href = 'index.php';</script>";
 }
+
 ?>

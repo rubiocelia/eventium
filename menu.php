@@ -8,7 +8,9 @@ require_once("conecta.php");
 $conexion = getConexion();
 
 // Iniciamos sesión
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 //Recuperamos la url de destino tras el inicio de sesion
 $urlDestino="";
 if (isset($_GET['sendTo'])) {
@@ -112,8 +114,8 @@ mysqli_close($conexion);
                         <h3 class="Subtitulo">Explora y reserva eventos ahora</h3>
                         <form class="FormularioLogin" action="login.php" method="POST" enctype="multipart/form-data">
                             <div>
-                                <input type="text" class="inputLogin" name="usuario"
-                                    placeholder="Nombre de usuario" required>
+                                <input type="text" class="inputLogin" name="usuario" placeholder="Nombre de usuario"
+                                    required>
                             </div>
                             <div>
                                 <input type="password" class="inputLogin" name="contrasena" placeholder="**********"

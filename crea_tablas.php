@@ -24,13 +24,15 @@ function crearTablas($conexion) {
 crearTablas($conexion);
 // Creamos tablas si no existen
 $sql_createUsuario = "CREATE TABLE IF NOT EXISTS usuario (
-    NIF VARCHAR(255) PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
     nombre_usuario VARCHAR(255)  NULL,
     apellidos_usuario VARCHAR(255) NULL,
     mail_usuario VARCHAR(255) NULL,
     telefono_usuario VARCHAR(255) NULL,
     fecha_nacimiento DATE NULL,
-    password_usuario VARCHAR(500) NULL
+    password_usuario VARCHAR(500) NULL,
+    foto_usuario VARCHAR(255)
 )";
 // Crear TipoEvento
 $sql_createTipoEvento = "CREATE TABLE IF NOT EXISTS tipoEvento (
@@ -83,23 +85,24 @@ $sql_createReservaUsuario = "CREATE TABLE IF NOT EXISTS reservaUsuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_evento INT NOT NULL,
     id_calendarioEvento INT NULL,
-    usuario varchar(255) NOT NULL,
+    usuario_id INT NOT NULL,
     FOREIGN KEY (id_evento) REFERENCES evento(id_evento),
     FOREIGN KEY (id_calendarioEvento) REFERENCES calendarioEvento(id),
-    FOREIGN KEY (usuario) REFERENCES usuario(nif)
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 )";
 
 // Crear Opiniones Evento
 $sql_createOpinionEvento = "CREATE TABLE IF NOT EXISTS opinionEvento (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_evento INT NOT NULL,
-    usuario varchar(255) NOT NULL,
+    usuario_id INT NOT NULL,
     fecha DATE NULL,
     numPuntuacion INT NULL,
     txt_opinion varchar(1000) NULL,
     FOREIGN KEY (id_evento) REFERENCES evento(id_evento),
-    FOREIGN KEY (usuario) REFERENCES usuario(nif)
+    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 )";
+
 
 // Ejecutamos consultas
 if ($conexion->query($sql_createUsuario) === TRUE) {
@@ -162,13 +165,13 @@ $passUser5= password_hash('12345678', PASSWORD_DEFAULT);
 $passUser6= password_hash('12345678', PASSWORD_DEFAULT);
 
 // Sentencia INSERT - Tabla [usuario]
-$sql_ins_usuario = "INSERT INTO usuario (NIF,nombre_usuario,apellidos_usuario,mail_usuario,telefono_usuario,fecha_nacimiento,password_usuario) VALUES
-( '12345678A', 'Juan', 'González Pérez', 'juan.gonzalez@gmail.com', '654123456', '1990-05-15', '$passUser1' ),
-( '87654321A', 'María', 'Martínez López', 'maria.martinez@hotmail.com', '612345678', '1985-08-22', '$passUser2' ),
-( '11111111A', 'Pedro', 'Sánchez García', 'pedro.sanchez@outlook.es', '634567891', '1993-02-10', '$passUser3' ),
-( '22222222A', 'Ana', 'Rodríguez Martín', 'ana.rodriguez@gmail.com', '678912345', '1988-11-30', '$passUser4' ),
-( '33333333A', 'Laura', 'Fernández Ruiz', 'laura.fernandez@hotmail.com', '678345678', '1997-07-05', '$passUser5' ),
-( '44444444A', 'Carlos', 'López Hernández', 'carlos.lopez@outlook.es', '612345678', '1983-04-18', '$passUser6' )";
+$sql_ins_usuario = "INSERT INTO usuario (username, nombre_usuario, apellidos_usuario, mail_usuario, telefono_usuario, fecha_nacimiento, password_usuario, foto_usuario) VALUES
+( 'juanpg', 'Juan', 'González Pérez', 'juan.gonzalez@gmail.com', '654123456', '1990-05-15', '$passUser1','./archivos/fotosPerfil/foto1.jpg' ),
+( 'mariaml', 'María', 'Martínez López', 'maria.martinez@hotmail.com', '612345678', '1985-08-22', '$passUser2','./archivos/fotosPerfil/foto1.jpg' ),
+( 'pedroSanchez', 'Pedro', 'Sánchez García', 'pedro.sanchez@outlook.es', '634567891', '1993-02-10', '$passUser3','./archivos/fotosPerfil/foto1.jpg' ),
+( 'aanarodrig', 'Ana', 'Rodríguez Martín', 'ana.rodriguez@gmail.com', '678912345', '1988-11-30', '$passUser4','./archivos/fotosPerfil/foto1.jpg' ),
+( 'lauFern', 'Laura', 'Fernández Ruiz', 'laura.fernandez@hotmail.com', '678345678', '1997-07-05', '$passUser5' ,'./archivos/fotosPerfil/foto1.jpg'),
+( 'carlopz', 'Carlos', 'López Hernández', 'carlos.lopez@outlook.es', '612345678', '1983-04-18', '$passUser6','./archivos/fotosPerfil/foto1.jpg' )";
 // Sentencia INSERT - Tabla [tipoEvento]
 $sql_ins_tipoEvento = "INSERT INTO tipoEvento (id,nombre_tipoEvento) VALUES
 ( 1, 'Musical' ),
@@ -258,32 +261,32 @@ $sql_ins_calendarioEvento = "INSERT INTO calendarioEvento (id,id_evento,fecha,ho
 ( 41, 10, '2024-10-02', '22:00', 150, 140, '25.00' ),
 ( 42, 10, '2024-10-02', '00:00', 150, 145, '25.00' )";
 // Sentencia INSERT - Tabla [opinionEvento]
-$sql_ins_opinionEvento = "INSERT INTO opinionEvento (id_evento,usuario,fecha,numPuntuacion,txt_opinion) VALUES
-( 1, '12345678A', '2023-04-01', 4, '¡Gran concierto, lo disfruté mucho!' ),
-( 1, '87654321A', '2023-05-03', 5, 'Increíble experiencia, definitivamente volvería.' ),
-( 1, '11111111A', '2023-06-05', 4, 'Muy buen ambiente y excelente música.' ),
-( 1, '22222222A', '2023-07-07', 4, 'Me gustó mucho, pero esperaba un poco más de variedad en el repertorio.' ),
-( 2, '33333333A', '2023-08-10', 3, 'Buen concierto, aunque hubo problemas de sonido.' ),
-( 2, '44444444A', '2023-09-12', 4, 'Me lo pasé bien, pero el lugar estaba un poco abarrotado.' ),
-( 2, '12345678A', '2023-10-15', 5, '¡Fantástico evento! La organización fue impecable.' ),
-( 3, '87654321A', '2023-11-20', 3, 'El teatro era encantador, pero la obra no me convenció del todo.' ),
-( 3, '11111111A', '2023-12-25', 4, 'Buena interpretación de los actores, pero la trama me dejó un poco indiferente.' ),
-( 3, '22222222A', '2023-01-27', 5, '¡Increíble! Me emocionó de principio a fin.' ),
-( 3, '33333333A', '2023-02-01', 4, 'Me encantó, pero creo que la duración podría haber sido un poco más corta.' ),
-( 6, '44444444A', '2023-03-20', 5, '¡Espectacular! Me encantó cada momento.' ),
-( 6, '12345678A', '2023-04-22', 4, 'Una experiencia maravillosa.' ),
-( 6, '87654321A', '2023-05-25', 5, 'Increíble actuación y una historia cautivadora.' ),
-( 4, '33333333A', '2023-06-27', 2, 'No fue lo que esperaba, me decepcionó.' ),
-( 5, '22222222A', '2023-07-01', 1, 'Muy malo, no lo recomendaría a nadie.' )";
+$sql_ins_opinionEvento = "INSERT INTO opinionEvento (id_evento,usuario_id,fecha,numPuntuacion,txt_opinion) VALUES
+( 1, '2', '2023-04-01', 4, '¡Gran concierto, lo disfruté mucho!' ),
+( 1, '6', '2023-05-03', 5, 'Increíble experiencia, definitivamente volvería.' ),
+( 1, '1', '2023-06-05', 4, 'Muy buen ambiente y excelente música.' ),
+( 1, '3', '2023-07-07', 4, 'Me gustó mucho, pero esperaba un poco más de variedad en el repertorio.' ),
+( 2, '4', '2023-08-10', 3, 'Buen concierto, aunque hubo problemas de sonido.' ),
+( 2, '5', '2023-09-12', 4, 'Me lo pasé bien, pero el lugar estaba un poco abarrotado.' ),
+( 2, '2', '2023-10-15', 5, '¡Fantástico evento! La organización fue impecable.' ),
+( 3, '6', '2023-11-20', 3, 'El teatro era encantador, pero la obra no me convenció del todo.' ),
+( 3, '1', '2023-12-25', 4, 'Buena interpretación de los actores, pero la trama me dejó un poco indiferente.' ),
+( 3, '3', '2023-01-27', 5, '¡Increíble! Me emocionó de principio a fin.' ),
+( 3, '4', '2023-02-01', 4, 'Me encantó, pero creo que la duración podría haber sido un poco más corta.' ),
+( 6, '5', '2023-03-20', 5, '¡Espectacular! Me encantó cada momento.' ),
+( 6, '2', '2023-04-22', 4, 'Una experiencia maravillosa.' ),
+( 6, '6', '2023-05-25', 5, 'Increíble actuación y una historia cautivadora.' ),
+( 4, '4', '2023-06-27', 2, 'No fue lo que esperaba, me decepcionó.' ),
+( 5, '3', '2023-07-01', 1, 'Muy malo, no lo recomendaría a nadie.' )";
 // Sentencia INSERT - Tabla [reservaUsuario]
-$sql_ins_reservaUsuario = "INSERT INTO reservaUsuario (id_evento,id_calendarioEvento,usuario) VALUES
-( 1, 1, '12345678A' ),
-( 2, 8, '87654321A' ),
-( 3, 11, '11111111A' ),
-( 4, 15, '22222222A' ),
-( 5, 19, '33333333A' ),
-( 6, 23, '44444444A' ),
-( 1, 4, '12345678A' )";
+$sql_ins_reservaUsuario = "INSERT INTO reservaUsuario (id_evento,id_calendarioEvento,usuario_id) VALUES
+( 1, 1, '2' ),
+( 2, 8, '6' ),
+( 3, 11, '1' ),
+( 4, 15, '3' ),
+( 5, 19, '4' ),
+( 6, 23, '5' ),
+( 1, 4, '2' )";
 
 if ($conexion->query($sql_ins_usuario) === TRUE) {
     echo "Datos de prueba insertados con éxito [Tabla - usuario].<br>";
