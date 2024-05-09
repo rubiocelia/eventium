@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Eventium</title>
+    <title>QQ Servicios</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
 

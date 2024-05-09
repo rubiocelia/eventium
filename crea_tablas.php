@@ -56,6 +56,7 @@ $sql_createEvento = "CREATE TABLE IF NOT EXISTS evento (
     edad_evento  VARCHAR(255) NULL,
     duracion_evento  VARCHAR(255) NULL,
     id_tipoEvento INT NOT NULL,
+    url_img VARCHAR(1500) NULL,
     FOREIGN KEY (id_tipoEvento) REFERENCES tipoEvento(id)
 )";
 
@@ -185,17 +186,17 @@ $sql_ins_categoriaEvento = "INSERT INTO categoriaEvento (id,nombre_categoriaEven
 ( 4, 'Eventos al Aire Libre' ),
 ( 5, 'Conciertos y Espectáculos' )";
 // Sentencia INSERT - Tabla [evento]
-$sql_ins_evento = "INSERT INTO evento (id_evento,nombre_evento,descripcion_evento,url_maps,ubicacion_evento,edad_evento,duracion_evento,id_tipoEvento) VALUES
-( 1, 'Concierto en el Parque', 'Disfruta de una tarde llena de música en vivo con artistas locales.', 'https://maps.google.com/?q=Parque+Central', 'Parque Central', 'Todas las edades', '3 horas', 1 ),
-( 2, 'Explosión de Rock', 'Un concierto lleno de energía con bandas locales de rock.', 'https://maps.google.com/?q=Teatro+Municipal', 'Teatro Municipal', 'Mayores de 18 años', '4 horas', 2 ),
-( 3, 'Romeo y Julieta', 'Una representación conmovedora de la clásica obra de Shakespeare.', 'https://maps.google.com/?q=Teatro+Nacional', 'Teatro Nacional', 'Todas las edades', '2 horas', 3 ),
-( 4, 'Jazz en el Parque', 'Disfruta de una noche mágica de jazz bajo las estrellas.', 'https://maps.google.com/?q=Parque+de+la+Ciudad', 'Parque de la Ciudad', 'Todas las edades', '5 horas', 1 ),
-( 5, 'Caliente Latino', 'Una fiesta de ritmos latinos con artistas internacionales.', 'https://maps.google.com/?q=Estadio+Municipal', 'Estadio Municipal', 'Mayores de 21 años', '6 horas', 2 ),
-( 6, 'Noche de Risas', 'Una noche llena de humor con los mejores comediantes de la ciudad.', 'https://maps.google.com/?q=Club+de+la+Comedia', 'Club de la Comedia', 'Mayores de 16 años', '2 horas', 3 ),
-( 7, 'Sunset Rave', 'Vive una experiencia única con DJs internacionales en la playa al atardecer.', 'https://maps.google.com/?q=Playa+Principal', 'Playa Principal', 'Mayores de 18 años', '8 horas', 1 ),
-( 8, 'Sinfonía en Do Mayor', 'Disfruta de la majestuosidad de la música clásica interpretada por una orquesta sinfónica.', 'https://maps.google.com/?q=Auditorio+Nacional', 'Auditorio Nacional', 'Todas las edades', '3 horas', 2 ),
-( 9, 'Travesía Fantástica', 'Una obra de teatro que desafía los límites de la realidad y la imaginación.', 'https://maps.google.com/?q=Centro+Cultural', 'Centro Cultural', 'Mayores de 12 años', '2 horas', 3 ),
-( 10, 'Reggae Roots', 'Sumérgete en el ambiente relajado y los ritmos contagiosos del reggae en medio del bosque.', 'https://maps.google.com/?q=Bosque+Nacional', 'Bosque Nacional', 'Mayores de 18 años', '7 horas', 1 )";
+$sql_ins_evento = "INSERT INTO evento (id_evento,nombre_evento,descripcion_evento,url_maps,ubicacion_evento,edad_evento,duracion_evento,id_tipoEvento, url_img) VALUES
+( 1, 'Concierto en el Parque', 'Disfruta de una tarde llena de música en vivo con artistas locales.', 'https://maps.google.com/?q=Parque+Central', 'Parque Central', 'Todas las edades', '3 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
+( 2, 'Explosión de Rock', 'Un concierto lleno de energía con bandas locales de rock.', 'https://maps.google.com/?q=Teatro+Municipal', 'Teatro Municipal', 'Mayores de 18 años', '4 horas', 2, 'https://i.blogs.es/c7ba83/rock-band/1366_2000.jpg'),
+( 3, 'Romeo y Julieta', 'Una representación conmovedora de la clásica obra de Shakespeare.', 'https://maps.google.com/?q=Teatro+Nacional', 'Teatro Nacional', 'Todas las edades', '2 horas', 3, 'https://www.teatroenvalencia.com/admin/assets/img/deb217a41be6025cf192ecaed29b2d4d1643281620.jpg'),
+( 4, 'Jazz en el Parque', 'Disfruta de una noche mágica de jazz bajo las estrellas.', 'https://maps.google.com/?q=Parque+de+la+Ciudad', 'Parque de la Ciudad', 'Todas las edades', '5 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
+( 5, 'Caliente Latino', 'Una fiesta de ritmos latinos con artistas internacionales.', 'https://maps.google.com/?q=Estadio+Municipal', 'Estadio Municipal', 'Mayores de 21 años', '6 horas', 2, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
+( 6, 'Noche de Risas', 'Una noche llena de humor con los mejores comediantes de la ciudad.', 'https://maps.google.com/?q=Club+de+la+Comedia', 'Club de la Comedia', 'Mayores de 16 años', '2 horas', 3, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
+( 7, 'Sunset Rave', 'Vive una experiencia única con DJs internacionales en la playa al atardecer.', 'https://maps.google.com/?q=Playa+Principal', 'Playa Principal', 'Mayores de 18 años', '8 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
+( 8, 'Sinfonía en Do Mayor', 'Disfruta de la majestuosidad de la música clásica interpretada por una orquesta sinfónica.', 'https://maps.google.com/?q=Auditorio+Nacional', 'Auditorio Nacional', 'Todas las edades', '3 horas', 2, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
+( 9, 'Travesía Fantástica', 'Una obra de teatro que desafía los límites de la realidad y la imaginación.', 'https://maps.google.com/?q=Centro+Cultural', 'Centro Cultural', 'Mayores de 12 años', '2 horas', 3, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
+( 10, 'Reggae Roots', 'Sumérgete en el ambiente relajado y los ritmos contagiosos del reggae en medio del bosque.', 'https://maps.google.com/?q=Bosque+Nacional', 'Bosque Nacional', 'Mayores de 18 años', '7 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg')";
 // Sentencia INSERT - Tabla [relacionCatEven]
 $sql_ins_relacionCatEven = "INSERT INTO relacionCatEven (id,id_categoriaEvento,id_evento) VALUES
 ( 1, 1, 1),
