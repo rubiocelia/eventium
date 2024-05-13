@@ -39,6 +39,7 @@ $primerElemento=true;
         .carousel-item img {
             max-height: 650px; /* Reducir la altura de las imágenes */
             object-fit: cover; /* Ajusta el tamaño de las imágenes para que cubran todo el espacio del contenedor */
+            filter: brightness(0.7);
         }
 
         @media (max-width: 768px) {
