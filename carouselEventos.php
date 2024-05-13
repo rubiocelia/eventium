@@ -46,7 +46,7 @@ $primerElemento=true;
                 width: 100%; 
             }
         }
-
+/* xjskjdkbskj */
        
     </style>
 </head>
