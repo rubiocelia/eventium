@@ -1,4 +1,6 @@
+// Espera a que el DOM esté completamente cargado para ejecutar el código
 document.addEventListener("DOMContentLoaded", function () {
+  // Obtener referencias a los elementos del DOM
   const btnModificar = document.getElementById("btnModificar");
   const btnGuardar = document.getElementById("btnGuardar");
   const btnCancelar = document.getElementById("btnCancelar");
@@ -8,10 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const fotoPerfil = document.querySelector(".fotoPerfil");
   const fotoOriginal = fotoPerfil.src; // Guarda el src original de la imagen al cargar la página
 
-  // Activar la edición
+  // Activar la edición cuando se hace clic en el botón "Modificar"
   btnModificar.addEventListener("click", function () {
     inputs.forEach((input) => {
-      if (input.type !== "file") input.readOnly = false; // Hace los inputs editables
+      if (input.type !== "file") input.readOnly = false; // Hace los inputs editables excepto el de archivo
       input.disabled = false; // Habilita todos los inputs, incluido el de archivo
     });
 
@@ -38,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Cancelar la edición
+  // Cancelar la edición y restaurar los valores originales
   btnCancelar.addEventListener("click", function () {
     inputs.forEach((input) => {
       input.readOnly = true; // Pone los campos en modo de solo lectura
@@ -58,12 +60,13 @@ document.addEventListener("DOMContentLoaded", function () {
     btnSeleccionarFoto.style.display = "none"; // Ocultar el botón de cambiar foto
   });
 
-  // Guardar los cambios
+  // Guardar los cambios del perfil
   btnGuardar.addEventListener("click", function (event) {
     event.preventDefault(); // Previene la recarga de la página por el envío del formulario
 
     const formData = new FormData(document.querySelector("form"));
 
+    // Enviar los datos del formulario al servidor
     fetch("guardar_perfil.php", {
       method: "POST",
       body: formData,
