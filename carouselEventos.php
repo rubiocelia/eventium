@@ -39,6 +39,7 @@ $primerElemento=true;
         .carousel-item img {
             max-height: 650px;
             object-fit: cover;
+            filter: brightness(0.7);
         }
 
         @media (max-width: 768px) {
@@ -46,7 +47,7 @@ $primerElemento=true;
                 width: 100%; 
             }
         }
-/* xjskjdkbskj */
+
        
     </style>
 </head>
