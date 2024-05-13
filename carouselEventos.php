@@ -2,7 +2,7 @@
 require_once("conecta.php");
 $conexion = getConexion();
 
-// Consulta para recuperar los eventos populares (Solo 8)
+// Consulta para recuperar los eventos populares (Solo 10)
 $sql = "SELECT
         reservausuario.id_evento,
         evento.nombre_evento,
@@ -33,21 +33,21 @@ $primerElemento=true;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         #carouselExampleIndicators {
-            width: 100%; /* Ajusta el ancho del carousel */
-            margin: 0 auto; /* Centra el carousel horizontalmente */
+            width: 100%; 
+            margin: 0 auto; 
         }
         .carousel-item img {
-            max-height: 650px; /* Reducir la altura de las imágenes */
-            object-fit: cover; /* Ajusta el tamaño de las imágenes para que cubran todo el espacio del contenedor */
+            max-height: 650px;
+            object-fit: cover;
         }
 
         @media (max-width: 768px) {
             #carouselExampleIndicators {
-                width: 100%; /* Si la pantalla es más pequeña que 768px, ocupa el 100% del ancho */
+                width: 100%; 
             }
         }
 
-        /* Estilos adicionales si es necesario */
+       
     </style>
 </head>
 <body>

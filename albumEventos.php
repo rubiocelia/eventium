@@ -22,16 +22,16 @@ $primerElemento=true;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         #carouselExampleIndicators {
-            width: 100%; /* Ajusta el ancho del carousel */
-            margin: 0 auto; /* Centra el carousel horizontalmente */
+            width: 100%; 
+            margin: 0 auto; 
         }
         @media (max-width: 768px) {
             #carouselExampleIndicators {
-                width: 100%; /* Si la pantalla es más pequeña que 768px, ocupa el 100% del ancho */
+                width: 100%; 
             }
         }
 
-        /* Estilos adicionales si es necesario */
+       
     </style>
 </head>
 <body>
