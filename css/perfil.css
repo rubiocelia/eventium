@@ -34,6 +34,7 @@ main {
   text-align: center;
   font-family: var(--titulo);
   margin-bottom: 1em;
+  color: white;
 }
 
 /* Estilos para el menú lateral */
