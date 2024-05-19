@@ -192,8 +192,8 @@ $sql_ins_categoriaEvento = "INSERT INTO categoriaEvento (id,nombre_categoriaEven
 ( 6, 'Planes de Pareja' )";
 // Sentencia INSERT - Tabla [evento]
 $sql_ins_evento = "INSERT INTO evento (id_evento,nombre_evento,descripcion_evento,url_maps,ubicacion_evento,edad_evento,duracion_evento,id_tipoEvento, url_img) VALUES
-( 1, 'Concierto en el Parque', 'Disfruta de una tarde llena de música en vivo con artistas locales.', 'https://maps.google.com/?q=Parque+Central', 'Parque Central', 'Todas las edades', '3 horas', 1, 'img/imgEventos/conciertoenelparqe.jpg'),
-( 2, 'Explosión de Rock', 'Un concierto lleno de energía con bandas locales de rock.', 'https://maps.google.com/?q=Teatro+Municipal', 'Teatro Municipal', 'Mayores de 18 años', '4 horas', 2, 'img/imgEventos/explosionderock.jpg'),
+( 1, 'Concierto en el Parque', 'Disfruta de una tarde llena de música en vivo con artistas locales en el emblemático Parque Central. Este evento, ideal para todas las edades, ofrece una mezcla vibrante de géneros musicales, desde pop y rock hasta jazz y música clásica. La atmósfera relajada y acogedora del parque, combinada con la energía de los músicos talentosos, crea una experiencia inolvidable para familias, amigos y parejas. Habrá áreas de picnic, puestos de comida con deliciosas opciones locales, y actividades recreativas para niños. Además, el evento contará con zonas de descanso bajo los árboles, perfectas para disfrutar de la música mientras te relajas en la naturaleza. No te pierdas la oportunidad de pasar una tarde mágica en compañía de tus seres queridos, rodeado de buena música y un ambiente festivo. ¡Te esperamos en el Parque Central!', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6075.421282342266!2d-3.6870744241324096!3d40.415260571439724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42289ff511827b%3A0x9e6c2716b524a3ae!2sParque%20de%20El%20Retiro!5e0!3m2!1ses!2ses!4v1716143107559!5m2!1ses!2ses', 'Parque del Retiro', 'Todas las edades', '3 horas', 1, 'img/imgEventos/conciertoenelparqe.jpg'),
+( 2, 'Explosión de Rock', 'Prepárate para una noche electrizante con Explosión de Rock en el histórico Teatro Municipal. Este concierto está diseñado para los verdaderos amantes del rock, presentando a algunas de las mejores bandas locales que prometen una velada llena de energía y pasión. Con un repertorio que abarca desde los clásicos del rock hasta las composiciones más innovadoras, este evento garantiza una experiencia musical única. Las potentes guitarras, las baterías estruendosas y las voces apasionadas te harán vibrar en cada canción. Además, el teatro ofrecerá un impresionante espectáculo de luces y efectos visuales que complementarán la intensidad de la música. Este evento es exclusivo para mayores de 18 años y contará con una zona VIP para los fanáticos más entusiastas, así como puestos de merchandising y bebidas. Ven y únete a esta explosión de rock que sacudirá el Teatro Municipal como nunca antes. ¡No te lo puedes perder!', 'https://maps.google.com/?q=Teatro+Municipal', 'Teatro Municipal', 'Mayores de 18 años', '4 horas', 2, 'img/imgEventos/explosionderock.jpg'),
 ( 3, 'Romeo y Julieta', 'Una representación conmovedora de la clásica obra de Shakespeare.', 'https://maps.google.com/?q=Teatro+Nacional', 'Teatro Nacional', 'Todas las edades', '2 horas', 3, 'img/imgEventos/romeoyjulieta.jpg'),
 ( 4, 'Jazz en el Parque', 'Disfruta de una noche mágica de jazz bajo las estrellas.', 'https://maps.google.com/?q=Parque+de+la+Ciudad', 'Parque de la Ciudad', 'Todas las edades', '5 horas', 1, 'img/imgEventos/jazzenelparque.jpg'),
 ( 5, 'Caliente Latino', 'Una fiesta de ritmos latinos con artistas internacionales.', 'https://maps.google.com/?q=Estadio+Municipal', 'Estadio Municipal', 'Mayores de 21 años', '6 horas', 2, 'img/imgEventos/calientelatino.jpg'),
@@ -340,13 +340,26 @@ $sql_ins_opinionEvento = "INSERT INTO opinionEvento (id_evento,usuario_id,fecha,
 ( 5, '3', '2023-07-01', 1, 'Muy malo, no lo recomendaría a nadie.' )";
 // Sentencia INSERT - Tabla [reservaUsuario]
 $sql_ins_reservaUsuario = "INSERT INTO reservaUsuario (id_evento,id_calendarioEvento,usuario_id) VALUES
-( 1, 1, '2' ),
+( 1, 2, '1' ),
+( 1, 2, '2' ),
+( 1, 2, '3' ),
+( 1, 2, '4' ),
+( 1, 2, '5' ),
+( 1, 2, '6' ),
 ( 2, 8, '6' ),
+( 2, 8, '2' ),
+( 2, 8, '1' ),
+( 2, 8, '3' ),
 ( 3, 11, '1' ),
-( 4, 15, '3' ),
+( 3, 11, '2' ),
+( 3, 11, '3' ),
+( 5, 19, '3' ),
+( 5, 19, '2' ),
+( 5, 19, '1' ),
 ( 5, 19, '4' ),
-( 6, 23, '5' ),
-( 1, 4, '2' )";
+( 5, 19, '5' ),
+( 9, 35, '6' ),
+( 9, 35, '1' )";
 
 if ($conexion->query($sql_ins_usuario) === TRUE) {
     echo "Datos de prueba insertados con éxito [Tabla - usuario].<br>";

@@ -66,8 +66,7 @@ $primerElemento=true;
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1><?php echo $evento['nombre_evento']; ?></h1>
-                            <p><?php echo $evento['descripcion_evento']; ?></p>
-                            <p><a class="btn btn-lg btn-primary" href="#">Reservar</a></p>
+                            <p><a href="infoEvento.php?evento=<?php echo $evento['id_evento']; ?>" class="btn btn-lg btn-primary" href="#">Reservar</a></p>
                         </div>
                     </div>
                 </div>
