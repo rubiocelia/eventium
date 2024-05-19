@@ -177,26 +177,42 @@ $sql_ins_usuario = "INSERT INTO usuario (username, nombre_usuario, apellidos_usu
 $sql_ins_tipoEvento = "INSERT INTO tipoEvento (id,nombre_tipoEvento) VALUES
 ( 1, 'Musical' ),
 ( 2, 'Concierto' ),
-( 3, 'Teatro' )";
+( 3, 'Teatro' ),
+( 4, 'Festival' ),
+( 5, 'Exposición' ),
+( 6, 'Conferencia' )";
+
 // Sentencia INSERT - Tabla [categoriaEvento]
 $sql_ins_categoriaEvento = "INSERT INTO categoriaEvento (id,nombre_categoriaEvento) VALUES
 ( 1, 'Planes en Familia' ),
 ( 2, 'Fiestas de Verano' ),
 ( 3, 'Noches Culturales' ),
 ( 4, 'Eventos al Aire Libre' ),
-( 5, 'Conciertos y Espectáculos' )";
+( 5, 'Conciertos y Espectáculos' ),
+( 6, 'Planes de Pareja' )";
 // Sentencia INSERT - Tabla [evento]
 $sql_ins_evento = "INSERT INTO evento (id_evento,nombre_evento,descripcion_evento,url_maps,ubicacion_evento,edad_evento,duracion_evento,id_tipoEvento, url_img) VALUES
-( 1, 'Concierto en el Parque', 'Disfruta de una tarde llena de música en vivo con artistas locales.', 'https://maps.google.com/?q=Parque+Central', 'Parque Central', 'Todas las edades', '3 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
-( 2, 'Explosión de Rock', 'Un concierto lleno de energía con bandas locales de rock.', 'https://maps.google.com/?q=Teatro+Municipal', 'Teatro Municipal', 'Mayores de 18 años', '4 horas', 2, 'https://i.blogs.es/c7ba83/rock-band/1366_2000.jpg'),
-( 3, 'Romeo y Julieta', 'Una representación conmovedora de la clásica obra de Shakespeare.', 'https://maps.google.com/?q=Teatro+Nacional', 'Teatro Nacional', 'Todas las edades', '2 horas', 3, 'https://www.teatroenvalencia.com/admin/assets/img/deb217a41be6025cf192ecaed29b2d4d1643281620.jpg'),
-( 4, 'Jazz en el Parque', 'Disfruta de una noche mágica de jazz bajo las estrellas.', 'https://maps.google.com/?q=Parque+de+la+Ciudad', 'Parque de la Ciudad', 'Todas las edades', '5 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
-( 5, 'Caliente Latino', 'Una fiesta de ritmos latinos con artistas internacionales.', 'https://maps.google.com/?q=Estadio+Municipal', 'Estadio Municipal', 'Mayores de 21 años', '6 horas', 2, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
-( 6, 'Noche de Risas', 'Una noche llena de humor con los mejores comediantes de la ciudad.', 'https://maps.google.com/?q=Club+de+la+Comedia', 'Club de la Comedia', 'Mayores de 16 años', '2 horas', 3, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
-( 7, 'Sunset Rave', 'Vive una experiencia única con DJs internacionales en la playa al atardecer.', 'https://maps.google.com/?q=Playa+Principal', 'Playa Principal', 'Mayores de 18 años', '8 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
-( 8, 'Sinfonía en Do Mayor', 'Disfruta de la majestuosidad de la música clásica interpretada por una orquesta sinfónica.', 'https://maps.google.com/?q=Auditorio+Nacional', 'Auditorio Nacional', 'Todas las edades', '3 horas', 2, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
-( 9, 'Travesía Fantástica', 'Una obra de teatro que desafía los límites de la realidad y la imaginación.', 'https://maps.google.com/?q=Centro+Cultural', 'Centro Cultural', 'Mayores de 12 años', '2 horas', 3, 'https://media.timeout.com/images/105777841/750/422/image.jpg'),
-( 10, 'Reggae Roots', 'Sumérgete en el ambiente relajado y los ritmos contagiosos del reggae en medio del bosque.', 'https://maps.google.com/?q=Bosque+Nacional', 'Bosque Nacional', 'Mayores de 18 años', '7 horas', 1, 'https://media.timeout.com/images/105777841/750/422/image.jpg')";
+( 1, 'Concierto en el Parque', 'Disfruta de una tarde llena de música en vivo con artistas locales.', 'https://maps.google.com/?q=Parque+Central', 'Parque Central', 'Todas las edades', '3 horas', 1, 'img/imgEventos/conciertoenelparqe.jpg'),
+( 2, 'Explosión de Rock', 'Un concierto lleno de energía con bandas locales de rock.', 'https://maps.google.com/?q=Teatro+Municipal', 'Teatro Municipal', 'Mayores de 18 años', '4 horas', 2, 'img/imgEventos/explosionderock.jpg'),
+( 3, 'Romeo y Julieta', 'Una representación conmovedora de la clásica obra de Shakespeare.', 'https://maps.google.com/?q=Teatro+Nacional', 'Teatro Nacional', 'Todas las edades', '2 horas', 3, 'img/imgEventos/romeoyjulieta.jpg'),
+( 4, 'Jazz en el Parque', 'Disfruta de una noche mágica de jazz bajo las estrellas.', 'https://maps.google.com/?q=Parque+de+la+Ciudad', 'Parque de la Ciudad', 'Todas las edades', '5 horas', 1, 'img/imgEventos/jazzenelparque.jpg'),
+( 5, 'Caliente Latino', 'Una fiesta de ritmos latinos con artistas internacionales.', 'https://maps.google.com/?q=Estadio+Municipal', 'Estadio Municipal', 'Mayores de 21 años', '6 horas', 2, 'img/imgEventos/calientelatino.jpg'),
+( 6, 'Noche de Risas', 'Una noche llena de humor con los mejores comediantes de la ciudad.', 'https://maps.google.com/?q=Club+de+la+Comedia', 'Club de la Comedia', 'Mayores de 16 años', '2 horas', 3, 'img/imgEventos/nochederisas.jpg'),
+( 7, 'Sunset Rave', 'Vive una experiencia única con DJs internacionales en la playa al atardecer.', 'https://maps.google.com/?q=Playa+Principal', 'Playa Principal', 'Mayores de 18 años', '8 horas', 1, 'img/imgEventos/sunsetrave.jpg'),
+( 8, 'Sinfonía en Do Mayor', 'Disfruta de la majestuosidad de la música clásica interpretada por una orquesta sinfónica.', 'https://maps.google.com/?q=Auditorio+Nacional', 'Auditorio Nacional', 'Todas las edades', '3 horas', 2, 'img/imgEventos/sinfoniaendomayor.jpg'),
+( 9, 'Travesía Fantástica', 'Una obra de teatro que desafía los límites de la realidad y la imaginación.', 'https://maps.google.com/?q=Centro+Cultural', 'Centro Cultural', 'Mayores de 12 años', '2 horas', 3, 'img/imgEventos/traveisafantastica.jpg'),
+( 10, 'Reggae Roots', 'Sumérgete en el ambiente relajado y los ritmos contagiosos del reggae en medio del bosque.', 'https://maps.google.com/?q=Bosque+Nacional', 'Bosque Nacional', 'Mayores de 18 años', '7 horas', 1, 'img/imgEventos/reggaeroots.jpg'),
+( 11, 'Festival de Verano', 'Un festival lleno de actividades, música y diversión para toda la familia.', 'https://maps.google.com/?q=Plaza+Mayor', 'Plaza Mayor', 'Todas las edades', '8 horas', 4, 'img/imgEventos/festivaldeverano.jpg'),
+( 12, 'Exposición de Arte Moderno', 'Explora las obras de los artistas modernos más influyentes.', 'https://maps.google.com/?q=Museo+de+Arte+Moderno', 'Museo de Arte Moderno', 'Todas las edades', '5 horas', 5, 'img/imgEventos/exposiciondeartemoderno.jpg'),
+( 13, 'Conferencia sobre Tecnología', 'Un evento para conocer las últimas tendencias en tecnología.', 'https://maps.google.com/?q=Centro+de+Convenciones', 'Centro de Convenciones', 'Mayores de 18 años', '4 horas', 6, 'img/imgEventos/conferenciasobretecnologia.jpg'),
+( 14, 'Noche de Magia', 'Déjate sorprender por los mejores ilusionistas del país.', 'https://maps.google.com/?q=Teatro+Magico', 'Teatro Mágico', 'Todas las edades', '2.5 horas', 3, 'img/imgEventos/nochedemagia.jpg'),
+( 15, 'Danza Contemporánea', 'Una espectacular presentación de danza moderna.', 'https://maps.google.com/?q=Centro+de+Artes+Escenicas', 'Centro de Artes Escénicas', 'Todas las edades', '2 horas', 1, 'img/imgEventos/danzaconteporanea.jpg'),
+( 16, 'Cine al Aire Libre', 'Disfruta de tus películas favoritas bajo las estrellas.', 'https://maps.google.com/?q=Parque+Cine', 'Parque Cine', 'Todas las edades', '3 horas', 4, 'img/imgEventos/cinealairelibre.jpg'),
+( 17, 'Feria de Libros', 'Una feria con las últimas novedades literarias y encuentros con autores.', 'https://maps.google.com/?q=Feria+del+Libro', 'Feria del Libro', 'Todas las edades', '6 horas', 5, 'img/imgEventos/feriadelibros.webp'),
+( 18, 'Cena Romántica en el Lago', 'Disfruta de una cena exclusiva con tu pareja junto al lago.', 'https://maps.google.com/?q=Restaurante+Lago', 'Restaurante Lago', 'Mayores de 18 años', '3 horas', 4, 'img/imgEventos/cenaromanticaenellago.jpg'),
+( 19, 'Paseo en Globo al Atardecer', 'Vive una experiencia inolvidable con un paseo en globo al atardecer.', 'https://maps.google.com/?q=Campo+Abierto', 'Campo Abierto', 'Todas las edades', '2 horas', 4, 'img/imgEventos/paseoenglobo.jpg'),
+( 20, 'Spa y Relajación para Parejas', 'Un día de relajación en un spa de lujo para parejas.', 'https://maps.google.com/?q=Spa+Centro', 'Spa Centro', 'Mayores de 18 años', '5 horas', 5, 'img/imgEventos/spayrelajacionparaprejas.jpg')";
+
 // Sentencia INSERT - Tabla [relacionCatEven]
 $sql_ins_relacionCatEven = "INSERT INTO relacionCatEven (id,id_categoriaEvento,id_evento) VALUES
 ( 1, 1, 1),
@@ -216,7 +232,22 @@ $sql_ins_relacionCatEven = "INSERT INTO relacionCatEven (id,id_categoriaEvento,i
 ( 15, 3, 8),
 ( 16, 3, 9),
 ( 17, 5, 10),
-( 18, 4, 10)";
+( 18, 4, 10),
+( 19, 1, 11),
+( 20, 2, 12),
+( 21, 3, 12),
+( 22, 4, 13),
+( 23, 5, 13),
+( 24, 1, 14),
+( 25, 4, 15),
+( 26, 3, 15),
+( 27, 1, 16),
+( 28, 4, 16),
+( 29, 5, 17),
+( 30, 3, 17),
+( 31, 6, 18),
+( 32, 6, 19),
+( 33, 6, 20)";
 // Sentencia INSERT - Tabla [calendarioEvento]
 $sql_ins_calendarioEvento = "INSERT INTO calendarioEvento (id,id_evento,fecha,hora,totalPlazas,plazasOcupadas,precio) VALUES
 ( 1, 1, '2024-05-15', '18:00', 100, 80, '20.00' ),
@@ -260,7 +291,35 @@ $sql_ins_calendarioEvento = "INSERT INTO calendarioEvento (id,id_evento,fecha,ho
 ( 39, 10, '2024-09-25', '22:00', 150, 130, '25.00' ),
 ( 40, 10, '2024-09-25', '00:00', 150, 135, '25.00' ),
 ( 41, 10, '2024-10-02', '22:00', 150, 140, '25.00' ),
-( 42, 10, '2024-10-02', '00:00', 150, 145, '25.00' )";
+( 42, 10, '2024-10-02', '00:00', 150, 145, '25.00' ),
+( 43, 11, '2024-10-09', '10:00', 300, 250, '50.00' ),
+( 44, 11, '2024-10-09', '12:00', 300, 260, '50.00' ),
+( 45, 12, '2024-10-16', '10:00', 200, 180, '15.00' ),
+( 46, 12, '2024-10-16', '12:00', 200, 170, '15.00' ),
+( 47, 13, '2024-10-23', '09:00', 100, 80, '45.00' ),
+( 48, 13, '2024-10-23', '11:00', 100, 85, '45.00' ),
+( 49, 14, '2024-11-01', '18:00', 120, 100, '20.00' ),
+( 50, 14, '2024-11-01', '20:00', 120, 105, '20.00' ),
+( 51, 14, '2024-11-08', '18:00', 120, 110, '20.00' ),
+( 52, 14, '2024-11-08', '20:00', 120, 115, '20.00' ),
+( 53, 15, '2024-11-15', '19:00', 150, 140, '25.00' ),
+( 54, 15, '2024-11-15', '21:00', 150, 135, '25.00' ),
+( 55, 15, '2024-11-22', '19:00', 150, 130, '25.00' ),
+( 56, 15, '2024-11-22', '21:00', 150, 125, '25.00' ),
+( 57, 16, '2024-11-29', '20:00', 200, 180, '15.00' ),
+( 58, 16, '2024-11-29', '22:00', 200, 170, '15.00' ),
+( 59, 16, '2024-12-06', '20:00', 200, 160, '15.00' ),
+( 60, 16, '2024-12-06', '22:00', 200, 150, '15.00' ),
+( 61, 17, '2024-12-13', '10:00', 500, 450, '10.00' ),
+( 62, 17, '2024-12-13', '12:00', 500, 460, '10.00' ),
+( 63, 17, '2024-12-20', '10:00', 500, 470, '10.00' ),
+( 64, 17, '2024-12-20', '12:00', 500, 480, '10.00' ),
+( 65, 18, '2024-12-27', '19:00', 50, 40, '100.00'),
+( 66, 18, '2024-12-27', '21:00', 50, 35, '100.00'),
+( 67, 19, '2024-12-30', '18:00', 30, 25, '200.00'),
+( 68, 19, '2024-12-30', '20:00', 30, 20, '200.00'),
+( 69, 20, '2024-12-31', '09:00', 40, 35, '150.00'),
+( 70, 20, '2024-12-31', '13:00', 40, 30, '150.00')";
 // Sentencia INSERT - Tabla [opinionEvento]
 $sql_ins_opinionEvento = "INSERT INTO opinionEvento (id_evento,usuario_id,fecha,numPuntuacion,txt_opinion) VALUES
 ( 1, '2', '2023-04-01', 4, '¡Gran concierto, lo disfruté mucho!' ),

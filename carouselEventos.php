@@ -33,7 +33,7 @@ $primerElemento=true;
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
         #carouselExampleIndicators {
-            width: 100%; 
+            width: 100%;;
             margin: 0 auto; 
         }
         .carousel-item img {
@@ -62,7 +62,7 @@ $primerElemento=true;
         <div class="carousel-inner">
             <?php foreach ($eventos as $evento) : ?>
                 <div class="<?= $primerElemento === true ? 'carousel-item active' : 'carousel-item'; ?>">
-                    <img src="<?php echo $evento['url_img']; ?>" class="d-block w-100" alt="">
+                    <img src="<?php echo $evento['url_img']; ?>" class="d-block w-100" style="height: 70vh;" alt="">
                     <div class="container">
                         <div class="carousel-caption text-start">
                             <h1><?php echo $evento['nombre_evento']; ?></h1>
