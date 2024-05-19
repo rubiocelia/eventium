@@ -59,20 +59,16 @@
             <!-- Sección Mi Perfil -->
             <div id="perfil" class="seccion">
                 <h1>Mi perfil</h1>
-                <form action="guardar_perfil.php" method="post" enctype="multipart/form-data">
+                <form id="perfilForm" action="guardar_perfil.php" method="post" enctype="multipart/form-data">
                     <div class="perfil">
-
                         <div class="foto">
                             <img src="<?php echo htmlspecialchars($usuario['foto_usuario']); ?>" alt="Foto de Perfil"
                                 class="fotoPerfil">
                             <input type="file" id="foto" name="foto" style="display:none;">
-                            <!-- Ocultamos el input real -->
                             <button type="button" id="btnSeleccionarFoto">Cambiar foto</button>
-                            <!-- Botón estilizado para seleccionar foto -->
                         </div>
 
                         <div class="datos">
-                            <!-- Fila para Nombre y Apellidos y username -->
                             <div class="fila">
                                 <div class="campo">
                                     <label for="nombre">Nombre:</label>
@@ -84,7 +80,6 @@
                                     <input type="text" id="apellidos" name="apellidos"
                                         value="<?php echo htmlspecialchars($usuario['apellidos_usuario']); ?>" readonly>
                                 </div>
-
                                 <div class="campo">
                                     <label for="username">Nombre de usuario:</label>
                                     <input type="text" id="username" name="username"
@@ -92,7 +87,6 @@
                                 </div>
                             </div>
 
-                            <!-- Fila para Email, Teléfono y Organización -->
                             <div class="fila">
                                 <div class="campo">
                                     <label for="email">Correo electrónico:</label>
@@ -113,15 +107,13 @@
                         </div>
 
                         <div class="acciones">
-                            <button type="button" id="btnModificar" onclick="habilitarEdicion()">Modificar</button>
+                            <button type="button" id="btnModificar">Modificar</button>
                             <button type="submit" id="btnGuardar" style="display:none;">Guardar cambios</button>
-                            <button type="button" id="btnCancelar" style="display:none;"
-                                onclick="cancelarEdicion()">Cancelar</button>
-
+                            <button type="button" id="btnCancelar" style="display:none;">Cancelar</button>
                         </div>
-
                     </div>
                 </form>
+
 
             </div>
             <div id="servicios" class="seccion">
