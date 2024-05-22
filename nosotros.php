@@ -15,7 +15,7 @@
     <section class="nosotros">
         <div class="hero">
             <div class="hero-text">
-                <h1>Conoce a Nuestro Equipo</h1>
+                <h1>¡Conoce a nuestro equipo!</h1>
                 <p>La pasión detrás de cada evento inolvidable</p>
             </div>
         </div>
@@ -45,7 +45,7 @@
         </div>
 
         <div class="datos-interactivos">
-            <h2>Lo que hemos logrado</h2>
+            <h1>Lo que hemos logrado</h1>
             <div class="infografia">
                 <div class="dato">
                     <h3 class="count" data-target="136">0 +</h3>
@@ -70,18 +70,40 @@
             </div>
         </div>
 
-        <!-- <div class="video-promocional">
-            <h2>Descubre Más</h2>
-            <video controls>
-                <source src="video/eventium.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
-        </div> -->
-
         <div class="llamado-accion">
-            <p>Deja que nuestro equipo cree momentos inolvidables para ti</p>
+            <h1 class="titulo-accion">Deja que nuestro equipo cree momentos inolvidables para ti</h1>
+            <p class="subtitulo-accion">¡No esperes más! Haz que tu próximo evento sea épico.</p>
             <a href="contacto.html" class="btn-accion">Contáctanos</a>
         </div>
+
+
+        <div class="video-promocional">
+            <h1>Prepárate para la diversión</h1>
+            <div class="videoYtexto">
+                <video controls>
+                    <source src="archivos/nosotros/videoNosotros.mp4" type="video/mp4">
+                </video>
+
+                <div class="txtVideo">
+
+                    <p>Somos tu puerta de entrada a los eventos más increíbles.
+                        <br><br>
+
+                        Conciertos, teatros, excursiones... ¡lo tenemos todo! Cada evento es una experiencia única, y
+                        estamos aquí para hacerla inolvidable.
+                        <br><br>
+
+                        Reserva con nosotros y prepárate para la diversión.
+                        <br><br>
+                        ¡Únete a la acción y vive momentos espectaculares con Eventium!
+
+                    </p>
+                    <a href="eventos.php">Ver eventos...</a>
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
     <?php include('footer.php'); ?>
