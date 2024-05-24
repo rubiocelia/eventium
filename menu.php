@@ -120,6 +120,8 @@ mysqli_close($conexion);
                             <div>
                                 <input type="password" class="inputLogin" name="contrasena" placeholder="**********"
                                     required>
+                                    <img src="./archivos/ojo_cerrado.png" onclick="togglePasswordRegistro()"
+                                        class="pass-icon" id="pass-icon-Registro">
                             </div>
                             <div class="boton">
                                 <button class="botonAcceder" type="submit">Acceder</button>
@@ -218,10 +220,11 @@ mysqli_close($conexion);
                                 </div>
                                 <div class="columnaSegundaFormularioRegistro">
                                     <input type="tel" class="inputLogin" name="telefono_usuario" placeholder="Teléfono" required>
-                                    <input type="text" class="inputLogin" name="username"
-                                        placeholder="Nombre de usuario" required>
+                                    <input type="text" class="inputLogin" name="username" placeholder="Nombre de usuario" required>
                                     <input type="password" class="inputLogin" name="password_usuario" placeholder="Contraseña"
                                         required>
+                                        <img src="./archivos/ojo_cerrado.png" onclick="togglePasswordRegistro()"
+                                        class="pass-icon" id="pass-icon-Registro">
 
                                 </div>
                             </div>
@@ -235,7 +238,37 @@ mysqli_close($conexion);
             </div>
         </div>
 
+        <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var passIcon = document.getElementById("pass-icon");
 
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passIcon.src = "./archivos/ojo_abierto.png";
+                passIcon.alt = "Ocultar Contraseña";
+            } else {
+                passwordInput.type = "password";
+                passIcon.src = "./archivos/ojo_cerrado.png";
+                passIcon.alt = "Mostrar Contraseña";
+            }
+        }
+
+        function togglePasswordRegistro() {
+            var passwordInput = document.getElementById("password-Registro");
+            var passIcon = document.getElementById("pass-icon-Registro");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passIcon.src = "./archivos/ojo_abierto.png";
+                passIcon.alt = "Ocultar Contraseña";
+            } else {
+                passwordInput.type = "password";
+                passIcon.src = "./archivos/ojo_cerrado.png";
+                passIcon.alt = "Mostrar Contraseña";
+            }
+        }
+    </script>
 
     </header>
     </header>
