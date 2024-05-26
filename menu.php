@@ -117,9 +117,11 @@ mysqli_close($conexion);
                                 <input type="text" class="inputLogin" name="usuario" placeholder="Nombre de usuario"
                                     required>
                             </div>
-                            <div>
+                            <div class="password">
                                 <input type="password" class="inputLogin" name="contrasena" placeholder="**********"
                                     required>
+                                <img src="./img/ojo_cerrado.png" onclick="togglePasswordRegistro()" class="pass-icon"
+                                    id="pass-icon-Registro">
                             </div>
                             <div class="boton">
                                 <button class="botonAcceder" type="submit">Acceder</button>
@@ -236,7 +238,37 @@ mysqli_close($conexion);
             </div>
         </div>
 
+        <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var passIcon = document.getElementById("pass-icon");
 
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passIcon.src = "./img/ojo_abierto.png";
+                passIcon.alt = "Ocultar Contraseña";
+            } else {
+                passwordInput.type = "password";
+                passIcon.src = "./img/ojo_cerrado.png";
+                passIcon.alt = "Mostrar Contraseña";
+            }
+        }
+
+        function togglePasswordRegistro() {
+            var passwordInput = document.getElementById("password-Registro");
+            var passIcon = document.getElementById("pass-icon-Registro");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passIcon.src = "./img/ojo_abierto.png";
+                passIcon.alt = "Ocultar Contraseña";
+            } else {
+                passwordInput.type = "password";
+                passIcon.src = "./img/ojo_cerrado.png";
+                passIcon.alt = "Mostrar Contraseña";
+            }
+        }
+        </script>
 
     </header>
     </header>
