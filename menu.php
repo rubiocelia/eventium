@@ -86,7 +86,7 @@ mysqli_close($conexion);
 
                 <li> <a href="eventos.php">Eventos</a></li>
 
-                <li> <a href="perfil.php">Contacto</a></li>
+                <li> <a href="contacto.php">Contacto</a></li>
             </ul>
 
             <!-- Botones -->
@@ -206,22 +206,23 @@ mysqli_close($conexion);
                     <div class="CuerpoSign">
                         <h1 class="tituloUnete">¡Prepárate para la aventura!</h1>
                         <h3 class="Subtitulo">Regístrate ahora y empieza a explorar un mundo de eventos</h3>
-                        <form class="FormularioRegistro" action="" method="POST"
-                            enctype="multipart/form-data">
+                        <form class="FormularioRegistro" action="" method="POST" enctype="multipart/form-data">
                             <div class="formularioRegistroFlex">
                                 <div class="columnaPrimeraFormularioRegistro">
-                                    <input type="text" class="inputLogin" name="nombre_usuario" placeholder="Nombre" required>
-                                    <input type="text" class="inputLogin" name="apellidos_usuario" placeholder="Apellidos"
+                                    <input type="text" class="inputLogin" name="nombre_usuario" placeholder="Nombre"
                                         required>
+                                    <input type="text" class="inputLogin" name="apellidos_usuario"
+                                        placeholder="Apellidos" required>
                                     <input type="email" class="inputLogin" name="mail_usuario"
                                         placeholder="example@email.es" required>
                                 </div>
                                 <div class="columnaSegundaFormularioRegistro">
-                                    <input type="tel" class="inputLogin" name="telefono_usuario" placeholder="Teléfono" required>
+                                    <input type="tel" class="inputLogin" name="telefono_usuario" placeholder="Teléfono"
+                                        required>
                                     <input type="text" class="inputLogin" name="username"
                                         placeholder="Nombre de usuario" required>
-                                    <input type="password" class="inputLogin" name="password_usuario" placeholder="Contraseña"
-                                        required>
+                                    <input type="password" class="inputLogin" name="password_usuario"
+                                        placeholder="Contraseña" required>
 
                                 </div>
                             </div>
