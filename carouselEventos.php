@@ -25,7 +25,7 @@ $primerElemento=true;
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> efe
     <title>Mi perfil</title>
     <link rel="stylesheet" type="text/css" href="css/eventos.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
