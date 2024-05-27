@@ -19,10 +19,10 @@
         <div class="footer-section links">
             <h2>SITIO WEB</h2>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="nosotros.php">Nosotros</a></li>
+                <li><a href="eventos.php">Eventos</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </div>
 
@@ -36,7 +36,7 @@
 
     <div class="footer-bottom">
         <p>
-            <a href="https://quidqualitas.es/aviso-legal/" target="_blank">Aviso legal | Protección de datos | Política
+            <a href="politica.php" target="_blank">Aviso legal | Protección de datos | Política
                 de cookies</a>
         </p>
         <p>&copy;2022 Todos los derechos reservados - EVENTIUM</p>

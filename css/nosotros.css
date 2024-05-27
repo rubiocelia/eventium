@@ -168,15 +168,6 @@ body {
   margin-bottom: 20px;
 }
 
-.titulo-promocional {
-  font-family: var(--titulo);
-  border-bottom: 3px solid var(--color-primario);
-  font-size: 1.8em;
-  color: white;
-  margin-bottom: 15px;
-  display: inline-block;
-}
-
 .videoYtexto {
   display: flex;
   flex-direction: row;
@@ -185,10 +176,10 @@ body {
   gap: 20px;
 }
 
-.video-promocional video {
-  width: 60%; /* 2/3 of the container width */
-  height: auto;
-  border-radius: 10px;
+.videoyt {
+  width: 750px;
+  height: 380px;
+  margin-right: 100px;
 }
 
 .txtVideo {

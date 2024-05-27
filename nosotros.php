@@ -15,7 +15,7 @@
     <section class="nosotros">
         <div class="hero">
             <div class="hero-text">
-                <h1>¡Conoce a nuestro equipo!</h1>
+                <h1>¡Descubre lo que nos hace únicos!</h1>
                 <p>La pasión detrás de cada evento inolvidable</p>
             </div>
         </div>
@@ -80,9 +80,11 @@
         <div class="video-promocional">
             <h1>Prepárate para la diversión</h1>
             <div class="videoYtexto">
-                <video controls>
-                    <source src="archivos/nosotros/videoNosotros.mp4" type="video/mp4">
-                </video>
+                <iframe class="videoyt" src="https://www.youtube.com/embed/WEH_QkdjKVc?si=3vk95S9yqtTBhe4H&amp;start=85"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
 
                 <div class="txtVideo">
 

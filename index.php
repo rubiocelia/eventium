@@ -53,7 +53,7 @@ $featuredEvents = getFeaturedEvents();
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Descubre y Reserva Eventos Únicos con Eventium</h1>
+            <h1>Descubre y reserva eventos únicos con Eventium</h1>
             <p>Desde cines hasta excursiones, encuentra lo que te apasiona.</p>
             <div class="search-bar">
                 <input type="text" placeholder="¿Qué evento buscas?">
@@ -102,7 +102,11 @@ $featuredEvents = getFeaturedEvents();
         </div>
     </section>
 
-
+    <div class="llamado-accion">
+        <h1 class="titulo-accion">¿Tienes preguntas o necesitas ayuda? ¡Estamos aquí para ti!</h1>
+        <p class="subtitulo-accion">No dudes en contactarnos a través de los siguientes medios:</p>
+        <a href="contacto.php" class="btn-accion">Contáctanos</a>
+    </div>
 
     <!-- Sección del Mapa Interactivo -->
     <section class="interactive-map">
@@ -110,15 +114,7 @@ $featuredEvents = getFeaturedEvents();
         <div id="map"></div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <h2>Suscríbete a Nuestro Boletín</h2>
-        <p>Recibe las últimas actualizaciones y ofertas exclusivas.</p>
-        <div class="subscription-form">
-            <input type="email" placeholder="Tu correo electrónico">
-            <button>Suscribirse</button>
-        </div>
-    </section>
+
 
     <?php include('footer.php'); ?>
 
