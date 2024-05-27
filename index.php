@@ -45,7 +45,6 @@ $featuredEvents = getFeaturedEvents();
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-
 </head>
 
 <body class="index">
@@ -82,32 +81,27 @@ $featuredEvents = getFeaturedEvents();
         <a href="eventos.php" class="view-all-link">Ver todos los eventos</a>
     </section>
 
-    <!-- Categories -->
     <section class="categories">
-        <h2>Explora por Categorías</h2>
+        <h2>Explora por categorías</h2>
         <div class="category-icons">
-            <div class="category">
-                <i class="fas fa-film"></i>
+            <div class="category" id="cine">
                 <p>Cine</p>
             </div>
-            <div class="category">
-                <i class="fas fa-music"></i>
+            <div class="category" id="conciertos">
                 <p>Conciertos</p>
             </div>
-            <div class="category">
-                <i class="fas fa-hiking"></i>
+            <div class="category" id="excursiones">
                 <p>Excursiones</p>
             </div>
-            <div class="category">
-                <i class="fas fa-plane"></i>
+            <div class="category" id="viajes">
                 <p>Viajes</p>
             </div>
-            <div class="category">
-                <i class="fas fa-theater-masks"></i>
+            <div class="category" id="teatro">
                 <p>Teatro</p>
             </div>
         </div>
     </section>
+
 
 
     <!-- Sección del Mapa Interactivo -->
