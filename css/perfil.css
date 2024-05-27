@@ -27,7 +27,7 @@ main {
   margin: 0;
   padding: 0;
   display: flex;
-  height: 80vh;
+  margin-bottom: 50px;
 }
 
 .bienvenido {
@@ -46,7 +46,8 @@ main {
   box-sizing: border-box;
   font-family: var(--texto);
   font-size: 1.3em;
-  height: 500px;
+  height: fit-content;
+  border-radius: 0 8px 8px 0;
 }
 
 #menu2 ul {
@@ -70,12 +71,8 @@ main {
   color: black;
 }
 
-.iconoMenu {
-  padding: 5px 0;
-  vertical-align: middle;
-  margin-right: 10px;
-  width: 25px;
-  height: auto;
+.icon {
+  margin-right: 8px;
 }
 
 /* Estilos para el contenedor de contenido */
@@ -90,6 +87,9 @@ main {
   display: none; /* Inicialmente oculto, se mostrará mediante JavaScript */
   padding: 20px;
   background-color: white;
+  border-radius: 8px;
+  width: 1100px;
+  margin-left: 50px;
 }
 
 .seccion h1 {
@@ -104,6 +104,7 @@ main {
   width: 100%;
   font-family: var(--titulo);
   font-size: 1.2em;
+  height: 450px;
 }
 
 .foto {
@@ -209,83 +210,98 @@ main {
   color: black;
   cursor: pointer;
 }
-.contacto {
+/* Estilos generales para el calendario */
+
+.calendario {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los elementos hijos horizontalmente */
-  width: 70%;
+  align-items: center;
+  width: 100%;
   font-family: var(--titulo);
   font-size: 1.2em;
-  margin: 0 auto; /* Centra el bloque '.contacto' en el centro horizontalmente */
-  padding: 20px; /* Agrega un poco de espacio alrededor del contenido */
+  height: 600px;
 }
 
-.campoContacto {
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px;
-  width: 100%; /* Asegura que el campo ocupa el espacio disponible */
-  margin-bottom: 10px; /* Espacio entre los campos */
+#calendar {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  height: 100%; /* Asegura que el calendario ocupe toda la altura del contenedor */
 }
 
-.campoContacto label,
-.campoContacto input,
-.campoContacto textarea {
-  align-self: flex-start; /* Alinea los elementos al inicio del eje transversal */
-}
-
-.campoContacto label {
-  margin-bottom: 5px;
-  font-family: var(--titulo);
-}
-
-.campoContacto input,
-.campoContacto textarea {
-  width: 100%;
-  font-family: var(--texto);
-  font-size: 0.8em;
-  padding-left: 5px;
-  border: none;
-  border-bottom: 1.5px solid gray;
-  outline: none;
-  transition: border-bottom 0.1s ease-in-out;
-}
-
-.campoContacto input {
-  height: 1.5em; /* Altura específica para input */
-}
-
-.campoContacto textarea {
-  height: 50px; /* Tamaño fijo para textarea */
-  resize: none; /* Impide que el usuario cambie el tamaño */
-}
-
-.campoContacto input:focus,
-.campoContacto textarea:focus {
-  border-bottom: 1.7px solid var(--color-primario);
-  box-shadow: 0 1px 0 0 var(--color-primario);
-}
-
-.btnEnviar {
-  background-color: var(--color-primario);
-  border: 2px solid var(--color-primario);
+/* Encabezado del calendario */
+.fc-toolbar {
+  background-color: #3498db;
+  color: #ffffff;
   border-radius: 5px;
-  color: white;
-  min-width: 120px;
-  height: auto;
-  font-size: 1em;
-  display: flex;
   padding: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
-  flex-grow: 1;
 }
 
-.btnEnviar:hover {
-  background-color: var(--color-contraste-primario);
-  border: 2px solid var(--color-contraste-primario-oscuro);
-  color: black;
+.fc-toolbar h2 {
+  color: #ffffff;
+}
+
+.fc-button {
+  background-color: #2980b9;
+  border: none;
+  color: #ffffff;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
   cursor: pointer;
+}
+
+.fc-button:hover {
+  background-color: #1f6396;
+}
+
+.fc-button:focus {
+  outline: none;
+}
+
+/* Día de la semana */
+.fc-day-header {
+  background-color: #f2f2f2;
+  color: #333333;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+/* Día actual */
+.fc-day-today {
+  background-color: #eaf6ff;
+}
+
+/* Eventos */
+.fc-event {
+  background-color: #3498db;
+  border: none;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.fc-event:hover {
+  background-color: #2980b9;
+}
+
+/* Vista de mes */
+.fc-day-grid-event {
+  margin: 5px 0;
+  padding: 2px 5px;
+}
+
+/* Vista de semana y día */
+.fc-time-grid-event {
+  margin: 5px 0;
+  padding: 5px 10px;
+}
+
+/* Título de los eventos */
+.fc-title {
+  font-size: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

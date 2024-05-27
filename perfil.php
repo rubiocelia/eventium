@@ -35,8 +35,12 @@
     <meta charset="UTF-8">
     <title>Mi perfil</title>
     <link rel="stylesheet" type="text/css" href="css/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 </head>
 
 <body class="miCuenta">
@@ -47,12 +51,9 @@
     <main>
         <div id="menu2">
             <ul>
-                <!-- <img src="./archivos/perfil/archivo.png" alt="Icono de perfil"
-                        class="iconoMenu"> -->
-                <li onclick="mostrarSeccion('perfil')">Mi perfil</li>
-                <li onclick="mostrarSeccion('servicios')">Mis servicios</li>
-                <li onclick="mostrarSeccion('archivos')">Mis archivos</li>
-                <li onclick="mostrarSeccion('contacto')">Contacto</li>
+                <li onclick="mostrarSeccion('perfil')"><i class="fas fa-user icon"></i> Mi perfil</li>
+                <li onclick="mostrarSeccion('tickets')"><i class="fas fa-ticket-alt icon"></i> Mis tickets</li>
+                <li onclick="mostrarSeccion('calendario')"><i class="fas fa-calendar-alt icon"></i> Mi calendario</li>
             </ul>
         </div>
         <div id="contenido">
@@ -116,40 +117,21 @@
 
 
             </div>
-            <div id="servicios" class="seccion">
-                <h1>Mis servicios</h1>
+            <div id="tickets" class="seccion">
+                <h1>Mis tickets</h1>
             </div>
 
-            <div id="archivos" class="seccion">
-                <h1>Mis archivos</h1>
+            <div id="calendario" class="seccion">
+                <h1>Mi calendario</h1>
+                <div id="calendar"></div>
             </div>
 
-            <div id="contacto" class="seccion">
-                <h1>Contacto</h1>
-                <form action="enviarContacto.php" method="post" class="campoContacto">
-                    <div class="contacto">
-                        <div class="campoContacto">
-                            <label for="name">Nombre:</label>
-                            <input type="text" id="name" name="name" placeholder="Escribe tu nombre" required>
-                        </div>
-                        <div class="campoContacto">
-                            <label for="email">Correo Electrónico:</label>
-                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
-                        </div>
-                        <div class="campoContacto">
-                            <label for="message">Mensaje:</label>
-                            <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí..."
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btnEnviar">Enviar</button>
-                    </div>
-                </form>
 
-            </div>
         </div>
     </main>
     <script src="./scripts/scriptPopUp.js"></script>
     <script src="scripts/menuLateral.js"></script>
+    <script src="scripts/perfil.js"></script>
     <script src="scripts/botonesPerfil.js"></script>
     <?php include('footer.php'); ?>
 </body>
