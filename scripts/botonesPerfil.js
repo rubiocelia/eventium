@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".perfil input, .perfil #foto");
   const fotoPerfil = document.querySelector(".fotoPerfil");
   const fotoOriginal = fotoPerfil.src; // Guarda el src original de la imagen al cargar la página
+  const errorGeneral = document.getElementById("errorGeneral");
 
   btnModificar.addEventListener("click", function () {
     inputs.forEach((input) => {
@@ -42,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("perfilForm").reset();
     fotoPerfil.src = fotoOriginal;
+    errorGeneral.style.display = "none"; // Ocultar mensajes de error al cancelar
 
     btnGuardar.style.display = "none";
     btnModificar.style.display = "inline-block";
@@ -51,6 +53,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
   btnGuardar.addEventListener("click", function (event) {
     event.preventDefault();
+
+    let valid = true;
+    let errorMessage = "";
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const apellidos = document.getElementById("apellidos").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const fechaNacimiento = document
+      .getElementById("fechaNacimiento")
+      .value.trim();
+
+    const nombreValido = /^[a-zA-Z\s]+$/.test(nombre);
+    const apellidosValido = /^[a-zA-Z\s]+$/.test(apellidos);
+    const emailValido = /^\S+@\S+\.\S+$/.test(email);
+    const telefonoValido = /^\d{9}$/.test(telefono);
+    const fechaNacimientoValida = new Date(fechaNacimiento) < new Date();
+
+    if (!nombre || !nombreValido) {
+      valid = false;
+      errorMessage += "El nombre no puede estar vacío ni contener números. ";
+    }
+    if (!apellidos || !apellidosValido) {
+      valid = false;
+      errorMessage +=
+        "Los apellidos no pueden estar vacíos ni contener números. ";
+    }
+    if (!username) {
+      valid = false;
+      errorMessage += "El nombre de usuario no puede estar vacío. ";
+    }
+    if (!email || !emailValido) {
+      valid = false;
+      errorMessage += "El correo electrónico no es válido. ";
+    }
+    if (!telefono || !telefonoValido) {
+      valid = false;
+      errorMessage +=
+        "El número de teléfono debe tener 9 dígitos y no puede contener letras. ";
+    }
+    if (!fechaNacimiento || !fechaNacimientoValida) {
+      valid = false;
+      errorMessage += "La fecha de nacimiento debe ser anterior a hoy. ";
+    }
+
+    if (!valid) {
+      errorGeneral.textContent = errorMessage;
+      errorGeneral.style.display = "block";
+      return;
+    }
 
     const formData = new FormData(document.getElementById("perfilForm"));
 
@@ -72,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
             input.disabled = input.type === "file";
           });
 
+          errorGeneral.style.display = "none"; // Ocultar mensajes de error en caso de éxito
           btnGuardar.style.display = "none";
           btnModificar.style.display = "inline-block";
           btnCancelar.style.display = "none";

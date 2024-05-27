@@ -24,9 +24,7 @@
    
    $usuario = $resultado->fetch_assoc();
    $conexion->close();
-   
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -57,7 +55,6 @@
             </ul>
         </div>
         <div id="contenido">
-            <!-- Sección Mi Perfil -->
             <div id="perfil" class="seccion">
                 <h1>Mi perfil</h1>
                 <form id="perfilForm" action="guardar_perfil.php" method="post" enctype="multipart/form-data">
@@ -88,7 +85,7 @@
                                 </div>
                             </div>
 
-                            <div class="fila">
+                            <div class="fila2">
                                 <div class="campo">
                                     <label for="email">Correo electrónico:</label>
                                     <input type="email" id="email" name="email"
@@ -106,6 +103,8 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- mensaje de error -->
+                        <div id="errorGeneral" class="error" style="display:none; color: red;"></div>
 
                         <div class="acciones">
                             <button type="button" id="btnModificar">Modificar</button>
@@ -114,7 +113,6 @@
                         </div>
                     </div>
                 </form>
-
 
             </div>
             <div id="tickets" class="seccion">
@@ -125,11 +123,9 @@
                 <h1>Mi calendario</h1>
                 <div id="calendar"></div>
             </div>
-
-
         </div>
     </main>
-    <script src="./scripts/scriptPopUp.js"></script>
+    <script src="scripts/scriptPopUp.js"></script>
     <script src="scripts/menuLateral.js"></script>
     <script src="scripts/perfil.js"></script>
     <script src="scripts/botonesPerfil.js"></script>

@@ -34,7 +34,8 @@ body {
 .contacto-hero {
   text-align: center;
   padding: 2rem;
-  background-color: var(--color-contraste-primario-oscuro);
+  background-color: #fbe5a9;
+  color: var(--color-primario);
   color: var(--color-primario);
 }
 
@@ -103,9 +104,11 @@ body {
 .contacto-formulario {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
   flex-grow: 2;
   margin: 50px 100px;
   color: white;
+  width: 65%;
 }
 
 .form-group {
@@ -145,7 +148,7 @@ body {
   width: 150px;
   height: 55px;
   padding: 5px 10px;
-  border: 1px solid white;
+  border: 2px solid white;
   background-color: transparent;
   font-family: var(--texto);
   font-size: 1.3em;
@@ -157,8 +160,8 @@ body {
   width: 150px;
   height: 55px;
   padding: 5px 10px;
-  border: 1px solid white;
-  background-color: white;
+  border: 2px solid white;
+  background-color: var(--color-contraste-primario);
   font-family: var(--texto);
   font-size: 1.3em;
   border-radius: 8px;

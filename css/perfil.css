@@ -153,6 +153,12 @@ main {
   margin-bottom: 2.5em;
 }
 
+.fila2 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
 .campo {
   flex: 1; /* Permite que cada campo se expanda equitativamente */
   display: flex;
@@ -211,7 +217,6 @@ main {
   cursor: pointer;
 }
 /* Estilos generales para el calendario */
-
 .calendario {
   display: flex;
   flex-direction: column;
@@ -219,40 +224,43 @@ main {
   width: 100%;
   font-family: var(--titulo);
   font-size: 1.2em;
-  height: 600px;
+  height: 800px;
 }
 
 #calendar {
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   height: 100%; /* Asegura que el calendario ocupe toda la altura del contenedor */
+  font-family: var(--texto); /* Aplica la tipografía personalizada */
 }
 
 /* Encabezado del calendario */
 .fc-toolbar {
-  background-color: #3498db;
-  color: #ffffff;
+  background-color: var(--color-contraste-primario);
   border-radius: 5px;
   padding: 10px;
 }
 
 .fc-toolbar h2 {
-  color: #ffffff;
+  color: var(--color-primario);
+  font-family: var(--titulo);
+  font-size: 2em;
 }
 
 .fc-button {
-  background-color: #2980b9;
   border: none;
   color: #ffffff;
   margin: 0 5px;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer;
+  font-family: var(--texto); /* Aplica la tipografía personalizada */
 }
 
 .fc-button:hover {
-  background-color: #1f6396;
+  background-color: var(--color-primario);
+  font-family: var(--texto);
 }
 
 .fc-button:focus {
@@ -261,15 +269,16 @@ main {
 
 /* Día de la semana */
 .fc-day-header {
-  background-color: #f2f2f2;
-  color: #333333;
+  background-color: var(--color-primario);
+  color: var(--color-contraste-primario);
   padding: 10px;
   border: 1px solid #ddd;
+  font-family: var(--texto); /* Aplica la tipografía personalizada */
 }
 
 /* Día actual */
 .fc-day-today {
-  background-color: #eaf6ff;
+  background-color: var(--color-contraste-primario-claro);
 }
 
 /* Eventos */
@@ -280,28 +289,31 @@ main {
   padding: 5px;
   border-radius: 4px;
   cursor: pointer;
+  font-family: var(--texto); /* Aplica la tipografía personalizada */
+  position: relative;
 }
 
 .fc-event:hover {
   background-color: #2980b9;
 }
 
-/* Vista de mes */
-.fc-day-grid-event {
-  margin: 5px 0;
-  padding: 2px 5px;
-}
-
-/* Vista de semana y día */
-.fc-time-grid-event {
-  margin: 5px 0;
-  padding: 5px 10px;
-}
-
-/* Título de los eventos */
-.fc-title {
-  font-size: 1em;
+/* Tooltip para eventos */
+.fc-event .tooltip {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+.fc-event:hover .tooltip {
+  display: block;
+}
+
+.error {
 }
