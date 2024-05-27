@@ -13,22 +13,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Eventos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/infoEvento.css">
+    <link rel="stylesheet" type="text/css" href="componentesEventos/Style/opinionesEvento.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
 </head>
-<body>
-    <?php include('menu.php'); ?>
-    <div class="container">
-        <!-- Cabcera de la pagina -->
+<body class="bodyInfoEvento">
+    <?php require_once('menu.php'); ?>
+    <div class="custom-container">
+        <!-- Cabecera de la página -->
         <div class="cabecera">
-        <!-- Imagen -->
-        <div>
-            <img src="<?php echo $evento['url_img']; ?>" alt=""></img>
-        </div>
-        <!-- nombre -->
-        <div>
-            <h1><?php echo $evento['nombre_evento']; ?></h1>
-        </div>
+            <!-- Imagen -->
+            <div>
+                <img src="<?php echo $evento['url_img']; ?>" alt=""></img>
+            </div>
+            <!-- Nombre -->
+            <div>
+                <h1><?php echo $evento['nombre_evento']; ?></h1>
+            </div>
         </div>
         <!-- Descripción -->
         <div>
@@ -36,11 +39,11 @@
             <p><?php echo $evento['descripcion_evento']; ?></p>
         </div>
         <br/><hr><br>
-        <!-- Sección de más informacion -->
+        <!-- Sección de más información -->
         <div>
             <h2>Información adicional </h2>
             <p><strong>👨‍👩‍👧‍👧Edad recomendada:</strong> <?php echo $evento['edad_evento']; ?></p>
-            <p><strong>🕛Duracion estimada:</strong> <?php echo $evento['duracion_evento']; ?></p>
+            <p><strong>🕛Duración estimada:</strong> <?php echo $evento['duracion_evento']; ?></p>
             <p><strong>🗺️Ubicación:</strong> <?php echo $evento['ubicacion_evento']; ?></p><br>
             <iframe
                 src="<?php echo $evento['url_maps']; ?>"
@@ -53,9 +56,16 @@
             </iframe>
         </div>
     </div>
-
-
-    <?php include('footer.php'); ?>
+        
+    <?php include('./componentesEventos/opinionesEvento.php'); ?> 
+    <!-- Incluye jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Incluye JS de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Incluye tu propio JS -->
+    <script src="../componentesEventos/js/opinionesEvento.js"></script> 
+    <?php require_once('footer.php'); ?>
+    
 </body>
 
 </html>

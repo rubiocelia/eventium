@@ -48,7 +48,7 @@ $primerElemento=true;
                                 <!--<p class="card-text"><?php //echo $evento['descripcion_evento']; ?></p>-->
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="infoEvento.php?evento=<?php echo $evento['id_evento']; ?>" class="btn btn-sm btn-outline-secondary">RESERVAR</a>
+                                        <a href="infoEvento.php?evento=<?php echo $evento['id_evento']; ?>" class="btn btn-sm btn-outline-secondary">MÁS INFO</a>
                                     </div>
                                 </div>
                             </div>
