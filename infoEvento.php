@@ -55,6 +55,9 @@
                 tabindex="0">
             </iframe>
         </div>
+        <div>
+        <?php include('calendarioEvento.php'); ?> 
+        </div>
     </div>
         
     <?php include('./componentesEventos/opinionesEvento.php'); ?> 
