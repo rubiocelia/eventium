@@ -114,19 +114,17 @@ mysqli_close($conexion);
                         <h3 class="Subtitulo">Explora y reserva eventos ahora</h3>
                         <form class="FormularioLogin" action="login.php" method="POST" enctype="multipart/form-data">
                             <div>
-                                <input type="text" class="inputLogin" name="usuario" placeholder="Nombre de usuario"
-                                    required>
+                                <input type="text" class="inputLogin" name="usuario" placeholder="Nombre de usuario">
                             </div>
                             <div class="password">
-                                <input type="password" class="inputLogin" name="contrasena" placeholder="**********"
-                                    required>
-                                <img src="./img/ojo_cerrado.png" onclick="togglePasswordRegistro()" class="pass-icon"
-                                    id="pass-icon-Registro">
+                                <input type="password" class="inputLogin" name="contrasena" id="password_usuario" placeholder="**********">
+                                <img src="./img/ojo_cerrado.png" onclick="togglePassword()" class="pass-icon"
+                                    id="pass-icon">
                             </div>
                             <div class="boton">
                                 <button class="botonAcceder" type="submit">Acceder</button>
                             </div>
-
+                            <div class="mensajeError" style="color: red; font-weight: bold;"></div>
                         </form>
                     </div>
                 </div>
@@ -211,25 +209,38 @@ mysqli_close($conexion);
                         <form class="FormularioRegistro" action="" method="POST" enctype="multipart/form-data">
                             <div class="formularioRegistroFlex">
                                 <div class="columnaPrimeraFormularioRegistro">
-                                    <input type="text" class="inputLogin" name="nombre_usuario" placeholder="Nombre"
-                                        required>
+                                    <input type="text" class="inputLogin" name="nombre_usuario" placeholder="Nombre">
                                     <input type="text" class="inputLogin" name="apellidos_usuario"
-                                        placeholder="Apellidos" required>
-                                    <input type="email" class="inputLogin" name="mail_usuario"
-                                        placeholder="example@email.es" required>
+                                        placeholder="Apellidos">
+                                    <input type="email" class="inputLogin" name="mail_usuario" id="mail_usuario"
+                                        placeholder="example@email.es">
                                 </div>
                                 <div class="columnaSegundaFormularioRegistro">
-                                    <input type="tel" class="inputLogin" name="telefono_usuario" placeholder="Teléfono"
-                                        required>
-                                    <input type="text" class="inputLogin" name="username"
-                                        placeholder="Nombre de usuario" required>
-                                    <input type="password" class="inputLogin" name="password_usuario"
-                                        placeholder="Contraseña" required>
-
+                                    <input type="tel" class="inputLogin" name="telefono_usuario" id="telefono_usuario" placeholder="Teléfono">
+                                    <input type="text" class="inputLogin" name="username" id="username"
+                                        placeholder="Nombre de usuario">
+                                        <div class="password">
+                                            <input type="password" class="inputLogin" name="contrasena" id="passwordRegistro" placeholder="**********">
+                                            <img src="./img/ojo_cerrado.png" onclick="togglePasswordRegistro()" class="pass-icon-registro"
+                                                id="pass-icon-registro">
+                                        </div>
                                 </div>
                             </div>
                             <div class="boton">
-                                <button class="botonAcceder" type="submit">Acceder</button>
+                                <button class="botonAccederRegistro" type="submit">Acceder</button>
+                            </div>
+                            <!-- Modal Structure -->
+                            <div id="modal-backdrop" class="modal-backdrop" style="display:none;">
+                            <div id="modal" class="modal" style="display:none;">
+                                <div class="modal-content">
+                                    <h2>Atención ⚠️</h2>
+                                    <br>
+                                    <p id="modal-message">Mensaje del modal</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                                </div>
+                            </div>
                             </div>
                         </form>
                     </div>
@@ -237,38 +248,38 @@ mysqli_close($conexion);
                 <span class="close">&times;</span>
             </div>
         </div>
-
         <script>
         function togglePassword() {
-            var passwordInput = document.getElementById("password");
+            var passwordInput = document.getElementById("password_usuario");
             var passIcon = document.getElementById("pass-icon");
 
-            if (passwordInput.type === "password") {
+            if (passwordInput.type === "password_usuario") {
                 passwordInput.type = "text";
                 passIcon.src = "./img/ojo_abierto.png";
                 passIcon.alt = "Ocultar Contraseña";
             } else {
-                passwordInput.type = "password";
+                passwordInput.type = "password_usuario";
                 passIcon.src = "./img/ojo_cerrado.png";
                 passIcon.alt = "Mostrar Contraseña";
             }
         }
 
         function togglePasswordRegistro() {
-            var passwordInput = document.getElementById("password-Registro");
-            var passIcon = document.getElementById("pass-icon-Registro");
+            var passwordInput = document.getElementById("passwordRegistro");
+            var passIcon = document.getElementById("pass-icon-registro");
 
-            if (passwordInput.type === "password") {
+            if (passwordInput.type === "password_usuario") {
                 passwordInput.type = "text";
                 passIcon.src = "./img/ojo_abierto.png";
                 passIcon.alt = "Ocultar Contraseña";
             } else {
-                passwordInput.type = "password";
+                passwordInput.type = "password_usuario";
                 passIcon.src = "./img/ojo_cerrado.png";
                 passIcon.alt = "Mostrar Contraseña";
             }
         }
         </script>
-
+        <script src="../eventium/scripts/validar_registro.js"></script>
+        <script src="../eventium/scripts/validar_duplicados.js"></script>
     </header>
     </header>
