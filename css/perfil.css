@@ -217,14 +217,14 @@ main {
   cursor: pointer;
 }
 /* Estilos generales para el calendario */
-.calendario {
+#calendario {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
   font-family: var(--titulo);
   font-size: 1.2em;
-  height: 800px;
+  height: fit-content;
 }
 
 #calendar {
