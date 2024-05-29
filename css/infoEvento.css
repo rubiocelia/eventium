@@ -39,3 +39,9 @@
   max-width: 1500px; /* Define un ancho máximo para evitar que el contenido se extienda demasiado */
   box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
+
+
+.seccion-info-adicional{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/infoEvento.css">
     <link rel="stylesheet" type="text/css" href="componentesEventos/Style/opinionesEvento.css">
+    <link rel="stylesheet" href="componentesEventos/Style/calendarioEvento.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
 </head>
 <body class="bodyInfoEvento">
@@ -40,23 +41,25 @@
         </div>
         <br/><hr><br>
         <!-- Sección de más información -->
-        <div>
-            <h2>Información adicional </h2>
-            <p><strong>👨‍👩‍👧‍👧Edad recomendada:</strong> <?php echo $evento['edad_evento']; ?></p>
-            <p><strong>🕛Duración estimada:</strong> <?php echo $evento['duracion_evento']; ?></p>
-            <p><strong>🗺️Ubicación:</strong> <?php echo $evento['ubicacion_evento']; ?></p><br>
-            <iframe
-                src="<?php echo $evento['url_maps']; ?>"
-                width="600"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                aria-hidden="false"
-                tabindex="0">
-            </iframe>
-        </div>
-        <div>
-        <?php include('calendarioEvento.php'); ?> 
+        <div class="seccion-info-adicional">
+            <div>
+                <h2>Información adicional </h2>
+                <p><strong>👨‍👩‍👧‍👧Edad recomendada:</strong> <?php echo $evento['edad_evento']; ?></p>
+                <p><strong>🕛Duración estimada:</strong> <?php echo $evento['duracion_evento']; ?></p>
+                <p><strong>🗺️Ubicación:</strong> <?php echo $evento['ubicacion_evento']; ?></p><br>
+                <iframe
+                    src="<?php echo $evento['url_maps']; ?>"
+                    width="600"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    aria-hidden="false"
+                    tabindex="0">
+                </iframe>
+            </div>
+            <div>
+                <?php include('./componentesEventos/calendarioEvento.php'); ?> 
+            </div>
         </div>
     </div>
         
