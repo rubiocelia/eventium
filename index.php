@@ -55,9 +55,11 @@ $featuredEvents = getFeaturedEvents();
         <div class="hero-content">
             <h1>Descubre y reserva eventos únicos con Eventium</h1>
             <p>Desde cines hasta excursiones, encuentra lo que te apasiona.</p>
-            <div class="search-bar">
-                <input type="text" placeholder="¿Qué evento buscas?">
-                <button>Encuentra tu Evento</button>
+            <div class="search-container">
+                <form id="searchForm" method="GET">
+                    <input type="text" id="searchQuery" name="query" placeholder="¿Qué evento buscas?" required>
+                </form>
+                <div id="searchResults"></div>
             </div>
         </div>
     </section>

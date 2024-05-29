@@ -36,7 +36,6 @@ body {
   padding: 2rem;
   background-color: #fbe5a9;
   color: var(--color-primario);
-  color: var(--color-primario);
 }
 
 .contacto-hero h1 {
@@ -48,7 +47,11 @@ body {
 
 .contacto-hero p {
   font-size: 1.5rem;
+  font-family: var(--texto);
   padding: 0 305px;
+}
+.contacto-hero a {
+  color: var(--color-primario);
 }
 
 .logoContacto {
@@ -100,19 +103,23 @@ body {
   height: 300px;
   border: 0;
 }
-
 .contacto-formulario {
   display: flex;
+  justify-content: center; /* Centra el formulario horizontalmente */
+  align-items: center; /* Centra el formulario verticalmente */
   flex-direction: column;
   margin: 0 auto;
-  flex-grow: 2;
-  margin: 50px 100px;
+  padding: 50px 100px;
   color: white;
   width: 65%;
 }
 
+form {
+  width: 100%; /* Asegura que el formulario ocupe todo el ancho de su contenedor */
+}
+
 .form-group {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   position: relative;
 }
 
@@ -130,7 +137,7 @@ body {
 }
 
 ::placeholder {
-  color: #afacac; /* Color del placeholder */
+  color: #cfcccc; /* Color del placeholder */
   opacity: 1; /* Por defecto es medio transparente */
 }
 
@@ -157,14 +164,56 @@ body {
 }
 
 .btnContacto:hover {
-  width: 150px;
-  height: 55px;
-  padding: 5px 10px;
-  border: 2px solid white;
   background-color: var(--color-contraste-primario);
-  font-family: var(--texto);
-  font-size: 1.3em;
-  border-radius: 8px;
   color: var(--azulQQ);
+  cursor: pointer;
+}
+
+/* faqs */
+
+.logosFAQS {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  gap: 20px;
+}
+
+.category {
+  width: 30%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.category img {
+  max-width: 100px;
+  margin-bottom: 10px;
+}
+
+.category p {
+  font-size: 1.2em;
+}
+
+.category:hover {
+  transform: scale(1.05);
+}
+
+.faqs-content {
+  display: none;
+  text-align: center;
+}
+
+.faq-category {
+  display: none;
+}
+
+#backToCategories {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
   cursor: pointer;
 }
