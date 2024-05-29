@@ -171,6 +171,45 @@
   transition: 800ms ease all;
 }
 
+.botonAccederRegistro {
+  width: 50%;
+}
+
+/* Animación Botón */
+.botonAccederRegistro {
+  background: var(--color-contraste-primario-oscuro);
+  border: 2px solid white;
+  border-radius: 5px;
+  font-family: var(--texto);
+  color: white;
+  position: relative;
+  height: 50px;
+  font-size: 1.4em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+  margin-top: 20px;
+}
+
+.botonAccederRegistro:hover {
+  background: var(--color-primario-claro);
+  color: black;
+}
+
+.botonAccederRegistro:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.botonAcceder:hover:before,
+.botonAcceder:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
 .CuerpoSign {
   display: flex;
   flex-direction: column;
@@ -247,4 +286,75 @@
   width: 27px !important;
   height: 32px !important;
   cursor: pointer;
+}
+.pass-icon-registro {
+  position: absolute;
+  top: 16px;
+  right: 10px;
+  width: 27px !important;
+  height: 32px !important;
+  cursor: pointer;
+}
+.errorMensaje {
+  color: crimson;
+  font-size: 0.7em;
+  margin-top: -10px;
+  gap: 10px;
+}
+ /* Estilo para el modal */
+ .modal {
+  position: fixed;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050; /* Asegúrate de que el modal esté por encima del backdrop */
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none; /* Oculto por defecto */
+}
+
+/* Estilo para el fondo oscuro */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Negro con transparencia */
+  z-index: 1040; /* Asegúrate de que el backdrop esté detrás del modal */
+  display: none; /* Oculto por defecto */
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content h2 {
+font-size: 28px;
+font-family: "Bellefair";
+}
+
+.modal-content p {
+font-size: 20px;
+font-family: "Chivo", sans-serif;
+}
+
+.modal-footer {
+  padding: 10px;
+  text-align: right;
+  border-radius: 15px;
+}
+
+.modal-footer a {
+  font-family: "Chivo", sans-serif;
+  border-radius: 15px;
+}
+.modal-close {
+  background-color: var(--verde-oscuro);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
 }
