@@ -20,7 +20,7 @@ if (isset($_GET['sendTo'])) {
 // Verificamos el inicio de sesión del paciente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperamos la url de destino al hacer login
-    $urlDestino= $_POST['sendTo'];
+    $urlDestino = isset($_GET['sendTo']) ? $_GET['sendTo'] : '';
     // Validamos que llamada al metodo POST venga del boton login para realizar el inicio de sesión
     if (isset($_POST['Login'])) {
         // Obtenemos los datos del formulario
