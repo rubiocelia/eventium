@@ -153,7 +153,7 @@ mysqli_close($conexion);
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Obtenemos datos del formulario
                 $username = $_POST['username'];
-                $password_usuario = $_POST['password_usuario']; // Contraseña en texto plano
+                $password_usuario = $_POST['passwordRegistro']; // Contraseña en texto plano
                 $nombre_usuario = $_POST['nombre_usuario'];
                 $apellidos_usuario = $_POST['apellidos_usuario'];
                 $telefono_usuario = $_POST['telefono_usuario'];
@@ -253,12 +253,12 @@ mysqli_close($conexion);
             var passwordInput = document.getElementById("password_usuario");
             var passIcon = document.getElementById("pass-icon");
 
-            if (passwordInput.type === "password_usuario") {
+            if (passwordInput.type === "password") {
                 passwordInput.type = "text";
                 passIcon.src = "./img/ojo_abierto.png";
                 passIcon.alt = "Ocultar Contraseña";
             } else {
-                passwordInput.type = "password_usuario";
+                passwordInput.type = "password";
                 passIcon.src = "./img/ojo_cerrado.png";
                 passIcon.alt = "Mostrar Contraseña";
             }
@@ -268,12 +268,12 @@ mysqli_close($conexion);
             var passwordInput = document.getElementById("passwordRegistro");
             var passIcon = document.getElementById("pass-icon-registro");
 
-            if (passwordInput.type === "password_usuario") {
+            if (passwordInput.type === "password") {
                 passwordInput.type = "text";
                 passIcon.src = "./img/ojo_abierto.png";
                 passIcon.alt = "Ocultar Contraseña";
             } else {
-                passwordInput.type = "password_usuario";
+                passwordInput.type = "password";
                 passIcon.src = "./img/ojo_cerrado.png";
                 passIcon.alt = "Mostrar Contraseña";
             }
