@@ -41,7 +41,6 @@ $primerElemento=true;
             object-fit: cover;
             filter: brightness(0.7);
         }
-        
 
         @media (max-width: 768px) {
             #carouselExampleIndicators {
