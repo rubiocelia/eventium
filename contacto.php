@@ -103,7 +103,9 @@ if (isset($_SESSION['idUsuarioLogin'])) {
             </form>
         </section>
 
-
+        <div class="titFaqs-container">
+            <h1 class="titFaqs">Preguntas frecuentes</h1>
+        </div>
         <section id="faqs" class="logosFAQS">
             <div class="category" data-category="musical">
                 <ion-icon name="musical-notes-outline"></ion-icon>

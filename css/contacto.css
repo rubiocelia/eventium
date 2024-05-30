@@ -171,6 +171,17 @@ form {
 
 /* faqs */
 
+.titFaqs-container {
+  text-align: center; /* Centra el contenido del contenedor */
+}
+
+.titFaqs {
+  color: white;
+  display: inline; /* Asegura que el ancho se ajuste al contenido */
+  border-bottom: 2px solid white; /* Agrega una línea debajo del texto */
+  padding-bottom: 2px; /* Espaciado opcional entre el texto y la línea */
+}
+
 .logosFAQS {
   display: flex;
   flex-wrap: wrap;
