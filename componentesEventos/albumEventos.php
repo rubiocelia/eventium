@@ -1,14 +1,27 @@
 <?php
-require_once("conecta.php");
-$conexion = getConexion();
+    require_once("conecta.php");
+    require_once("./eventos.php");
+    $conexion = getConexion();
 
-// Consulta para recuperar los eventos populares (Solo 8)
-$sql = "SELECT * FROM evento";
-$consulta = $conexion->query($sql);
-$eventos = $consulta->fetch_all(MYSQLI_ASSOC);
-$conexion->close();
-$indexIndicator = 0;
-$primerElemento=true;
+    $sql="";
+    if($filtrar==true){
+        if($filtrarPor=="Tipo"){
+            $sql="SELECT * FROM evento WHERE id_tipoEvento='$idFiltro'";    
+        } else {
+            $sql="SELECT 
+                evento.*
+            FROM 
+                evento
+                JOIN relacioncateven as rel ON evento.id_evento=rel.id_evento AND rel.id_categoriaEvento='$idFiltro'";
+        }
+    } else {
+        $sql="SELECT * FROM evento";
+    }
+    $consulta = $conexion->query($sql);
+    $eventos = $consulta->fetch_all(MYSQLI_ASSOC);
+    $conexion->close();
+    $indexIndicator = 0;
+    $primerElemento=true;
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +55,7 @@ $primerElemento=true;
                 <?php foreach ($eventos as $evento) : ?>
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img src="<?php echo $evento['url_img']; ?>" style="object-fit: cover; max-height: 200px;"  alt="">
+                            <img src="<?php echo $evento['url_img']; ?>" style="object-fit: cover; max-height: 200px;" loading="lazy" alt="">
                             <div class="card-body">
                                 <h6><?php echo $evento['nombre_evento']; ?></h6>
                                 <!--<p class="card-text"><?php //echo $evento['descripcion_evento']; ?></p>-->

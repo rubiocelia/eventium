@@ -61,20 +61,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 <div class="container-custom">
   <?php foreach ($calendario as $item) : ?>
-    <div class="row row-striped">
-      <div class="col-2 text-right">
-        <h1 class="display-4"><span class="badge badge-secondary"><?php echo $item['dia_evento'];?></span></h1>
-        <h2><?php echo $item['year_evento'];?></h2>
-      </div>
-        <div class="col-10">
-          <h3 class="text-uppercase"><strong><?php echo $item['nom_mes'];?></strong></h3>
-          <ul class="list-inline">
-            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo ' '.$item['nom_dia_semana'];?></li>
-            <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo ' '.$item['hora'];?></li>
-            <li class="list-inline-item"><i class="fa fa-eur" aria-hidden="true"></i><?php echo ' '.$item['precio'];?></li>
-          </ul>
-          <p>Plazas disponibles: <?php echo $item['plazas_disponibles'];?></p>
+    <a href="pasarelaPago.php?id=<?php echo $item['id']; ?>">
+      <div class="row row-striped">
+        <div class="col-2 text-right">
+          <h1 class="display-4"><span class="badge badge-secondary"><?php echo $item['dia_evento'];?></span></h1>
+          <h2><?php echo $item['year_evento'];?></h2>
         </div>
-    </div>
+          <div class="col-10">
+            <h3 class="text-uppercase"><strong><?php echo $item['nom_mes'];?></strong></h3>
+            <ul class="list-inline">
+              <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo ' '.$item['nom_dia_semana'];?></li>
+              <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo ' '.$item['hora'];?></li>
+              <li class="list-inline-item"><i class="fa fa-eur" aria-hidden="true"></i><?php echo ' '.$item['precio'];?></li>
+            </ul>
+            <p>Plazas disponibles: <?php echo $item['plazas_disponibles'];?></p>
+          </div>
+      </div>
+    </a>
   <?php endforeach; ?>
 </div>

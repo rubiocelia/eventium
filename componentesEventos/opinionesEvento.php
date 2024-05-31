@@ -29,11 +29,13 @@
     $conexion->close();
     $primerElemento = true;
 ?>
+<!-- Incluye CSS de Bootstrap -->
+<?php echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">'; ?>
+<!-- Incluye Font Awesome -->
+<?php echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">'; ?>
+<?php if (!empty($listaOpiniones)) : ?>
 <div class="bodyOpiniones">
-    <!-- Incluye CSS de Bootstrap -->
-    <?php echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">'; ?>
-    <!-- Incluye Font Awesome -->
-    <?php echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">'; ?>
+    
     <div id="TestC" class="carousel slide" data-ride="carousel">
         <div class="redz">
             <h1>Testimonios <?php echo ' - '.$mediaOpiniones['media'].'/5'; ?> ⭐</h1>
@@ -69,3 +71,4 @@
     <!-- Incluye tu propio JS -->
     <script src="../componentesEventos/js/opinionesEvento.js"></script>
 </div>
+<?php endif; ?>

@@ -1,3 +1,16 @@
+<?php
+    $filtrar=false;
+    $filtrarPor=null;
+    $idFiltro=0;
+    if(isset($_GET['filtrarPor'], $_GET['idFiltro'])){
+        $filtrar=true;
+        $filtrarPor=$_GET['filtrarPor'];
+        $idFiltro=$_GET['idFiltro'];
+    } else {
+        $filtrar=false;
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,13 +23,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body class="index">
-    <?php include('menu.php'); ?>
-    <?php include('carouselEventos.php'); ?>
-    <div class="busquedaEventos">
-        <div><?php include('componentesEventos/menuFiltrosEventos.php'); ?></div>
-        <div><?php include('componentesEventos/albumEventos.php'); ?></div>
+    <?php require_once('menu.php'); ?>
+    <?php require_once('carouselEventos.php'); ?>
+    <div class="busquedaEventos" id="filtro">
+        <div><?php require_once('componentesEventos/menuFiltrosEventos.php'); ?></div>
+        <div><?php require_once('componentesEventos/albumEventos.php'); ?></div>
     </div>
-    <?php include('footer.php'); ?>
+    <?php require_once('footer.php'); ?>
 </body>
 
 </html>

@@ -80,6 +80,7 @@
     $id_calendario=$_GET['id'];
     $infoCalendario=obtenerInfoCalendario($id_calendario);
     $infoUsuario=obtenerInfoUsuario($idUsuario);
+    $entradasDisponibles=$infoCalendario['plazas_disponibles'];
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -88,6 +89,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="css/pasarelaPago.css">
+    <script type="text/javascript" src="./scripts/pasarelaPago.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Formulario de Pago</title>
 </head>
 <body>
@@ -95,6 +98,7 @@
 <div class="container">
     <h2>Formulario de Pago</h2>
     <div class="distribucion-principal">
+        <!-- Columna 1  -->
         <div class="seccion-resumen">
             <div class="info-evento">
                 <h3><?php echo $infoCalendario['nombre_evento'];?></h3>
@@ -108,44 +112,48 @@
                 <span>Email: <?php echo $infoUsuario['mail_usuario'];?></span><br>
                 <span>Telefono: <?php echo $infoUsuario['telefono_usuario'];?></span><br>
             </div>
-            <div class="datos-tareja">
+            <div class="formas-pago">
+                <form method="post" action="">
+                    <h3>Formas de Pago</h3>
+                    <div>
+                        <label>Tipo de tarjeta</label>
+                        <input type="radio" id="opc_Credito" name="grupo_tipo_tarjeta" value="Credito" checked> Crédito
+                        <input type="radio" id="opc_Debito" name="grupo_tipo_tarjeta" value="Debito"> Débito
+                    </div>
+                    <div>
+                        <!-- Titular de la tarjeta -->
+                        <label for="nombreTitular">Nombre titular:</label>
+                        <input type="text" id="nombreTitular" name="nombreTitular" required>
+                        <!-- Numero de tarjeta -->
+                        <label for="tarjeta">Número de tarjeta:</label>
+                        <input type="text" id="tarjeta" name="tarjeta" inputmode="numeric" maxlength="16" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}">
+                        <!-- Caducidad de tarjeta -->
+                        <label for="caducidad">Fecha de caducidad:</label>
+                        <input type="month" id="caducidad" name="caducidad">
+                        <!-- CVV de tarjeta -->
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" inputmode="numeric" maxlength="3">
+                    </div>
+                </form>
             </div>
         </div>
+        <!-- Columna 2 -->
         <div class="seccion-pago">
-        <?php echo $id_calendario; ?>
+            <div class="contador">
+                <button id="decrementar">-</button>
+                    <span id="contador" max="<?php echo $entradasDisponibles; ?>">1</span>
+                <button id="incrementar">+</button>
+            </div>
+            <div class="resumen-pago">
+                <span>Precio por entrada: </span><span id="precioEvento"><?php echo $infoCalendario['precio'].' €'; ?></span><br>
+                <span>Total a pagar: <span id="totalPagar"></span></span><br>
+                <input type="hidden" id="id_evento" name="id_evento" value="<?php echo $infoCalendario['id_evento']; ?>">
+                <input type="hidden" id="usuario_id" name="usuario_id" value="<?php echo $idUsuario; ?>">
+                <input type="hidden" id="id_calendario" name="id_calendario" value="<?php echo $infoCalendario['id']; ?>">
+                <button id="btnPagar">Pagar</button>
+            </div>
         </div>
     </div>
-    <form action="#" method="post">
-        <div class="form-group">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" name="nombre" required>
-        </div>
-        <div class="form-group">
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div class="form-group">
-            <label for="telefono">Número de Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" required>
-        </div>
-        <div class="form-group">
-            <label for="direccion">Dirección de Envío</label>
-            <input type="text" id="direccion" name="direccion" required>
-        </div>
-        <div class="form-group">
-            <label for="tarjeta">Número de Tarjeta de Crédito</label>
-            <input type="text" id="tarjeta" name="tarjeta" required>
-        </div>
-        <div class="form-group">
-            <label for="expiracion">Fecha de Expiración (MM/AA)</label>
-            <input type="text" id="expiracion" name="expiracion" required>
-        </div>
-        <div class="form-group">
-            <label for="cvv">CVV</label>
-            <input type="number" id="cvv" name="cvv" required>
-        </div>
-        <input type="submit" value="Pagar">
-    </form>
 </div>
 
 </body>

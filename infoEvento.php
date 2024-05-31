@@ -46,7 +46,9 @@
                 <h2>Información adicional </h2>
                 <p><strong>👨‍👩‍👧‍👧Edad recomendada:</strong> <?php echo $evento['edad_evento']; ?></p>
                 <p><strong>🕛Duración estimada:</strong> <?php echo $evento['duracion_evento']; ?></p>
-                <p><strong>🗺️Ubicación:</strong> <?php echo $evento['ubicacion_evento']; ?></p><br>
+                <p><strong>♿Accesibilidad:</strong> <?php echo $evento['accesibilidad_evento']; ?></p>
+                <p><strong>🎟️Aforo:</strong> <?php echo $evento['aforo_evento']; ?></p><br>
+                
                 <iframe
                     src="<?php echo $evento['url_maps']; ?>"
                     width="600"
