@@ -28,17 +28,17 @@
    
    // Obtener eventos comprados por el usuario
    $sql_tickets = "
-       SELECT e.nombre_evento, ce.fecha, ce.hora, e.url_img
-       FROM reservaUsuario ru
-       JOIN calendarioEvento ce ON ru.id_calendarioEvento = ce.id
-       JOIN evento e ON ce.id_evento = e.id_evento
-       WHERE ru.usuario_id = ?
-       ORDER BY ce.fecha DESC";
+   SELECT e.nombre_evento, ce.fecha, ce.hora, e.url_img, e.ubicacion_evento
+   FROM reservaUsuario ru
+   JOIN calendarioEvento ce ON ru.id_calendarioEvento = ce.id
+   JOIN evento e ON ce.id_evento = e.id_evento
+   WHERE ru.usuario_id = ?
+   ORDER BY ce.fecha ASC";  // Cambiado de DESC a ASC para ordenar de más cercano a más lejano
    $stmt_tickets = $conexion->prepare($sql_tickets);
    $stmt_tickets->bind_param("i", $idUsuario);
    $stmt_tickets->execute();
    $tickets_resultado = $stmt_tickets->get_result();
-   
+
    $tickets = [];
    while ($row = $tickets_resultado->fetch_assoc()) {
        $tickets[] = $row;
@@ -46,7 +46,6 @@
    
    $conexion->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -140,18 +139,58 @@
 
             <div id="tickets" class="seccion">
                 <h1>Mis tickets</h1>
-                <div class="tickets-container">
-                    <?php foreach ($tickets as $ticket): ?>
-                    <div class="ticket <?php echo (strtotime($ticket['fecha']) < time()) ? 'ticket-pasado' : ''; ?>">
-                        <img src="<?php echo htmlspecialchars($ticket['url_img']); ?>"
-                            alt="<?php echo htmlspecialchars($ticket['nombre_evento']); ?>" class="ticket-img">
-                        <div class="ticket-info">
-                            <h2><?php echo htmlspecialchars($ticket['nombre_evento']); ?></h2>
-                            <p>Fecha: <?php echo htmlspecialchars($ticket['fecha']); ?></p>
-                            <p>Hora: <?php echo htmlspecialchars($ticket['hora']); ?></p>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
+                <div class="filter-buttons">
+                    <button onclick="mostrarTickets('futuros')">Ver futuros</button>
+                    <button onclick="mostrarTickets('pasados')">Ver pasados</button>
+                </div>
+                <div class="tickets-container" id="tickets-futuros">
+                    <?php
+                    foreach ($tickets as $ticket) {
+                        $fechaEvento = strtotime($ticket['fecha']);
+                        $hoy = time();
+                        $diferencia = ($fechaEvento - $hoy) / 86400;
+                        if ($fechaEvento >= $hoy) {
+                            echo '<div class="ticket">';
+                            echo '<img src="' . htmlspecialchars($ticket['url_img']) . '" alt="' . htmlspecialchars($ticket['nombre_evento']) . '" class="ticket-img">';
+                            echo '<div class="ticket-info">';
+                            echo '<h2>' . htmlspecialchars($ticket['nombre_evento']) . '</h2>';
+                            echo '<p>📆 Fecha: ' . htmlspecialchars($ticket['fecha']) . '</p>';
+                            echo '<p>🕑 Hora: ' . htmlspecialchars($ticket['hora']) . '</p>';
+                            echo '<p>📍 Ubicación: ' . htmlspecialchars($ticket['ubicacion_evento']) . '</p>';
+                            if ($diferencia <= 15) {
+                                echo '<form action="mostrar_entradas.php" method="GET">';
+                                echo '<input type="hidden" name="nombre_evento" value="' . htmlspecialchars($ticket['nombre_evento']) . '">';
+                                echo '<input type="hidden" name="fecha" value="' . htmlspecialchars($ticket['fecha']) . '">';
+                                echo '<input type="hidden" name="hora" value="' . htmlspecialchars($ticket['hora']) . '">';
+                                echo '<input type="hidden" name="ubicacion" value="' . htmlspecialchars($ticket['ubicacion_evento']) . '">';
+                                echo '<input type="hidden" name="url_img" value="' . htmlspecialchars($ticket['url_img']) . '">';
+                                echo '<button class="btnVer" type="submit">Mostrar tickets</button>';
+                                echo '</form>';
+                            } else {
+                                echo '<p>Entradas disponibles 15 días antes del evento</p>';
+                            }
+                            echo '</div></div>';
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="tickets-container" id="tickets-pasados" style="display:none;">
+                    <?php
+                    foreach ($tickets as $ticket) {
+                        $fechaEvento = strtotime($ticket['fecha']);
+                        if ($fechaEvento < $hoy) {
+                            echo '<div class="ticket ticket-pasado">';
+                            echo '<img src="' . htmlspecialchars($ticket['url_img']) . '" alt="' . htmlspecialchars($ticket['nombre_evento']) . '" class="ticket-img">';
+                            echo '<div class="ticket-info">';
+                            echo '<h2>' . htmlspecialchars($ticket['nombre_evento']) . '</h2>';
+                            echo '<p>📆 Fecha: ' . htmlspecialchars($ticket['fecha']) . '</p>';
+                            echo '<p>🕑 Hora: ' . htmlspecialchars($ticket['hora']) . '</p>';
+                            echo '<p>📍 Ubicación: ' . htmlspecialchars($ticket['ubicacion_evento']) . '</p>';
+                            echo '<button class="btnVer" disabled>Mostrar tickets</button>';
+                            echo '</div></div>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
 
