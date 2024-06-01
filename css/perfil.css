@@ -41,7 +41,7 @@ main {
 #menu2 {
   background-color: var(--color-primario);
   color: white;
-  width: 200px;
+  min-width: 200px;
   padding: 10px 10px;
   box-sizing: border-box;
   font-family: var(--texto);
@@ -89,7 +89,7 @@ main {
   background-color: white;
   border-radius: 8px;
   width: 1100px;
-  margin-left: 50px;
+  margin-left: 80px;
 }
 
 .seccion h1 {
@@ -216,12 +216,59 @@ main {
   color: black;
   cursor: pointer;
 }
+
+/* tickets */
+
+.tickets-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ticket {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 300px;
+  position: relative;
+}
+
+.ticket-pasado::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.ticket-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.ticket-info {
+  padding: 10px;
+  background-color: #fff;
+  z-index: 2;
+  position: relative;
+}
+
+.ticket-info h2,
+.ticket-info p {
+  margin: 0;
+  padding: 5px 0;
+}
+
 /* Estilos generales para el calendario */
 #calendario {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 86%;
   font-family: var(--titulo);
   font-size: 1.2em;
   height: fit-content;
@@ -231,7 +278,7 @@ main {
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  height: 100%; /* Asegura que el calendario ocupe toda la altura del contenedor */
+  height: fit-content;
   font-family: var(--texto); /* Aplica la tipografía personalizada */
 }
 
@@ -283,7 +330,7 @@ main {
 
 /* Eventos */
 .fc-event {
-  background-color: #3498db;
+  background-color: var(--color-primario);
   border: none;
   color: #ffffff;
   padding: 5px;
@@ -294,7 +341,7 @@ main {
 }
 
 .fc-event:hover {
-  background-color: #2980b9;
+  background-color: var(--color-primario-claro);
 }
 
 /* Tooltip para eventos */
