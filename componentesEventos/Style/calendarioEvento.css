@@ -19,7 +19,7 @@
 }
 
 .mi-calendario .item-calendario:nth-child(odd) {
-  background-color: #dddbdb;
+  background-color: #CFF0F0;
 }
 
 .mi-calendario .item-calendario:nth-child(even) {
@@ -48,8 +48,8 @@
 
 .mi-calendario .sty-dia {
   font-size: 25pt;
-  color: #fff;
-  background-color: #616060;
+  color: #414040;
+  background-color: var(--color-contraste-primario-claro);
   padding: 7px;
   width: 100%;
   border-radius: 15px;
@@ -114,7 +114,7 @@
   font-family: var(--texto);
   font-weight: bold;
   color: #fff;
-  background-color: #4CAF50;
+  background-color: #5b89c3;
   text-align: center;
   text-decoration: none;
   border-radius: 12px;
@@ -123,7 +123,7 @@
 }
 
 .mi-calendario .boton-pago:hover {
-  background-color: #45a049;
+  background-color:#5b89c3;
 }
 
 .mi-calendario .pago {
