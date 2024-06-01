@@ -34,3 +34,27 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 });
+
+// tickets
+function mostrarTickets(tipo) {
+  if (tipo === "futuros") {
+    document.getElementById("tickets-futuros").style.display = "flex";
+    document.getElementById("tickets-pasados").style.display = "none";
+  } else {
+    document.getElementById("tickets-futuros").style.display = "none";
+    document.getElementById("tickets-pasados").style.display = "flex";
+  }
+}
+
+function mostrarEntradas(ticket) {
+  const ticketInfo = JSON.parse(ticket);
+  const fechaEvento = new Date(ticketInfo.fecha);
+  const hoy = new Date();
+  const diferencia = (fechaEvento - hoy) / (1000 * 60 * 60 * 24);
+  if (diferencia <= 15) {
+    window.location.href =
+      "mostrar_entradas.php?evento=" + ticketInfo.nombre_evento;
+  } else {
+    alert("Las entradas estarán disponibles 15 días antes del evento.");
+  }
+}
