@@ -34,14 +34,70 @@
 }
 
 .custom-container {
-  padding: 2em 1em; /* Ajusta el padding superior/inferior y lateral */
-  margin: 0 auto; /* Centra el contenedor */
-  max-width: 1500px; /* Define un ancho máximo para evitar que el contenido se extienda demasiado */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  padding: 2em 1em; 
+  margin: 0 auto; 
+  max-width: 1320px;
+  box-sizing: border-box;
 }
 
 
 .seccion-info-adicional{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.seccion-mapa-calendario{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
 }
+.datos-info{
+  /* background-color: #f2d47f;
+  padding: 2px;
+  border-radius: 8px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: self-start;
+  column-gap: 30px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+/*  estilos letras y colores */
+
+.descripcion{
+  font-size: 16px;
+  font-family: var(--texto)!important;
+}
+iframe {
+  border-radius: 10px;
+  border: 2px solid var(--color-contraste-primario);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease-in-out;
+}
+
+iframe:hover {
+  transform: scale(1.02);
+}
+.nombre-descripcion h1 {
+  color:#f2d47f!important;
+  font-family: var(--titulo)!important;
+}
+.seccion-info-adicional h2{
+  color:#f2d47f!important;
+  font-family: var(--titulo)!important;
+}
+.nombre-descripcion{
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.datos-info strong {
+  color: var(--color-contraste-primario);
+  font-size: 16px;
+}
+.datos-info p {
+  font-size: 15px;
+}
+
+
+

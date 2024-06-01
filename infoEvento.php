@@ -30,25 +30,27 @@
                 <img src="<?php echo $evento['url_img']; ?>" alt=""></img>
             </div>
             <!-- Nombre -->
-            <div>
+            <div class="nombre-descripcion">
                 <h1><?php echo $evento['nombre_evento']; ?></h1>
+                <p class="descripcion"><?php echo $evento['descripcion_evento']; ?></p>
             </div>
         </div>
         <!-- Descripción -->
-        <div>
-            <h2>Descripción</h2>
-            <p><?php echo $evento['descripcion_evento']; ?></p>
-        </div>
-        <br/><hr><br>
+        
+        <br/><hr>
         <!-- Sección de más información -->
         <div class="seccion-info-adicional">
+            <h2>Información adicional </h2>
+            <div class="datos-info">
+                <p><strong>👨‍👩‍👧‍👧Edad recomendada:</strong><br> <?php echo $evento['edad_evento']; ?></p>
+                <p><strong>🕛Duración estimada:</strong><br> <?php echo $evento['duracion_evento']; ?></p>
+                <p><strong>♿Accesibilidad:</strong><br> <?php echo $evento['accesibilidad_evento']; ?></p>              
+                <p><strong>🗺️Ubicación:</strong><br> <?php echo $evento['ubicacion_evento']; ?></p>
+                <p><strong>🎟️Aforo:</strong><br> <?php echo $evento['aforo_evento']; ?></p>
+            </div>
+        </div>
+        <div class="seccion-mapa-calendario">
             <div>
-                <h2>Información adicional </h2>
-                <p><strong>👨‍👩‍👧‍👧Edad recomendada:</strong> <?php echo $evento['edad_evento']; ?></p>
-                <p><strong>🕛Duración estimada:</strong> <?php echo $evento['duracion_evento']; ?></p>
-                <p><strong>♿Accesibilidad:</strong> <?php echo $evento['accesibilidad_evento']; ?></p>
-                <p><strong>🎟️Aforo:</strong> <?php echo $evento['aforo_evento']; ?></p><br>
-                
                 <iframe
                     src="<?php echo $evento['url_maps']; ?>"
                     width="600"

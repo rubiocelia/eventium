@@ -1,4 +1,6 @@
 <?php
+  // require_once("../conecta.php");
+  // $conexion = getConexion();
   require_once("infoEvento.php");
   // Consulta para recuperar el calendario del evento
   $sql_Calendario = "SELECT 
@@ -52,31 +54,31 @@
   $calendario = $consulta->fetch_all(MYSQLI_ASSOC);
 
 ?>
-<script src="../componentesEventos/js/calendarioEvento.js" defer></script>
+<!-- <script src="../componentesEventos/js/calendarioEvento.js" defer></script> -->
 <link rel="stylesheet" href="../componentesEventos/Style/calendarioEvento.css">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">	
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-<div class="container-custom">
-  <?php foreach ($calendario as $item) : ?>
-    <a href="pasarelaPago.php?id=<?php echo $item['id']; ?>">
-      <div class="row row-striped">
-        <div class="col-2 text-right">
-          <h1 class="display-4"><span class="badge badge-secondary"><?php echo $item['dia_evento'];?></span></h1>
-          <h2><?php echo $item['year_evento'];?></h2>
+<div class="mi-calendario">
+  <div class="contenido-calendario">
+    <?php foreach ($calendario as $item) : ?>
+      <div class="item-calendario">
+        <!-- Columnas donde ubicar el día y la hora -->
+        <div class="column-day-hora">
+            <span class="sty-dia"><?php echo $item['dia_evento'];?></span>
+            <span class="sty-hora"><?php echo ' '.$item['hora'];?></span>
         </div>
-          <div class="col-10">
-            <h3 class="text-uppercase"><strong><?php echo $item['nom_mes'];?></strong></h3>
-            <ul class="list-inline">
-              <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i><?php echo ' '.$item['nom_dia_semana'];?></li>
-              <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i><?php echo ' '.$item['hora'];?></li>
-              <li class="list-inline-item"><i class="fa fa-eur" aria-hidden="true"></i><?php echo ' '.$item['precio'];?></li>
-            </ul>
-            <p>Plazas disponibles: <?php echo $item['plazas_disponibles'];?></p>
-          </div>
+        <div class="column-info-pago">
+            <div class="info">
+                <span class="sty-mes"><?php echo $item['nom_mes'].' '.$item['year_evento'];?></span>
+                <ul class="lista-info-reducida">
+                    <li>📅 <?php echo $item['nom_dia_semana'];?></li>
+                    <li>💶 <?php echo $item['precio'];?> €</li>
+                </ul>
+                <span class="plazas-disponibles">Entradas disponibles: <?php echo $item['plazas_disponibles'];?></span>
+            </div>
+            <div class="pago">
+                <a href="pasarelaPago.php?id=<?php echo $item['id']; ?>" class="boton-pago">COMPRAR</a>
+            </div>
+        </div>
       </div>
-    </a>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
+  </div>
 </div>
