@@ -34,10 +34,10 @@
 }
 
 .custom-container {
-  padding: 2em 1em; /* Ajusta el padding superior/inferior y lateral */
-  margin: 0 auto; /* Centra el contenedor */
-  max-width: 1320px; /* Define un ancho máximo para evitar que el contenido se extienda demasiado */
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+  padding: 2em 1em; 
+  margin: 0 auto; 
+  max-width: 1320px;
+  box-sizing: border-box;
 }
 
 
@@ -101,30 +101,3 @@ iframe:hover {
 
 
 
-/* sobreescribir boostrap */
-/* Sobrescribir el estilo de Bootstrap para el footer */
-.footer {
-  background: var(--color-primario) !important;
-  color: white !important;
-  padding-top: 50px !important;
-  width: 100% !important;
-}
-
-/* Asegurar que el espacio entre los elementos sea cero */
-.footer .footer-content,
-.footer .footer-bottom {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.footer-bottom p,
-.footer-bottom a {
-  background-color: var(--color-primario-oscuro) !important;
-  color: #cac8c8 !important;
-  text-align: center !important;
-  padding: 1em 0 !important;
-}
-
-.footer-bottom a:hover {
-  color: var(--color-contraste-primario-oscuro) !important;
-}
