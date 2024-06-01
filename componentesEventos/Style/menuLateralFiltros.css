@@ -1,0 +1,58 @@
+:root {
+    /* Variables de tipografía */
+    --titulo: "Nunito", sans-serif;
+    --texto: "Cantarell", sans-serif;
+    /* Variables de color */
+    --color-primario: #5b89c3;
+    --color-primario-oscuro: #11446e;
+    --color-primario-claro: #9adede;
+    --color-contraste-primario: #ffec88;
+    --color-contraste-primario-oscuro: #f2d47f;
+    --color-contraste-primario-claro: #ffdc96;
+  }
+
+
+
+.boton-colapsar {
+    background-color: var(--color-primario);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-colapsar:hover, .active {
+    background-color: var(--color-contraste-primario-claro);
+    color: black;
+}
+
+.lista-opciones-filtros {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: var(--color-primario-claro);
+}
+
+.lista-opciones-filtros ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista-opciones-filtros li {
+    margin: 5px 0;
+}
+
+.lista-opciones-filtros a {
+    text-decoration: none;
+    color: var(--color-primario-oscuro);
+    font-family: var(--texto);
+}
+
+.lista-opciones-filtros a:hover {
+    color: var(--color-contraste-primario-claro)!important;
+}

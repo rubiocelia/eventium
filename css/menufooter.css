@@ -225,6 +225,7 @@ nav {
   font-family: var(--texto);
   text-align: center;
   padding: 1em 0;
+  margin-bottom: 0px;
   font-size: 0.5em;
 }
 
@@ -234,10 +235,12 @@ nav {
   text-align: center;
   padding: 1em 0;
   font-size: 1em;
+  margin-bottom: 0px;
   text-decoration: none;
 }
 
 .footer-bottom a:hover {
   color: var(--color-contraste-primario-oscuro);
   transition: background-color 0.3s;
+  margin-bottom: 0px;
 }

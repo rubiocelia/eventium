@@ -1,0 +1,49 @@
+:root {
+    /* Variables de tipografía */
+    --titulo: "Nunito", sans-serif;
+    --texto: "Cantarell", sans-serif;
+    /* Variables de color */
+    --color-primario: #5b89c3;
+    --color-primario-oscuro: #11446e;
+    --color-primario-claro: #9adede;
+    --color-contraste-primario: #ffec88;
+    --color-contraste-primario-oscuro: #f2d47f;
+    --color-contraste-primario-claro: #ffdc96;
+  }
+
+#carouselExampleIndicators {
+    width: 100%;;
+    margin: 0 auto; 
+}
+.carousel-item img {
+    max-height: 650px;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+.mi-boton-personalizado {
+    background-color: var(--color-primario)!important;
+    color: var(--color-contraste-primario)!important;
+    border: 2px solid var(--color-primario-oscuro)!important;
+    font-family: var(--titulo)!important;
+    padding: 10px 20px!important;
+    text-transform: uppercase!important;
+    text-align: center!important;
+    display: inline-block!important;
+    transition: background-color 0.3s ease, color 0.3s ease!important;
+  }
+  
+  .mi-boton-personalizado:hover {
+    background-color: var(--color-primario-oscuro)!important;
+    color: var(--color-contraste-primario-claro)!important;
+    border-color: var(--color-primario-claro)!important;
+  }
+  .carousel-caption h1{
+    font-family: var(--titulo)!important;
+    color:var(--color-contraste-primario-oscuro);
+  }
+
+@media (max-width: 768px) {
+    #carouselExampleIndicators {
+        width: 100%; 
+    }
+}

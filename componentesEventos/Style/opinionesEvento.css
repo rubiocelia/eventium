@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic");
 
-/* :root {
+:root {
  
   --titulo: "Nunito", sans-serif;
   --texto: "Cantarell", sans-serif;
@@ -13,11 +13,11 @@
   --color-contraste-primario: #ffec88;
   --color-contraste-primario-oscuro: #f2d47f;
   --color-contraste-primario-claro: #ffdc96;
-} */
+}
 
 
 .bodyOpiniones{
-  font-family: 'Roboto Condensed', sans-serif;
+  
   margin: 0px;
   padding: 0px;
 }
@@ -27,8 +27,9 @@
 .alcenter{text-align:center;}
 
 #TestC{
- background:url('http://adhycorp.5gbfree.com/Imgs/16042015-DSC_0390.jpg')no-repeat center center fixed; 
-  background-size: 100%;
+ /* background:url('http://adhycorp.5gbfree.com/Imgs/16042015-DSC_0390.jpg')no-repeat center center fixed;  */
+ background-color: #11446e; 
+ background-size: 100%;
   width:100%;
   height:400px;
   box-shadow:0px 0px 20px rgba(0,0,0,0.8);
@@ -43,6 +44,7 @@
 }
 
 #TestC h1{
+  font-family: var(--titulo);
   margin-left:5%;
   padding-top:1%;
   color:#fff;
@@ -82,6 +84,7 @@
   border-radius:10px;
   color:#eee;
   background:rgba(123, 128, 136, 0.3);
+  font-family: var(--texto);
 }
 
 #ql{
@@ -99,22 +102,23 @@
   border-radius:5px;
   background:rgba(255, 255, 255, 0.2);
   padding:5px;
+  font-family: var(--texto);
 }
 /* Control de las flechas  */
 .control-carrusel {
   position: absolute;
   top: 50%;
-  width: 50px; /* Ajusta el ancho automáticamente */
-  height: 50px; /* Ajusta la altura automáticamente */
+  width: 50px; 
+  height: 50px; 
   color: #fff;
-  background: none; /* Elimina el fondo */
-  border: none; /* Elimina cualquier borde */
+  background: none; 
+  border: none; 
   transform: translateY(-50%);
   text-align: center;
   font-size: 36px;
   cursor: pointer;
-  z-index: 1000; /* Asegúrate de que las flechas estén por encima de otros elementos */
-  transition: color 0.2s ease-in-out; /* Solo transición de color */
+  z-index: 1000; 
+  transition: color 0.2s ease-in-out; 
 }
 
 .control-carrusel-izquierda {
@@ -126,7 +130,7 @@
 }
 
 .control-carrusel:hover {
-  color: rgba(255, 255, 255, 0.8); /* Cambia solo el color al pasar el mouse */
+  color: rgba(255, 255, 255, 0.8); 
 }
 
 .control-carrusel i {

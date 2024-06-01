@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     text: 'Gracias por tu compra.',
                     confirmButtonText: 'Cerrar',
                     didClose: () => {
-                        window.location.href = "perfil.php"; // Redireccionar a perfil.php
+                        window.location.href = "perfil.php#tickets"; // Redireccionar a perfil.php
                     }
                 });
             } else {
