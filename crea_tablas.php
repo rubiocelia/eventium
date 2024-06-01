@@ -355,9 +355,9 @@ $sql_ins_opinionEvento = "INSERT INTO opinionEvento (id_evento,usuario_id,fecha,
 ( 5, '3', '2023-07-01', 1, 'Muy malo, no lo recomendaría a nadie.' )";
 // Sentencia INSERT - Tabla [reservaUsuario]
 $sql_ins_reservaUsuario = "INSERT INTO reservaUsuario (id_evento,id_calendarioEvento,usuario_id, numero_entradas) VALUES
-( 1, 4, 1, 1 ),
+( 1, 4, 1, 2 ),
 ( 2, 9, 1, 1 ),
-( 4, 16, 1, 1 ),
+( 4, 16, 1, 3 ),
 ( 1, 2, 3, 1 ),
 ( 1, 2, 4, 1 ),
 ( 4, 16, 5, 1 ),
@@ -366,7 +366,7 @@ $sql_ins_reservaUsuario = "INSERT INTO reservaUsuario (id_evento,id_calendarioEv
 ( 2, 8, 2, 1 ),
 ( 2, 8, 1, 1 ),
 ( 2, 8, 3, 1 ),
-( 3, 11, 1, 1 ),
+( 3, 11, 1, 3 ),
 ( 3, 11, 2, 1 ),
 ( 3, 11, 3, 1 ),
 ( 5, 19, 3, 1 ),

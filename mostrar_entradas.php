@@ -29,6 +29,31 @@ if ($resultado->num_rows == 0) {
 }
 
 $usuario = $resultado->fetch_assoc();
+
+// Obtener número de entradas compradas para el evento
+$sql_tickets = "
+    SELECT SUM(numero_entradas) as num_tickets 
+    FROM reservaUsuario 
+    WHERE usuario_id = ? 
+      AND id_calendarioEvento = (
+          SELECT id 
+          FROM calendarioEvento 
+          WHERE id_evento = (
+              SELECT id_evento 
+              FROM evento 
+              WHERE nombre_evento = ? LIMIT 1
+          ) 
+          AND fecha = ? 
+          AND hora = ?
+    )
+";
+$stmt_tickets = $conexion->prepare($sql_tickets);
+$stmt_tickets->bind_param("isss", $idUsuario, $nombreEvento, $fechaEvento, $horaEvento);
+$stmt_tickets->execute();
+$tickets_resultado = $stmt_tickets->get_result();
+$tickets_data = $tickets_resultado->fetch_assoc();
+$numTickets = $tickets_data['num_tickets'];
+
 $conexion->close();
 ?>
 
@@ -56,6 +81,8 @@ $conexion->close();
                     <p>📆 Fecha: <span><?php echo htmlspecialchars($fechaEvento); ?></span></p>
                     <p>🕑 Hora: <span><?php echo htmlspecialchars($horaEvento); ?></span></p>
                     <p>📍 Ubicación: <span><?php echo htmlspecialchars($ubicacionEvento); ?></span></p>
+                    <p>🎟️ Número de entradas: <span><?php echo htmlspecialchars($numTickets); ?></span></p>
+
                 </div>
             </div>
             <div class="user-info">
