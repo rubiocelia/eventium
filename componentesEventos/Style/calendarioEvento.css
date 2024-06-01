@@ -1,16 +1,133 @@
-.row-striped:nth-of-type(odd){
-  background-color: #efefef;
-  border-left: 4px #000000 solid;
+.mi-calendario {
+  --titulo: "Nunito", sans-serif;
+  --texto: "Cantarell", sans-serif;
+  --color-primario: #5b89c3;
+  --color-primario-oscuro: #11446e;
+  --color-primario-claro: #9adede;
+  --color-contraste-primario: #ffec88;
+  --color-contraste-primario-oscuro: #f2d47f;
+  --color-contraste-primario-claro: #ffdc96;
 }
 
-.row-striped:nth-of-type(even){
-  background-color: #ffffff;
-  border-left: 4px #efefef solid;
+.mi-calendario .contenido-calendario {
+  border: 1px solid #000000;
+  /* max-width: 42em; */
+  width: 100%;
+  height: 450px;
+  overflow-y: scroll;
+  border-radius: 10px;
 }
 
-.row-striped {
-    padding: 10px 1px;
+.mi-calendario .item-calendario:nth-child(odd) {
+  background-color: #dddbdb;
 }
-.container-custom{
-  width: 550px;
+
+.mi-calendario .item-calendario:nth-child(even) {
+  background-color: #ffffff; 
+}
+
+.mi-calendario .item-calendario {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: #fff;
+  padding: 2.5%;
+  text-align: center;
+}
+
+.mi-calendario .column-day-hora {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1em;
+  padding: 0%;
+}
+
+.mi-calendario .column-info-pago {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.mi-calendario .sty-dia {
+  font-size: 25pt;
+  color: #fff;
+  background-color: #616060;
+  padding: 7px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5px;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Impact', Charcoal, sans-serif;
+}
+
+.mi-calendario .sty-hora {
+  font-size: 20pt;
+  font-weight: bold;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  color: #414040;
+  width: 100%; 
+  text-align: center;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.mi-calendario .sty-mes {
+  font-size: 20px;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 0%;
+  font-family: var(--titulo);
+}
+
+.mi-calendario .lista-info-reducida {
+  margin-top: 8px;
+  margin-bottom: 11px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.mi-calendario .lista-info-reducida li {
+  margin-top: 0px;
+  font-family: var(--texto);
+  color: #000000;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+
+.mi-calendario .plazas-disponibles {
+  padding: 0%;
+  color: #000000;
+  font-family: var(--texto);
+}
+
+.mi-calendario .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mi-calendario .boton-pago {
+  display: inline-block;
+  padding: 8px 18px;
+  margin-right: 10px;
+  font-size: 14pt;
+  font-family: var(--texto);
+  font-weight: bold;
+  color: #fff;
+  background-color: #4CAF50;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.mi-calendario .boton-pago:hover {
+  background-color: #45a049;
+}
+
+.mi-calendario .pago {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
