@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="componentesEventos/Style/calendarioEvento.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
 </head>
+
 <body class="bodyInfoEvento">
     <?php require_once('menu.php'); ?>
     <div class="custom-container">
@@ -36,46 +37,43 @@
             </div>
         </div>
         <!-- Descripción -->
-        
-        <br/><hr>
+
+        <br />
+        <hr>
         <!-- Sección de más información -->
         <div class="seccion-info-adicional">
             <h2>Información adicional </h2>
             <div class="datos-info">
                 <p><strong>👨‍👩‍👧‍👧Edad recomendada:</strong><br> <?php echo $evento['edad_evento']; ?></p>
                 <p><strong>🕛Duración estimada:</strong><br> <?php echo $evento['duracion_evento']; ?></p>
-                <p><strong>♿Accesibilidad:</strong><br> <?php echo $evento['accesibilidad_evento']; ?></p>              
+                <p><strong>♿Accesibilidad:</strong><br> <?php echo $evento['accesibilidad_evento']; ?></p>
                 <p><strong>🗺️Ubicación:</strong><br> <?php echo $evento['ubicacion_evento']; ?></p>
                 <p><strong>🎟️Aforo:</strong><br> <?php echo $evento['aforo_evento']; ?></p>
             </div>
         </div>
         <div class="seccion-mapa-calendario">
             <div>
-                <iframe
-                    src="<?php echo $evento['url_maps']; ?>"
-                    width="600"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    aria-hidden="false"
-                    tabindex="0">
+                <iframe src="<?php echo $evento['url_maps']; ?>" width="600" height="450" style="border:0;"
+                    allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
             <div>
-                <?php include('./componentesEventos/calendarioEvento.php'); ?> 
+                <?php include('./componentesEventos/calendarioEvento.php'); ?>
             </div>
         </div>
     </div>
-        
-    <?php include('./componentesEventos/opinionesEvento.php'); ?> 
+
+    <?php include('./componentesEventos/opinionesEvento.php'); ?>
     <!-- Incluye jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Incluye JS de Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Incluye tu propio JS -->
-    <script src="../componentesEventos/js/opinionesEvento.js"></script> 
+    <script src="../componentesEventos/js/opinionesEvento.js"></script>
+    <script src="scripts/scriptPopUp.js"></script>
+
     <?php require_once('footer.php'); ?>
-    
+
 </body>
 
 </html>

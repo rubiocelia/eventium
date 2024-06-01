@@ -103,6 +103,8 @@ $conexion->close();
         </div>
     </div>
     <?php include('footer.php'); ?>
+    <script src="scripts/scriptPopUp.js"></script>
+
 </body>
 
 </html>
