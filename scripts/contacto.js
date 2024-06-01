@@ -26,3 +26,22 @@ document.addEventListener("DOMContentLoaded", function () {
     categories.forEach((cat) => (cat.style.display = "block")); // Mostrar todas las categorías
   });
 });
+
+function toggleFaq(faqElement) {
+  const allAnswers = document.querySelectorAll(".faq-answer");
+  allAnswers.forEach((answer) => {
+    if (answer.previousElementSibling !== faqElement) {
+      answer.style.display = "none";
+      answer.previousElementSibling.classList.remove("active");
+    }
+  });
+
+  const answer = faqElement.nextElementSibling;
+  if (faqElement.classList.contains("active")) {
+    faqElement.classList.remove("active");
+    answer.style.display = "none";
+  } else {
+    faqElement.classList.add("active");
+    answer.style.display = "block";
+  }
+}

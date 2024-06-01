@@ -112,60 +112,208 @@ if (isset($_SESSION['idUsuarioLogin'])) {
                 <p>Musical</p>
             </div>
             <div class="category" data-category="concierto">
-                <img src="path/to/concierto_logo.png" alt="Concierto Logo">
+                <ion-icon name="mic-outline"></ion-icon>
                 <p>Concierto</p>
             </div>
             <div class="category" data-category="teatro">
-                <img src="path/to/teatro_logo.png" alt="Teatro Logo">
+                <ion-icon name="ticket-outline"></ion-icon>
                 <p>Teatro</p>
             </div>
             <div class="category" data-category="festival">
-                <img src="path/to/festival_logo.png" alt="Festival Logo">
+                <ion-icon name="sparkles-outline"></ion-icon>
                 <p>Festival</p>
             </div>
             <div class="category" data-category="exposicion">
-                <img src="path/to/exposicion_logo.png" alt="Exposicion Logo">
+                <ion-icon name="images-outline"></ion-icon>
                 <p>Exposición</p>
             </div>
             <div class="category" data-category="conferencia">
-                <img src="path/to/conferencia_logo.png" alt="Conferencia Logo">
+                <ion-icon name="podium-outline"></ion-icon>
                 <p>Conferencia</p>
             </div>
+        </section>
 
-            <div id="faqsContent" class="faqs-content" style="display: none;">
-                <button id="backToCategories">Volver atrás</button>
-                <div id="musical" class="faq-category">
-                    <h2>FAQs - Musical</h2>
-                    <p>Preguntas frecuentes sobre Musical</p>
-                    <!-- Añade aquí las preguntas frecuentes sobre Musical -->
+        <div id="faqsContent" class="faqs-content" style="display: none;">
+            <button id="backToCategories">⬅ Volver atrás</button>
+
+            <div id="musical" class="faq-category">
+                <h2>FAQs - Musical</h2>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Qué tipos de musicales hay?</div>
+                    <div class="faq-answer">Hay muchos tipos de musicales, incluyendo comedias, dramas, musicales
+                        románticos y más.</div>
                 </div>
-                <div id="concierto" class="faq-category">
-                    <h2>FAQs - Concierto</h2>
-                    <p>Preguntas frecuentes sobre Concierto</p>
-                    <!-- Añade aquí las preguntas frecuentes sobre Concierto -->
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Necesito experiencia previa para disfrutar de
+                        un musical?</div>
+                    <div class="faq-answer">No, los musicales están diseñados para ser disfrutados por todo tipo de
+                        audiencia.</div>
                 </div>
-                <div id="teatro" class="faq-category">
-                    <h2>FAQs - Teatro</h2>
-                    <p>Preguntas frecuentes sobre Teatro</p>
-                    <!-- Añade aquí las preguntas frecuentes sobre Teatro -->
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Hay musicales para niños?</div>
+                    <div class="faq-answer">Sí, hay muchos musicales diseñados específicamente para niños y familias.
+                    </div>
                 </div>
-                <div id="festival" class="faq-category">
-                    <h2>FAQs - Festival</h2>
-                    <p>Preguntas frecuentes sobre Festival</p>
-                    <!-- Añade aquí las preguntas frecuentes sobre Festival -->
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Los musicales son caros?</div>
+                    <div class="faq-answer">El precio de las entradas para un musical varía dependiendo del espectáculo
+                        y del lugar.</div>
                 </div>
-                <div id="exposicion" class="faq-category">
-                    <h2>FAQs - Exposición</h2>
-                    <p>Preguntas frecuentes sobre Exposición</p>
-                    <!-- Añade aquí las preguntas frecuentes sobre Exposición -->
-                </div>
-                <div id="conferencia" class="faq-category">
-                    <h2>FAQs - Conferencia</h2>
-                    <p>Preguntas frecuentes sobre Conferencia</p>
-                    <!-- Añade aquí las preguntas frecuentes sobre Conferencia -->
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Cuál es la duración típica de un musical?</div>
+                    <div class="faq-answer">La duración de los musicales suele ser de entre 2 a 3 horas, incluyendo un
+                        intermedio.</div>
                 </div>
             </div>
-        </section>
+
+            <div id="concierto" class="faq-category">
+                <h2>FAQs - Concierto</h2>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Qué debo llevar a un concierto?</div>
+                    <div class="faq-answer">Es recomendable llevar ropa cómoda, dinero en efectivo, y tu entrada.
+                        Consulta las normas del evento para saber qué más puedes necesitar.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿A qué hora debo llegar a un concierto?</div>
+                    <div class="faq-answer">Se recomienda llegar al menos 30 minutos antes del inicio para encontrar tu
+                        asiento y evitar aglomeraciones.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo llevar comida y bebida a un concierto?
+                    </div>
+                    <div class="faq-answer">Depende del lugar del evento. Generalmente no se permite, pero muchos
+                        lugares tienen puestos de comida y bebida.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Hay restricciones de edad para los conciertos?
+                    </div>
+                    <div class="faq-answer">Algunos conciertos tienen restricciones de edad. Revisa los detalles del
+                        evento para más información.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo obtener un reembolso si no puedo asistir
+                        al concierto?</div>
+                    <div class="faq-answer">La política de reembolsos varía según el evento y el organizador. Revisa la
+                        política de reembolsos al momento de comprar tu entrada.</div>
+                </div>
+            </div>
+
+            <div id="teatro" class="faq-category">
+                <h2>FAQs - Teatro</h2>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Cómo debo vestir para una obra de teatro?</div>
+                    <div class="faq-answer">No hay un código de vestimenta estricto, pero se recomienda vestir de manera
+                        casual elegante.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo llegar tarde a una obra de teatro?</div>
+                    <div class="faq-answer">Es mejor llegar a tiempo, ya que llegar tarde puede interrumpir la
+                        actuación. Algunos teatros no permiten la entrada una vez iniciada la obra.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Los niños pueden asistir al teatro?</div>
+                    <div class="faq-answer">Sí, pero asegúrate de que la obra sea apropiada para su edad.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo tomar fotos durante la obra?</div>
+                    <div class="faq-answer">Generalmente no está permitido tomar fotos o grabar durante la obra.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Hay intermedios en las obras de teatro?</div>
+                    <div class="faq-answer">Sí, muchas obras de teatro tienen un intermedio de 15 a 20 minutos.</div>
+                </div>
+            </div>
+
+            <div id="festival" class="faq-category">
+                <h2>FAQs - Festival</h2>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Qué debo llevar a un festival?</div>
+                    <div class="faq-answer">Lleva ropa cómoda, protector solar, agua, y una mochila ligera. Consulta las
+                        normas del festival para saber qué más puedes necesitar.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo salir y volver a entrar al festival?
+                    </div>
+                    <div class="faq-answer">Depende de la política del festival. Algunos permiten reingreso con una
+                        pulsera especial.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Hay cajeros automáticos en el festival?</div>
+                    <div class="faq-answer">Muchos festivales tienen cajeros automáticos, pero es mejor llevar algo de
+                        efectivo por si acaso.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo llevar mi propia comida y bebida al
+                        festival?</div>
+                    <div class="faq-answer">Generalmente no se permite, pero muchos festivales tienen una amplia oferta
+                        de comida y bebida.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Qué pasa si llueve durante el festival?</div>
+                    <div class="faq-answer">La mayoría de los festivales se llevan a cabo llueva o truene. Es
+                        recomendable llevar ropa adecuada para la lluvia.</div>
+                </div>
+            </div>
+
+            <div id="exposicion" class="faq-category">
+                <h2>FAQs - Exposición</h2>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Qué tipo de exposiciones hay?</div>
+                    <div class="faq-answer">Hay exposiciones de arte, ciencia, historia, tecnología y muchas más.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Necesito comprar entradas con antelación?</div>
+                    <div class="faq-answer">Es recomendable, especialmente para exposiciones populares.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo tomar fotos en una exposición?</div>
+                    <div class="faq-answer">Depende de la exposición. Algunas permiten fotos sin flash, otras no
+                        permiten fotos en absoluto.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Las exposiciones son aptas para niños?</div>
+                    <div class="faq-answer">Muchas exposiciones tienen actividades y secciones diseñadas específicamente
+                        para niños.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Hay visitas guiadas disponibles?</div>
+                    <div class="faq-answer">Sí, muchas exposiciones ofrecen visitas guiadas por un costo adicional.
+                    </div>
+                </div>
+            </div>
+
+            <div id="conferencia" class="faq-category">
+                <h2>FAQs - Conferencia</h2>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Qué debo llevar a una conferencia?</div>
+                    <div class="faq-answer">Lleva una libreta, un bolígrafo, y tarjetas de presentación para hacer
+                        contactos.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Es necesario registrarse previamente?</div>
+                    <div class="faq-answer">Sí, la mayoría de las conferencias requieren registro previo.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Hay pausas para el café durante las
+                        conferencias?</div>
+                    <div class="faq-answer">Sí, la mayoría de las conferencias tienen pausas para el café y el almuerzo.
+                    </div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Puedo hacer preguntas durante la conferencia?
+                    </div>
+                    <div class="faq-answer">Sí, generalmente hay sesiones de preguntas y respuestas al final de cada
+                        presentación.</div>
+                </div>
+                <div class="faq">
+                    <div class="faq-question" onclick="toggleFaq(this)">¿Se entrega algún certificado de asistencia?
+                    </div>
+                    <div class="faq-answer">Muchas conferencias entregan certificados de asistencia al finalizar el
+                        evento.</div>
+                </div>
+            </div>
+        </div>
+
 
     </main>
 
