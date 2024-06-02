@@ -7,9 +7,9 @@
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
     }
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION['id_usuario'])) {
         // Obtener el ID del usuario autenticado
-        $idUsuario = $_SESSION['id'];
+        $idUsuario = $_SESSION['id_usuario'];
 
         // Realizar consulta para obtener el estado de administrador del usuario
         $conexion = getConexion();

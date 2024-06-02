@@ -240,31 +240,31 @@ mysqli_close($conexion);
             var passwordInput = document.getElementById("password_usuario");
             var passIcon = document.getElementById("pass-icon");
 
-            if (passwordInput.type === "password_usuario") {
+            if (passwordInput.type === "password") {
                 passwordInput.type = "text";
                 passIcon.src = "./img/ojo_abierto.png";
                 passIcon.alt = "Ocultar Contraseña";
             } else {
-                passwordInput.type = "password_usuario";
+                passwordInput.type = "password";
                 passIcon.src = "./img/ojo_cerrado.png";
                 passIcon.alt = "Mostrar Contraseña";
             }
         }
 
         function togglePasswordRegistro() {
-            var passwordInput = document.getElementById("passwordRegistro");
-            var passIcon = document.getElementById("pass-icon-registro");
+        var passwordInput = document.getElementById("passwordRegistro");
+        var passIcon = document.getElementById("pass-icon-registro");
 
-            if (passwordInput.type === "password_usuario") {
-                passwordInput.type = "text";
-                passIcon.src = "./img/ojo_abierto.png";
-                passIcon.alt = "Ocultar Contraseña";
-            } else {
-                passwordInput.type = "password_usuario";
-                passIcon.src = "./img/ojo_cerrado.png";
-                passIcon.alt = "Mostrar Contraseña";
-            }
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passIcon.src = "./img/ojo_abierto.png";
+            passIcon.alt = "Ocultar Contraseña";
+        } else {
+            passwordInput.type = "password";
+            passIcon.src = "./img/ojo_cerrado.png";
+            passIcon.alt = "Mostrar Contraseña";
         }
+    }
         </script>
         <script src="../eventium/scripts/validar_registro.js"></script>
     </header>
