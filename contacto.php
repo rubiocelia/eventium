@@ -64,12 +64,12 @@ if (isset($_SESSION['idUsuarioLogin'])) {
     }
 
     // Verifica si la sesión está iniciada y si $id_usuario está definido
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION['id_usuario'])) {
         include('menu_sesion_iniciada.php');
     } else {
         include('menu.php');
     }
-    ?>
+    ?> 
     </header>
 
     <main class="contacto-main">
