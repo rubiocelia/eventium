@@ -131,7 +131,7 @@ mysqli_close($conexion);
                 <span class="close">&times;</span>
             </div>
         </div>
-
+        <!-- Registro -->
         <div id="registerPopup" class="popup">
             <div class="popup-content">
                 <div class="PanelIzquierdo"><img src="img/FondoLogin.jpg" alt="Fondo del Login"></div>
