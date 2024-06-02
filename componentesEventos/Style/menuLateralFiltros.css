@@ -54,5 +54,5 @@
 }
 
 .lista-opciones-filtros a:hover {
-    color: var(--color-contraste-primario-claro)!important;
+    color: var(--color-contraste-primario-claro);
 }
