@@ -155,7 +155,7 @@ $featuredEvents = getFeaturedEvents();
     <!-- js -->
     <script src="scripts/scriptPopUp.js"></script>
     <script src="scripts/index.js"></script>
-    <script src="scripts/validacionRegistro.js"></script>
+    <script src="scripts/validacion_registro.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 
