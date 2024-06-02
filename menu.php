@@ -20,7 +20,7 @@ if (isset($_GET['sendTo'])) {
 // Verificamos el inicio de sesión del paciente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperamos la url de destino al hacer login
-    $urlDestino = isset($_GET['sendTo']) ? $_GET['sendTo'] : '';
+    $urlDestino= $_POST['sendTo'];
     // Validamos que llamada al metodo POST venga del boton login para realizar el inicio de sesión
     if (isset($_POST['Login'])) {
         // Obtenemos los datos del formulario
@@ -153,7 +153,7 @@ mysqli_close($conexion);
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Obtenemos datos del formulario
                 $username = $_POST['username'];
-                $password_usuario = $_POST['passwordRegistro']; // Contraseña en texto plano
+                $password_usuario = $_POST['passwo']; // Contraseña en texto plano
                 $nombre_usuario = $_POST['nombre_usuario'];
                 $apellidos_usuario = $_POST['apellidos_usuario'];
                 $telefono_usuario = $_POST['telefono_usuario'];
@@ -229,19 +229,6 @@ mysqli_close($conexion);
                             <div class="boton">
                                 <button class="botonAccederRegistro" type="submit">Acceder</button>
                             </div>
-                            <!-- Modal Structure -->
-                            <div id="modal-backdrop" class="modal-backdrop" style="display:none;">
-                            <div id="modal" class="modal" style="display:none;">
-                                <div class="modal-content">
-                                    <h2>Atención ⚠️</h2>
-                                    <br>
-                                    <p id="modal-message">Mensaje del modal</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
-                                </div>
-                            </div>
-                            </div>
                         </form>
                     </div>
                 </div>
@@ -253,12 +240,12 @@ mysqli_close($conexion);
             var passwordInput = document.getElementById("password_usuario");
             var passIcon = document.getElementById("pass-icon");
 
-            if (passwordInput.type === "password") {
+            if (passwordInput.type === "password_usuario") {
                 passwordInput.type = "text";
                 passIcon.src = "./img/ojo_abierto.png";
                 passIcon.alt = "Ocultar Contraseña";
             } else {
-                passwordInput.type = "password";
+                passwordInput.type = "password_usuario";
                 passIcon.src = "./img/ojo_cerrado.png";
                 passIcon.alt = "Mostrar Contraseña";
             }
@@ -268,18 +255,17 @@ mysqli_close($conexion);
             var passwordInput = document.getElementById("passwordRegistro");
             var passIcon = document.getElementById("pass-icon-registro");
 
-            if (passwordInput.type === "password") {
+            if (passwordInput.type === "password_usuario") {
                 passwordInput.type = "text";
                 passIcon.src = "./img/ojo_abierto.png";
                 passIcon.alt = "Ocultar Contraseña";
             } else {
-                passwordInput.type = "password";
+                passwordInput.type = "password_usuario";
                 passIcon.src = "./img/ojo_cerrado.png";
                 passIcon.alt = "Mostrar Contraseña";
             }
         }
         </script>
         <script src="../eventium/scripts/validar_registro.js"></script>
-        <script src="../eventium/scripts/validar_duplicados.js"></script>
     </header>
     </header>

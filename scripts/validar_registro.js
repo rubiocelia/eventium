@@ -66,6 +66,61 @@ document.addEventListener("DOMContentLoaded", function() {
           mostrarError(contrasena, "La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.");
       }
 
+      //Validacion del usuario, mail y telefono para que no se repitan.
+    // Verificación con la base de datos
+    //Creamos la instancia "FormData" para complilar los valores y enviarlos mediante fetch.
+
+    var datos = new FormData();
+
+    //Añadimos al objeto "Formdata" los valores que no queremos que se repitan en la base de datos
+
+    datos.append("telefono_usuario", telefono_usuario.value);
+    datos.append("mail_usuario", mail_usuario.value);
+    datos.append("username", username.value);
+
+    //Utilizamos fetch para enviar la solicitud post al formulario y el archivo validar_duplicados.php
+    //será el que manejará la solicitud
+
+    fetch("validar_duplicados.php", {
+      method: "POST",
+      body: datos, // Usando FormData
+
+      //Manejamos la respuesta del servidor una vez la solicitud este enviada, para que cuando
+      //el servidor responda la respuesta sea recibida como un objeto response que a su vez es procesado
+      //para convertirlo a formato json.
+    })
+      .then((response) => response.json())
+
+      //Aqui verificamos que ninguno de los campos de telefono_usuario, mail_usuario y username
+      //se pueda repetir y que en caso de que ya este en la base de datos salte un error mediante un showModal
+
+      .then((data) => {
+        var error = false;
+        if (data.telefono_usuario) {
+          mostrarError(
+            telefono_usuario, "Este teléfono ya está registrado, por favor introduzca otro número de teléfono válido."
+          );
+          error = true;
+        }
+        if (data.mail_usuario) {
+          mostrarError(
+            mail_usuario, "Este correo electrónico ya está registrado, por favor introduzca otro correo válido."
+          );
+          error = true;
+        }
+        if (data.username) {
+          mostrarError(
+            username, "Este nombre de usuario ya está registrado, por favor introduzca otro nombre de usuario."
+          );
+          error = true;
+        }
+
+        if (!error) {
+          form.submit(); // Envía el formulario si no hay errores
+        }
+        //En que caso de que la consulta fetch falle saldra un error mediante un showModal
+      })
+
       // Si no hay campos con errores, enviar el formulario
       const camposConError = formulario.querySelectorAll(".error");
       if (camposConError.length === 0) {

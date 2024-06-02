@@ -26,7 +26,20 @@
 </head>
 
 <body class="index">
-    <?php require_once('menu.php'); ?>
+<?php
+    // Inicia o continua una sesión existente
+    if (session_status() == PHP_SESSION_NONE) {
+        // Si no hay sesión activa, iniciar una nueva sesión
+        session_start();
+    }
+
+    // Verifica si la sesión está iniciada y si $id_usuario está definido
+    if (isset($_SESSION['id'])) {
+        include('menu_sesion_iniciada.php');
+    } else {
+        include('menu.php');
+    }
+    ?>  
     <?php require_once('carouselEventos.php'); ?>
     <div class="busquedaEventos" id="filtro">
         <div><?php require_once('componentesEventos/menuLateralFiltros.php'); ?></div>
