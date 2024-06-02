@@ -60,6 +60,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="miCuenta">
@@ -86,6 +87,8 @@
                 <li onclick="mostrarSeccion('perfil')"><i class="fas fa-user icon"></i> Mi perfil</li>
                 <li onclick="mostrarSeccion('tickets')"><i class="fas fa-ticket-alt icon"></i> Mis tickets</li>
                 <li onclick="mostrarSeccion('calendario')"><i class="fas fa-calendar-alt icon"></i> Mi calendario</li>
+                <li onclick="confirmarCerrarSesion()"><img src="./archivos/fotosPerfil/cerrar-sesion.png"
+                        alt="Icono de cerrar sesion" class="iconoMenu">Cerrar sesión</li>
             </ul>
         </div>
         <div id="contenido">
@@ -217,6 +220,7 @@
     <script src="scripts/menuLateral.js"></script>
     <script src="scripts/perfil.js"></script>
     <script src="scripts/botonesPerfil.js"></script>
+    <script src="scripts/cerrarSesion.js"></script>
     <?php include('footer.php'); ?>
 </body>
 
