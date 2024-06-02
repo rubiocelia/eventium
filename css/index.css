@@ -273,6 +273,7 @@ form#searchForm {
 
 .categories h2 {
   font-size: 2.7em;
+  margin-bottom: 15px;
   animation: slideInLeft 1s;
   font-family: var(--titulo);
   color: var(--color-contraste-primario);
@@ -285,8 +286,8 @@ form#searchForm {
 }
 
 .category {
-  width: 250px;
-  height: 150px;
+  width: 200px;
+  height: 140px;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -298,8 +299,21 @@ form#searchForm {
   padding: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: 5px;
+  margin: 8px;
   position: relative;
+}
+
+.category a {
+  text-decoration: none;
+  color: white;
+  margin: 0;
+  z-index: 1;
+}
+.category a:hover {
+  text-decoration: underline;
+  color: white;
+  margin: 0;
+  z-index: 1;
 }
 
 .category p {
@@ -319,24 +333,28 @@ form#searchForm {
   z-index: 0;
 }
 
-#cine {
-  background-image: url("../archivos/index/cine.jpg");
+#musical {
+  background-image: url("../archivos/index/musical.jpg");
 }
 
 #conciertos {
   background-image: url("../archivos/index/concierto.jpg");
 }
 
-#excursiones {
-  background-image: url("../archivos/index/excursiones.jpg");
+#conferencia {
+  background-image: url("../archivos/index/conferencia.jpg");
 }
 
-#viajes {
-  background-image: url("../archivos/index/viajes.jpg");
+#expo {
+  background-image: url("../archivos/index/expo.jpg");
 }
 
 #teatro {
   background-image: url("../archivos/index/teatro.jpg");
+}
+
+#festival {
+  background-image: url("../archivos/index/festival.jpg");
 }
 
 .llamado-accion {

@@ -86,23 +86,42 @@ $featuredEvents = getFeaturedEvents();
     <section class="categories">
         <h2>Explora por categorías</h2>
         <div class="category-icons">
-            <div class="category" id="cine">
-                <p>Cine</p>
+            <div class="category" id="musical">
+                <a href="eventos.php?filtrarPor=Categoria&idFiltro=1#filtro">
+                    <p>Musical</p>
+                </a>
             </div>
             <div class="category" id="conciertos">
-                <p>Conciertos</p>
-            </div>
-            <div class="category" id="excursiones">
-                <p>Excursiones</p>
-            </div>
-            <div class="category" id="viajes">
-                <p>Viajes</p>
+                <a href="eventos.php?filtrarPor=Categoria&idFiltro=2#filtro">
+                    <p>Concierto</p>
+                </a>
             </div>
             <div class="category" id="teatro">
-                <p>Teatro</p>
+                <a href="eventos.php?filtrarPor=Categoria&idFiltro=3#filtro">
+                    <p>Teatro</p>
+                </a>
             </div>
+            <div class="category" id="festival">
+                <a href="eventos.php?filtrarPor=Categoria&idFiltro=4#filtro">
+                    <p>Festival</p>
+                </a>
+            </div>
+            <div class="category" id="expo">
+                <a href="eventos.php?filtrarPor=Categoria&idFiltro=5#filtro">
+                    <p>Exposición</p>
+                </a>
+            </div>
+            <div class="category" id="conferencia">
+                <a href="eventos.php?filtrarPor=Categoria&idFiltro=6#filtro">
+                    <p>Conferencia</p>
+                </a>
+            </div>
+
+
+
         </div>
     </section>
+
 
     <div class="llamado-accion">
         <h1 class="titulo-accion">¿Tienes preguntas o necesitas ayuda? ¡Estamos aquí para ti!</h1>
