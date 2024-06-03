@@ -19,16 +19,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $row = $result->fetch_assoc();
             if (password_verify($password, $row['password_usuario'])) {
                 $_SESSION['id_usuario'] = $row['id'];
-                header("Location: perfil.php");
+                echo json_encode(['success' => true, 'redirect' => 'perfil.php']);
                 exit;
             } else {
-                echo "Error: Contraseña incorrecta.";
+                echo json_encode(['success' => false, 'message' => 'Error: Contraseña incorrecta.']);
+                exit;
             }
         } else {
-            echo "Error: Usuario no encontrado.";
+            echo json_encode(['success' => false, 'message' => 'Error: Usuario no encontrado.']);
+            exit;
         }
     } else {
-        echo "Error: Complete todos los campos.";
+        echo json_encode(['success' => false, 'message' => 'Error: Complete todos los campos.']);
+        exit;
     }
 }
 ?>
+<script src="../eventium/scripts/validar_inicio_sesion.js"></script>

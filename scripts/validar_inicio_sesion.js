@@ -52,7 +52,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Si no hay errores, enviar el formulario
         if (!error) {
-            formulario.submit();
+            const formData = new FormData(formulario);
+            fetch('login.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = data.redirect;
+                } else {
+                    mostrarError(contrasena, data.message);
+                }
+            })
+            .catch(error => {
+                mostrarError(contrasena, "Error de conexión. Inténtelo de nuevo más tarde.");
+            });
         }
     });
 });
