@@ -424,3 +424,33 @@ form#searchForm {
   color: var(--color-contraste-primario);
   margin-bottom: 15px;
 }
+
+/* tablets */
+
+@media (max-width: 992px) {
+  .categories {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .category-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-content: center;
+    gap: 16px;
+  }
+}
+
+/* movil */
+
+@media (max-width: 575px) {
+  .category-icons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 8px;
+  }
+}

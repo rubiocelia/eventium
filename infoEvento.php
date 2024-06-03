@@ -12,6 +12,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,6 +26,7 @@
     <?php require_once('menu.php'); ?>
     <div class="custom-container">
         <!-- Cabecera de la página -->
+        <a href="eventos.php" class="volver">⬅ Volver</a>
         <div class="cabecera">
             <!-- Imagen -->
             <div>
@@ -58,7 +60,7 @@
                 </iframe>
             </div>
             <div>
-                <?php include('./componentesEventos/calendarioEvento.php'); ?>
+                <?php require_once('./componentesEventos/calendarioEvento.php'); ?>
             </div>
         </div>
     </div>

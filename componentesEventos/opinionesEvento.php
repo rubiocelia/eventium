@@ -1,5 +1,6 @@
 <?php
     require_once('infoEvento.php');
+    $conexion = getConexion();
     // Consulta para recuperar todas las opiniones del evento
     $sql_Opiniones="SELECT 
             opinion.txt_opinion, 

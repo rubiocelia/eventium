@@ -1,7 +1,8 @@
 <?php
   // require_once("../conecta.php");
   // $conexion = getConexion();
-  require_once("infoEvento.php");
+  require_once("./infoEvento.php");
+  $conexion = getConexion();
   // Consulta para recuperar el calendario del evento
   $sql_Calendario = "SELECT 
       calen.id
@@ -52,7 +53,7 @@
     ORDER BY fecha ASC";
   $consulta = $conexion->query($sql_Calendario);
   $calendario = $consulta->fetch_all(MYSQLI_ASSOC);
-
+  $conexion->close();
 ?>
 <!-- <script src="../componentesEventos/js/calendarioEvento.js" defer></script> -->
 <link rel="stylesheet" href="../componentesEventos/Style/calendarioEvento.css">
@@ -82,3 +83,4 @@
     <?php endforeach; ?>
   </div>
 </div>
+<script src="./componentesEventos/js/calendarioEvento.js" defer></script>

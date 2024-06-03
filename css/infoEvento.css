@@ -34,7 +34,7 @@
 }
 
 .custom-container {
-  padding: 2em 1em; 
+  padding: 1em 1em; 
   margin: 0 auto; 
   max-width: 1320px;
   box-sizing: border-box;
@@ -98,6 +98,78 @@ iframe:hover {
 .datos-info p {
   font-size: 15px;
 }
+.iconoFooter {
+  width: 1.5em !important; 
+  height: auto !important;
+  padding-right: 0.5em;
+}
+.volver {
+  font-family: var(--texto);
+  font-size: 1.3em;
+  display: inline-block;
+  margin-top: 1px;
+  margin-bottom: 15px;
+  /* margin-left: 350px; */
+  color: #fff;
+  text-decoration: none;
+}
 
+.volver:hover {
+  color: var(--color-contraste-primario);
+}
 
+@media (max-width: 1024px) {
+  .cabecera {
+    grid-template-columns: 1fr;
+  }
+
+  .datos-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .seccion-mapa-calendario {
+    grid-template-columns: 1fr;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .datos-info {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion-mapa-calendario {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-container {
+    padding: 1em 0.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecera img {
+    height: auto;
+  }
+
+  .nombre-descripcion h1 {
+    font-size: 24px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+  }
+
+  .datos-info strong {
+    font-size: 14px;
+  }
+
+  .datos-info p {
+    font-size: 13px;
+  }
+}
 

@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const startTime = moment(event.start).format("HH:mm");
       element.attr("title", `${event.title}\n${startTime}\n${event.location}`);
     },
+    eventClick: function (event) {
+      // Redirigir a la página del evento al hacer clic
+      window.location.href = `infoEvento.php?evento=${event.id}`;
+      return false; // Prevenir cualquier otra acción
+    },
     dayClick: function (date, jsEvent, view) {
       // Prevenir cualquier acción al hacer clic en los días
       jsEvent.preventDefault();

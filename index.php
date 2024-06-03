@@ -43,12 +43,12 @@ $featuredEvents = getFeaturedEvents();
     <title>Eventium</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 
 <body class="index">
-<?php
+    <?php
     // Inicia o continua una sesión existente
     if (session_status() == PHP_SESSION_NONE) {
         // Si no hay sesión activa, iniciar una nueva sesión

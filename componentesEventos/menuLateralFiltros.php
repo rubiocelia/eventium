@@ -1,4 +1,5 @@
 <?php
+    require_once('./eventos.php');
     require_once('./conecta.php');
     $conexion = getConexion();
     $sql = "SELECT * FROM tipoevento";
@@ -11,7 +12,7 @@
 ?>
 <link rel="stylesheet" type="text/css" href="./componentesEventos/Style/menuLateralFiltros.css">
 <div class="contenedor-prinpical">
-    <h2>Filtra según preferencia</h2>
+    <h3>Encuentra tu evento</h3>
     <div class="item-filtros">
         <button class="boton-colapsar">Filtrar por tipo</button>
         <div class="lista-opciones-filtros">
@@ -32,5 +33,10 @@
             </ul>
         </div>
     </div>
+    <?php if ($filtrar==true) : ?>
+        <div class="seccion-boton-quitar-filtros">
+            <a href="eventos.php#filtro" class="btn-accion">Quitar Filtros</a>
+        </div>
+    <?php endif; ?>
     <script src="./componentesEventos/js/menuLateralFiltros.js"></script>
 </div>

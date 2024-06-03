@@ -56,3 +56,29 @@
 .lista-opciones-filtros a:hover {
     color: var(--color-contraste-primario-claro);
 }
+.seccion-boton-quitar-filtros{
+    display: flex;
+    align-content: center;
+    margin-top: 25px;
+    justify-content: center;
+}
+.btn-accion {
+    font-family: var(--texto);
+    font-size: 1em;
+    color: var(--color-primario-oscuro);
+    background-color: rgb(254, 255, 228);
+    padding: 0.40rem 1rem;
+    border: 2px solid var(--color-contraste-primario);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-accion:hover {
+    font-family: var(--texto);
+    font-size: 1em;
+    color: var(--color-primario-oscuro);
+    background-color: var(--color-contraste-primario);
+    padding: 0.40rem 1rem;
+    border: 2px solid white;
+}

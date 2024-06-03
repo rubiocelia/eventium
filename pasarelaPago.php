@@ -96,61 +96,74 @@
 <body>
 
 <div class="container">
-    <h2>Formulario de Pago</h2>
+    <h1>Formulario de Pago</h1>
     <div class="distribucion-principal">
         <!-- Columna 1  -->
         <div class="seccion-resumen">
-            <div class="info-evento">
-                <h3><?php echo $infoCalendario['nombre_evento'];?></h3>
-                <span>Fecha: <?php echo $infoCalendario['dia_evento'].'-'.$infoCalendario['nom_mes'].'-'.$infoCalendario['year_evento'];?></span><br>
-                <span>Hora: <?php echo $infoCalendario['hora'];?></span>
-            </div>
-            <div class="info-usuario">
-                <h3>Información Titular reserva</h3>
-                <span>UserName: <?php echo $infoUsuario['username'];?></span><br>
-                <span>Nombre: <?php echo $infoUsuario['nombre_usuario'].' '.$infoUsuario['apellidos_usuario'];?></span><br>
-                <span>Email: <?php echo $infoUsuario['mail_usuario'];?></span><br>
-                <span>Telefono: <?php echo $infoUsuario['telefono_usuario'];?></span><br>
+        <div class="info-evento">
+            <h3><?php echo $infoCalendario['nombre_evento']; ?></h3>
+                <div class="info-evento-details">
+                    <span>Fecha: <?php echo $infoCalendario['dia_evento'].'-'.$infoCalendario['nom_mes'].'-'.$infoCalendario['year_evento']; ?></span>
+                    <span>Hora: <?php echo $infoCalendario['hora']; ?></span>
+                </div>
+        </div>
+            <div class="info-usuario-container">
+                <h3> Información Titular reserva</h3>
+                    <div class="info-usuario">
+                        <span class="username">UserName: <?php echo $infoUsuario['username']; ?></span>
+                        <span class="nombre">Nombre: <?php echo $infoUsuario['nombre_usuario'].' '.$infoUsuario['apellidos_usuario']; ?></span>
+                        <span class="email">Email: <?php echo $infoUsuario['mail_usuario']; ?></span>
+                        <span class="telefono">Telefono: <?php echo $infoUsuario['telefono_usuario']; ?></span>
+                    </div>
             </div>
             <div class="formas-pago">
                 <form method="post" action="">
                     <h3>Formas de Pago</h3>
-                    <div>
-                        <label>Tipo de tarjeta</label>
+                    <div class="textos-tarjeta">
+                        <label>Tipo de tarjeta 💳</label>
                         <input type="radio" id="opc_Credito" name="grupo_tipo_tarjeta" value="Credito" checked> Crédito
                         <input type="radio" id="opc_Debito" name="grupo_tipo_tarjeta" value="Debito"> Débito
                     </div>
-                    <div>
+                    <div class="textos-tarjeta">
                         <!-- Titular de la tarjeta -->
                         <label for="nombreTitular">Nombre titular:</label>
                         <input type="text" id="nombreTitular" name="nombreTitular" required>
                         <!-- Numero de tarjeta -->
                         <label for="tarjeta">Número de tarjeta:</label>
                         <input type="text" id="tarjeta" name="tarjeta" inputmode="numeric" maxlength="16" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}">
-                        <!-- Caducidad de tarjeta -->
-                        <label for="caducidad">Fecha de caducidad:</label>
-                        <input type="month" id="caducidad" name="caducidad">
-                        <!-- CVV de tarjeta -->
-                        <label for="cvv">CVV:</label>
-                        <input type="text" id="cvv" name="cvv" inputmode="numeric" maxlength="3">
+                        <!-- Caducidad de tarjeta y CVV -->
+                        <div class="caducidad-cvv">
+                            <div>
+                                <label for="caducidad">Fecha de caducidad:</label>
+                                <input type="month" id="caducidad" name="caducidad">
+                            </div>
+                            <div>
+                                <label for="cvv">CVV:</label>
+                                <input type="text" id="cvv" name="cvv" inputmode="numeric" maxlength="3">
+                            </div>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
         <!-- Columna 2 -->
         <div class="seccion-pago">
+            <h4>Selecciona tus entradas</h4>
             <div class="contador">
                 <button id="decrementar">-</button>
                     <span id="contador" max="<?php echo $entradasDisponibles; ?>">1</span>
                 <button id="incrementar">+</button>
             </div>
             <div class="resumen-pago">
-                <span>Precio por entrada: </span><span id="precioEvento"><?php echo $infoCalendario['precio'].' €'; ?></span><br>
+                <span>Precio por entrada: </span><span id="precioEvento"><?php echo $infoCalendario['precio'].'€'; ?></span><br>
                 <span>Total a pagar: <span id="totalPagar"></span></span><br>
                 <input type="hidden" id="id_evento" name="id_evento" value="<?php echo $infoCalendario['id_evento']; ?>">
                 <input type="hidden" id="usuario_id" name="usuario_id" value="<?php echo $idUsuario; ?>">
                 <input type="hidden" id="id_calendario" name="id_calendario" value="<?php echo $infoCalendario['id']; ?>">
-                <button id="btnPagar">Pagar</button>
+                <button id="btnPagar">Pagar 🛒</button>
+                <a href="infoEvento.php?evento=<?php echo $infoCalendario['id_evento']; ?>">
+                    <button id="btnCancelar">Cancelar ❌</button>
+                </a>
             </div>
         </div>
     </div>
