@@ -48,6 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
           mostrarError(apellidos_usuario, "El campo apellidos es obligatorio.");
           error = true;
       }
+      if (username.value.trim() === "") {
+        mostrarError(username, "El campo usuario es obligatorio.");
+        error = true;
+    }
       if (!regexCorreo.test(mail_usuario.value)) {
           mostrarError(mail_usuario, "Introduzca un correo electrónico válido.");
           error = true;
