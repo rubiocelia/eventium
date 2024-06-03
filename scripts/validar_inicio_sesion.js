@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const formulario = document.querySelector(".FormularioRegistro");
+    const formulario = document.querySelector(".FormularioLogin");
   
     formulario.addEventListener("submit", function(event) {
         event.preventDefault(); // Evitar que el formulario se envíe automáticamente
@@ -27,18 +27,32 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Eliminar errores existentes
-      eliminarErrores();
+        eliminarErrores();
 
+        const username = formulario.querySelector("[name='usuario']");
         const contrasena = formulario.querySelector("[name='contrasena']");
-        const username = formulario.querySelector("[name='username']");
+        let error = false;
+
+        // Validación del nombre de usuario y contraseña
+        var patronUsuario = /^[a-zA-Z0-9_]+$/; // Letras, números y guiones bajos
+        var patronContrasena = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
         if (username.value.trim() === "") {
             mostrarError(username, "Rellene el campo de usuario por favor.");
             error = true;
+        } else if (!patronUsuario.test(username.value)) {
+            mostrarError(username, "Introduzca un usuario válido.");
+            error = true;
         }
+
         if (contrasena.value.trim() === "") {
             mostrarError(contrasena, "Rellene el campo de contraseña por favor.");
             error = true;
         }
-    })
-})
+
+        // Si no hay errores, enviar el formulario
+        if (!error) {
+            formulario.submit();
+        }
+    });
+});

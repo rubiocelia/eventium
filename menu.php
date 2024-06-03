@@ -1,8 +1,7 @@
-    <!-- menu.php -->
-    <?php echo '<link rel="stylesheet" type="text/css" href="css/menufooter.css">';
-    echo '<link rel="stylesheet" type="text/css" href="css/PopUpLoginSignUp.css">';
-    ?>
-    <?php
+<?php echo '<link rel="stylesheet" type="text/css" href="css/menufooter.css">';
+echo '<link rel="stylesheet" type="text/css" href="css/PopUpLoginSignUp.css">';
+?>
+<?php
 require_once("conecta.php");
 
 $conexion = getConexion();
@@ -24,11 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validamos que llamada al metodo POST venga del boton login para realizar el inicio de sesión
     if (isset($_POST['Login'])) {
         // Obtenemos los datos del formulario
-        $nombre_usuario = $_POST["nombre_usuario"];
-        $password_usuario = $_POST["password_usuario"];
+        $nombre_usuario = $_POST["usuario"];
+        $password_usuario = $_POST["contrasena"];
 
         // Consultamos la base de datos para verificar el inicio de sesión
-        $sql_verificar_usuario = "SELECT * FROM usuario WHERE nombre_usuario = ?";
+        $sql_verificar_usuario = "SELECT * FROM usuario WHERE username = ?";
         $stmt = $conexion->prepare($sql_verificar_usuario);
         $stmt->bind_param("s", $nombre_usuario);
         $stmt->execute();
@@ -209,5 +208,6 @@ mysqli_close($conexion);
     }
         </script>
         <script src="../eventium/scripts/validar_registro.js"></script>
+        <script src="../eventium/scripts/validar_inicio_sesion.js"></script>
     </header>
     </header>
