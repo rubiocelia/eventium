@@ -30,7 +30,11 @@
   flex-direction: column;
   gap: 10px;
 } */
-
+.iconoFooter {
+  width: 1.5em !important; 
+  height: auto !important;
+  padding-right: 0.5em;
+}
 @media (max-width: 768px) {
   .busquedaEventos {
     grid-template-columns: 1fr;

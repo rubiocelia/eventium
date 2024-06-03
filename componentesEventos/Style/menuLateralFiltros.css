@@ -53,8 +53,9 @@
     font-family: var(--texto);
 }
 
-.lista-opciones-filtros a:hover {
+.lista-opciones-filtros a:hover, .selected {
     color: var(--color-contraste-primario-claro);
+    font-weight: bold;
 }
 .seccion-boton-quitar-filtros{
     display: flex;
