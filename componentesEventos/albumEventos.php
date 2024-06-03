@@ -28,14 +28,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Mi perfil</title>
-    <link rel="stylesheet" type="text/css" href="style/albumEventos.css">
+    <link rel="stylesheet" type="text/css" href="./componentesEventos/Style/albumEventos.css">
     <link rel="icon" href="./img/Eventium.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </head>
-<body>
+
     
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
@@ -59,5 +58,5 @@
             </div>
         </div>
     </div>
-</body>
+
 </html>

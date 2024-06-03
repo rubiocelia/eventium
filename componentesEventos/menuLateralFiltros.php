@@ -11,7 +11,7 @@
 ?>
 <link rel="stylesheet" type="text/css" href="./componentesEventos/Style/menuLateralFiltros.css">
 <div class="contenedor-prinpical">
-    <h2>Filtra según preferencia</h2>
+    <h3>Encuentra tu evento</h3>
     <div class="item-filtros">
         <button class="boton-colapsar">Filtrar por tipo</button>
         <div class="lista-opciones-filtros">

@@ -99,5 +99,58 @@ iframe:hover {
   font-size: 15px;
 }
 
+@media (max-width: 1024px) {
+  .cabecera {
+    grid-template-columns: 1fr;
+  }
 
+  .datos-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .seccion-mapa-calendario {
+    grid-template-columns: 1fr;
+  }
+
+  iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .datos-info {
+    grid-template-columns: 1fr;
+  }
+
+  .seccion-mapa-calendario {
+    grid-template-columns: 1fr;
+  }
+
+  .custom-container {
+    padding: 1em 0.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .cabecera img {
+    height: auto;
+  }
+
+  .nombre-descripcion h1 {
+    font-size: 24px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+  }
+
+  .datos-info strong {
+    font-size: 14px;
+  }
+
+  .datos-info p {
+    font-size: 13px;
+  }
+}
 
