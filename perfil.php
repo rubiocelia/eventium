@@ -64,7 +64,7 @@
 </head>
 
 <body class="miCuenta">
-<?php
+    <?php
     // Inicia o continua una sesión existente
     if (session_status() == PHP_SESSION_NONE) {
         // Si no hay sesión activa, iniciar una nueva sesión
@@ -78,9 +78,6 @@
         include('menu.php');
     }
     ?>
-    <h1 class="bienvenido">Bienvenid@,
-        <?php echo htmlspecialchars($usuario['nombre_usuario']); ?>
-    </h1>
     <main>
         <div id="menu2">
             <ul>

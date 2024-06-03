@@ -9,125 +9,125 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 // Array de eventos con sus coordenadas y URL
 var eventos = [
   {
-    lat: 40.616331,
-    lng: -0.127759,
+    lat: 40.390044,
+    lng: -3.686416,
     nombre: "Concierto en el Parque",
-    url: "pagina_evento_1.html",
-  }, // Alcañiz
+    url: "infoEvento.php?evento=1",
+  }, // Parque Enrique Tierno Galván, Madrid
   {
-    lat: 37.884752,
-    lng: -4.422075,
+    lat: 37.88356,
+    lng: -4.782478,
     nombre: "Explosión de Rock",
-    url: "pagina_evento_2.html",
-  }, // Córdoba
+    url: "infoEvento.php?evento=2",
+  }, // Teatro Góngora, Córdoba
   {
-    lat: 41.658633,
-    lng: -1.661481,
+    lat: 41.65186,
+    lng: -0.881896,
     nombre: "Romeo y Julieta",
-    url: "pagina_evento_3.html",
-  }, // Zaragoza
+    url: "infoEvento.php?evento=3",
+  }, // Teatro Principal, Zaragoza
   {
-    lat: 40.418541,
-    lng: -3.71204,
+    lat: 40.415262,
+    lng: -3.686041,
     nombre: "Jazz en el Parque",
-    url: "pagina_evento_4.html",
-  }, // Madrid
+    url: "infoEvento.php?evento=4",
+  }, // Parque del Retiro, Madrid
   {
-    lat: 39.865351,
-    lng: -3.703583,
+    lat: 39.868981,
+    lng: -4.020682,
     nombre: "Caliente Latino",
-    url: "pagina_evento_5.html",
-  }, // Toledo
+    url: "infoEvento.php?evento=5",
+  }, // Estadio Salto del Caballo, Toledo
   {
-    lat: 41.655931,
-    lng: -4.71135,
+    lat: 41.65162,
+    lng: -4.730721,
     nombre: "Noche de Risas",
-    url: "pagina_evento_6.html",
-  }, // Valladolid
+    url: "infoEvento.php?evento=6",
+  }, // Teatro Zorrilla, Valladolid
   {
-    lat: 43.369776,
-    lng: -8.406365,
+    lat: 43.369102,
+    lng: -8.413962,
     nombre: "Sunset Rave",
-    url: "pagina_evento_7.html",
-  }, // A Coruña
+    url: "infoEvento.php?evento=7",
+  }, // Playa de Riazor, A Coruña
   {
-    lat: 41.658633,
-    lng: -1.661481,
+    lat: 41.65186,
+    lng: -0.881896,
     nombre: "Sinfonía en Do Mayor",
-    url: "pagina_evento_8.html",
-  }, // Zaragoza
+    url: "infoEvento.php?evento=8",
+  }, // Teatro Principal, Zaragoza
   {
-    lat: 41.655931,
-    lng: -4.71135,
+    lat: 41.65162,
+    lng: -4.730721,
     nombre: "Travesía Fantástica",
-    url: "pagina_evento_9.html",
-  }, // Valladolid
+    url: "infoEvento.php?evento=9",
+  }, // Teatro Zorrilla, Valladolid
   {
-    lat: 41.125609,
-    lng: 1.28721,
+    lat: 41.290385,
+    lng: 0.793862,
     nombre: "Reggae Roots",
-    url: "pagina_evento_10.html",
-  }, // Tarragona
+    url: "infoEvento.php?evento=10",
+  }, // Parque Natural de la Sierra de Montsant, Tarragona
   {
-    lat: 38.87824,
-    lng: -6.94658,
+    lat: 39.475122,
+    lng: -6.376236,
     nombre: "Festival de Verano",
-    url: "pagina_evento_11.html",
-  }, // Mérida
+    url: "infoEvento.php?evento=11",
+  }, // Plaza Mayor, Cáceres
   {
-    lat: 37.890816,
-    lng: -4.777896,
+    lat: 37.87561,
+    lng: -4.774264,
     nombre: "Exposición de Arte Moderno",
-    url: "pagina_evento_12.html",
-  }, // Córdoba
+    url: "infoEvento.php?evento=12",
+  }, // Museo de Arte Contemporáneo, Córdoba
   {
-    lat: 40.431968,
-    lng: -3.704024,
+    lat: 40.462267,
+    lng: -3.618929,
     nombre: "Conferencia sobre Tecnología",
-    url: "pagina_evento_13.html",
-  }, // Madrid
+    url: "infoEvento.php?evento=13",
+  }, // Palacio Municipal de Congresos, Madrid
   {
-    lat: 43.361632,
-    lng: -6.945239,
+    lat: 43.539274,
+    lng: -5.663849,
     nombre: "Noche de Magia",
-    url: "pagina_evento_14.html",
-  }, // Gijón
+    url: "infoEvento.php?evento=14",
+  }, // Teatro Jovellanos, Gijón
   {
-    lat: 43.366477,
-    lng: -4.772472,
+    lat: 43.348228,
+    lng: -4.054231,
     nombre: "Danza Contemporánea",
-    url: "pagina_evento_15.html",
-  }, // Torrelavega
+    url: "infoEvento.php?evento=15",
+  }, // Centro de Artes Escénicas, Torrelavega
   {
-    lat: 43.366477,
-    lng: -4.772472,
+    lat: 40.401951,
+    lng: -3.882065,
     nombre: "Cine al Aire Libre",
-    url: "pagina_evento_16.html",
-  }, // Torrelavega
+    url: "infoEvento.php?evento=16",
+  }, // Parque Juan Pablo II, Madrid
   {
-    lat: 40.418541,
-    lng: -3.71204,
+    lat: 40.409739,
+    lng: -3.698951,
     nombre: "Feria de Libros",
-    url: "pagina_evento_17.html",
-  }, // Madrid
+    url: "infoEvento.php?evento=17",
+  }, // Parque del Retiro, Madrid
   {
-    lat: 40.391425,
-    lng: -4.021707,
+    lat: 40.304799,
+    lng: -3.746887,
     nombre: "Cena Romántica en el Lago",
-    url: "pagina_evento_18.html",
-  }, // Getafe
+    url: "infoEvento.php?evento=18",
+  }, // Restaurante Lago Alhóndiga, Getafe
   {
-    lat: 40.997559,
-    lng: -1.646117,
+    lat: 40.487423,
+    lng: -4.054178,
     nombre: "Paseo en Globo al Atardecer",
-    url: "pagina_evento_19.html",
-  }, // Teruel
+    url: "infoEvento.php?evento=19",
+  }, // Campo de Vuelo, Teruel
   {
-    lat: 43.360868,
-    lng: -8.411442,
+    lat: 40.445841,
+    lng: -3.871087,
     nombre: "Spa y Relajación para Parejas",
-    url: "pagina_evento_20.html",
-  }, // Isla de la Toja
+    url: "infoEvento.php?evento=20",
+  }, // Forus Majadahonda Las Rejas, Majadahonda
 ];
 
 // Añadir los marcadores en el mapa
