@@ -97,35 +97,35 @@ $featuredEvents = getFeaturedEvents();
     </section>
 
     <section class="categories">
-        <h2>Explora por categorías</h2>
+        <h2>Descubre eventos según su tipo</h2>
         <div class="category-icons">
             <div class="category" id="musical">
-                <a href="eventos.php?filtrarPor=Categoria&idFiltro=1#filtro">
+                <a href="eventos.php?filtrarPor=Tipo&idFiltro=1#filtro">
                     <p>Musical</p>
                 </a>
             </div>
             <div class="category" id="conciertos">
-                <a href="eventos.php?filtrarPor=Categoria&idFiltro=2#filtro">
+                <a href="eventos.php?filtrarPor=Tipo&idFiltro=2#filtro">
                     <p>Concierto</p>
                 </a>
             </div>
             <div class="category" id="teatro">
-                <a href="eventos.php?filtrarPor=Categoria&idFiltro=3#filtro">
+                <a href="eventos.php?filtrarPor=Tipo&idFiltro=3#filtro">
                     <p>Teatro</p>
                 </a>
             </div>
             <div class="category" id="festival">
-                <a href="eventos.php?filtrarPor=Categoria&idFiltro=4#filtro">
+                <a href="eventos.php?filtrarPor=Tipo&idFiltro=4#filtro">
                     <p>Festival</p>
                 </a>
             </div>
             <div class="category" id="expo">
-                <a href="eventos.php?filtrarPor=Categoria&idFiltro=5#filtro">
+                <a href="eventos.php?filtrarPor=Tipo&idFiltro=5#filtro">
                     <p>Exposición</p>
                 </a>
             </div>
             <div class="category" id="conferencia">
-                <a href="eventos.php?filtrarPor=Categoria&idFiltro=6#filtro">
+                <a href="eventos.php?filtrarPor=Tipo&idFiltro=6#filtro">
                     <p>Conferencia</p>
                 </a>
             </div>

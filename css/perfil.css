@@ -89,7 +89,8 @@ main {
   padding: 20px;
   background-color: white;
   border-radius: 8px;
-  width: 1100px;
+  width: 100%; /* Adaptar al tamaño de la pantalla */
+  max-width: 1100px; /* Limitar el tamaño máximo */
   margin-left: 80px;
 }
 
@@ -155,23 +156,20 @@ main {
   width: 100%;
 }
 
-.fila {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2.5em;
-}
-
+.fila,
 .fila2 {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 1em;
 }
 
 .campo {
-  flex: 1; /* Permite que cada campo se expanda equitativamente */
+  flex: 1 1 20%; /* Permite que cada campo se expanda y se ajuste */
   display: flex;
   flex-direction: column;
-  padding: 0 10px;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .campo label {
@@ -293,14 +291,6 @@ main {
 }
 
 /* Estilos generales para el calendario */
-#calendario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 1100px;
-  font-family: var(--titulo);
-  font-size: 1.2em;
-}
 
 #calendar {
   background-color: white;
@@ -442,55 +432,115 @@ main {
   font-family: var(--titulo);
 }
 
-/* tablet */
-
-@media (max-width: 992px) {
-  #menu2 ul {
-    flex-direction: row;
-    justify-content: center;
+/* tablet y movil */
+@media (max-width: 1463px) {
+  main {
+    flex-direction: column;
+    align-items: center;
   }
 
-  #menu2 ul li {
+  #menu2 {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-primario);
+    z-index: 1000;
+    padding: 10px 0;
+    border-radius: 8px;
+  }
+
+  #menu2 ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  #menu2 li {
     flex: 1;
     margin: 0;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
     border-right: 1px solid #ccc;
   }
 
-  #menu2 ul li:last-child {
+  #menu2 li:last-child {
     border-right: none;
   }
 
   #contenido {
-    margin-top: 20px;
+    margin-top: 70px; /* Ajustar según la altura del menú */
+    padding: 0 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .seccion {
     display: block;
+    width: 100%;
+    max-width: 900px; /* Ajustar para pantallas de tamaño mediano */
+    margin: 20px 0;
+    padding: 10px;
   }
 }
 
 /* Media Query para 575px */
-@media (max-width: 575px) {
+@media (max-width: 1075px) {
   #menu2 ul {
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
   }
 
-  #menu2 ul li {
-    flex: 1;
-    margin: 0;
-    border-right: 1px solid #ccc;
-  }
-
-  #menu2 ul li:last-child {
+  #menu2 li {
+    flex: none;
+    margin: 5px 0;
     border-right: none;
   }
 
   #contenido {
-    margin-top: 20px;
+    margin-top: 80px; /* Ajustar según la altura del menú */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .seccion {
     display: block;
+    width: 80%;
+    max-width: 100%; /* Para pantallas muy pequeñas */
+    margin: 20px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 900px; /* Altura mínima para evitar doble scroll, considerando el menú fijo */
+  }
+
+  #tickets {
+    height: fit-content;
+  }
+
+  #calendario {
+    height: fit-content;
+  }
+
+  .fila,
+  .fila2 {
+    flex-direction: column;
+  }
+
+  .campo {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .perfil {
+    padding: 10px;
   }
 }
