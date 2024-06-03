@@ -415,6 +415,22 @@ main {
   cursor: default;
 }
 
+.custom-swal-title {
+  font-family: var(--titulo);
+}
+
+.custom-swal-content {
+  font-family: var(--texto);
+}
+
+.custom-swal-confirm {
+  font-family: var(--texto); 
+}
+
+.custom-swal-cancel {
+  font-family: var(--texto); 
+}
+
 /* tablet */
 
 @media (max-width: 992px) {
@@ -467,4 +483,4 @@ main {
     display: block;
   }
 }
->>>>>>> 27e5288d7c6173636d9b0716b912e9145a58a338
+
