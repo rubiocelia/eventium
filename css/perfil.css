@@ -407,3 +407,56 @@ main {
   border: none;
   cursor: default;
 }
+
+/* tablet */
+
+@media (max-width: 992px) {
+  #menu2 ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #menu2 ul li {
+    flex: 1;
+    margin: 0;
+    border-right: 1px solid #ccc;
+  }
+
+  #menu2 ul li:last-child {
+    border-right: none;
+  }
+
+  #contenido {
+    margin-top: 20px;
+  }
+
+  .seccion {
+    display: block;
+  }
+}
+
+/* Media Query para 575px */
+@media (max-width: 575px) {
+  #menu2 ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #menu2 ul li {
+    flex: 1;
+    margin: 0;
+    border-right: 1px solid #ccc;
+  }
+
+  #menu2 ul li:last-child {
+    border-right: none;
+  }
+
+  #contenido {
+    margin-top: 20px;
+  }
+
+  .seccion {
+    display: block;
+  }
+}

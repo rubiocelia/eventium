@@ -248,3 +248,55 @@ body {
   padding: 0.75rem 1.5rem;
   border: 3px solid white;
 }
+
+/* tablet */
+@media (max-width: 992px) {
+  .videoYtexto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .videoyt {
+    width: 70%;
+    height: 300px;
+    margin-right: 0;
+  }
+
+  .txtVideo {
+    width: 80%;
+    text-align: center;
+  }
+  .infografia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+/* movil */
+@media (max-width: 575px) {
+  .videoYtexto {
+    flex-direction: column;
+  }
+
+  .videoyt {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+
+  .txtVideo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .infografia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
