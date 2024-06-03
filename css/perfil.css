@@ -420,15 +420,26 @@ main {
 }
 
 .custom-swal-content {
-  font-family: var(--texto);
+  font-family: var(--titulo);
 }
 
 .custom-swal-confirm {
-  font-family: var(--texto); 
+  font-family: var(--titulo);
 }
 
 .custom-swal-cancel {
-  font-family: var(--texto); 
+  font-family: var(--titulo);
+}
+
+.swal2-popup .swal2-title,
+.swal2-popup .swal2-content,
+.swal2-popup .swal2-confirm,
+.swal2-popup .swal2-cancel {
+  font-family: var(--titulo);
+}
+
+.swal2-html-container {
+  font-family: var(--titulo);
 }
 
 /* tablet */
@@ -483,4 +494,3 @@ main {
     display: block;
   }
 }
-

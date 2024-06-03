@@ -1,7 +1,6 @@
 function confirmarCerrarSesion() {
     Swal.fire({
         title: '¿Estás seguro?',
-        title: 'Cantar',
         text: "¿Estás seguro de que deseas cerrar sesión?",
         icon: 'warning',
         showCancelButton: true,
