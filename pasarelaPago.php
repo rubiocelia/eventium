@@ -101,8 +101,9 @@
         <!-- Columna 1  -->
         <div class="seccion-resumen">
         <div class="info-evento">
-            <h3><?php echo $infoCalendario['nombre_evento']; ?></h3>
+            <h3>Información del Evento</h3>
                 <div class="info-evento-details">
+                    <span>Evento: <strong><?php echo $infoCalendario['nombre_evento']; ?></strong></span>
                     <span>Fecha: <?php echo $infoCalendario['dia_evento'].'-'.$infoCalendario['nom_mes'].'-'.$infoCalendario['year_evento']; ?></span>
                     <span>Hora: <?php echo $infoCalendario['hora']; ?></span>
                 </div>

@@ -15,20 +15,20 @@
     <h3>Encuentra tu evento</h3>
     <div class="item-filtros">
         <button class="boton-colapsar">Filtrar por tipo</button>
-        <div class="lista-opciones-filtros">
+        <div class="lista-opciones-filtros" style="<?php echo ($filtrar && $filtrarPor == 'Tipo') ? 'display: block;' : ''; ?>">
             <ul>
                 <?php foreach ($tiposEventos as $item) : ?>
-                    <li><a href="?filtrarPor=Tipo&idFiltro=<?php echo $item['id']; ?>#filtro"><?php echo $item['nombre_tipoEvento']; ?></a></li>
+                    <li><a href="?filtrarPor=Tipo&idFiltro=<?php echo $item['id']; ?>#filtro" class="<?php echo ($filtrar && $filtrarPor == 'Tipo' && $idFiltro == $item['id']) ? 'selected' : ''; ?>"><?php echo $item['nombre_tipoEvento']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
     </div>
     <div class="item-filtros">
         <button class="boton-colapsar">Filtrar por categoria</button>
-        <div class="lista-opciones-filtros">
+        <div class="lista-opciones-filtros" style="<?php echo ($filtrar && $filtrarPor == 'Categoria') ? 'display: block;' : ''; ?>">
             <ul>
                 <?php foreach ($categoriasEventos as $item) : ?>
-                    <li><a href="?filtrarPor=Categoria&idFiltro=<?php echo $item['id']; ?>#filtro"><?php echo $item['nombre_categoriaEvento']; ?></a></li>
+                    <li><a href="?filtrarPor=Categoria&idFiltro=<?php echo $item['id']; ?>#filtro" class="<?php echo ($filtrar && $filtrarPor == 'Categoria' && $idFiltro == $item['id']) ? 'selected' : ''; ?>"><?php echo $item['nombre_categoriaEvento']; ?></a></li>
                 <?php endforeach; ?>
             </ul>
         </div>
