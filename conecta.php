@@ -2,7 +2,7 @@
 function getConexion() {
     $host = "localhost";
     $usuario = "root";
-    $contrasena = "rootroot";
+    $contrasena = "";
 
     // Realizamos la conexión a MySQL server
     $conexion = new mysqli($host, $usuario, $contrasena);
