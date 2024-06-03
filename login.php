@@ -23,19 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: perfil.php");
                 exit;
             } else {
-                // Mensaje de error por contraseña incorrecta
-                echo "<script>alert('La contraseña no es correcta.'); window.location.href = 'index.php';</script>";
+                // Error al insertar en Usuarios
+                echo "Error al iniciar sesion: " . $stmt->error;
             }
-        } else {
-            // Mensaje de error por no encontrar el usuario
-            echo "<script>alert('No se encontró ningún usuario con ese nombre.'); window.location.href = 'index.php';</script>";
         }
-    } else {
-        echo "<script>alert('Por favor complete ambos campos.'); window.location.href = 'index.php';</script>";
     }
-    $conexion->close();
-} else {
-    echo "<script>alert('Acceso no autorizado.'); window.location.href = 'index.php';</script>";
 }
 
 ?>

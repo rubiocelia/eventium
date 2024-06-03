@@ -414,3 +414,18 @@ main {
   border: none;
   cursor: default;
 }
+.custom-swal-title {
+  font-family: var(--titulo);
+}
+
+.custom-swal-content {
+  font-family: var(--texto);
+}
+
+.custom-swal-confirm {
+  font-family: var(--texto); 
+}
+
+.custom-swal-cancel {
+  font-family: var(--texto); 
+}
