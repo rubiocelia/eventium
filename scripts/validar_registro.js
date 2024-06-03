@@ -26,50 +26,72 @@ document.addEventListener("DOMContentLoaded", function() {
           });
       }
 
-      // Variables para los campos del formulario
+      // Eliminar errores existentes
+      eliminarErrores();
+
+      // Validaciones de los campos
+      let error = false;
       const nombre_usuario = formulario.querySelector("[name='nombre_usuario']");
       const apellidos_usuario = formulario.querySelector("[name='apellidos_usuario']");
       const mail_usuario = formulario.querySelector("[name='mail_usuario']");
       const telefono_usuario = formulario.querySelector("[name='telefono_usuario']");
       const contrasena = formulario.querySelector("[name='contrasena']");
       const username = formulario.querySelector("[name='username']");
-
-      // Expresiones regulares para validar el correo electrónico y la contraseña
       const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const regexContrasena = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
-      // Eliminar errores existentes
-      eliminarErrores();
-
-      // Validar Nombre
       if (nombre_usuario.value.trim() === "") {
           mostrarError(nombre_usuario, "El campo nombre es obligatorio.");
+          error = true;
       }
-
-      // Validar Apellidos
       if (apellidos_usuario.value.trim() === "") {
           mostrarError(apellidos_usuario, "El campo apellidos es obligatorio.");
+          error = true;
       }
-
-      // Validar Correo electrónico
       if (!regexCorreo.test(mail_usuario.value)) {
           mostrarError(mail_usuario, "Introduzca un correo electrónico válido.");
+          error = true;
       }
-
-      // Validar Teléfono
       if (telefono_usuario.value.trim() === "") {
           mostrarError(telefono_usuario, "El campo teléfono es obligatorio.");
+          error = true;
       }
-
-      // Validar Contraseña
       if (!regexContrasena.test(contrasena.value)) {
           mostrarError(contrasena, "La contraseña debe tener al menos 8 caracteres, una mayúscula y un número.");
+          error = true;
       }
 
-      // Si no hay campos con errores, enviar el formulario
-      const camposConError = formulario.querySelectorAll(".error");
-      if (camposConError.length === 0) {
-          formulario.submit();
+      // Verificación con la base de datos solo si no hay errores iniciales
+      if (!error) {
+          var datos = new FormData(formulario);
+
+          fetch("validar_duplicados.php", {
+            method: "POST",
+            body: datos
+          })
+          .then((response) => response.json())
+          .then((data) => {
+              if (data.telefono_usuario) {
+                mostrarError(telefono_usuario, "Este teléfono ya está registrado.");
+                error = true;
+              }
+              if (data.mail_usuario) {
+                mostrarError(mail_usuario, "Este correo electrónico ya está registrado.");
+                error = true;
+              }
+              if (data.username) {
+                mostrarError(username, "Este nombre de usuario ya está registrado.");
+                error = true;
+              }
+
+              // Envía el formulario solo si no hay errores después de todas las validaciones
+              if (!error) {
+                formulario.submit();
+              }
+          })
+          .catch((error) => {
+              console.error('Error al procesar la solicitud: ', error);
+          });
       }
   });
 });

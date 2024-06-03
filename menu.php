@@ -20,7 +20,7 @@ if (isset($_GET['sendTo'])) {
 // Verificamos el inicio de sesión del paciente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperamos la url de destino al hacer login
-    $urlDestino = isset($_GET['sendTo']) ? $_GET['sendTo'] : '';
+    $urlDestino= $_POST['sendTo'];
     // Validamos que llamada al metodo POST venga del boton login para realizar el inicio de sesión
     if (isset($_POST['Login'])) {
         // Obtenemos los datos del formulario
@@ -131,65 +131,7 @@ mysqli_close($conexion);
                 <span class="close">&times;</span>
             </div>
         </div>
-
-        <!-- Registrarse -->
-        <?php
-
-            $conexion = getConexion();
-
-            // Función para recuperar el id del paciente registrado
-            function obtenerIdNewUsuario($userNewUsuario){
-                $conexion = getConexion();
-                $sql_get_usuario= "SELECT * FROM usuario WHERE username = ?";
-                $stmt = $conexion->prepare($sql_get_usuario);
-                $stmt->bind_param("s", $userNewUsuario);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-                $datosUsuario = $resultado->fetch_assoc();
-                return $datosUsuario['id'];
-            }
-
-            // Verificamos si se ha enviado un formulario
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Obtenemos datos del formulario
-                $username = $_POST['username'];
-                $password_usuario = $_POST['passwordRegistro']; // Contraseña en texto plano
-                $nombre_usuario = $_POST['nombre_usuario'];
-                $apellidos_usuario = $_POST['apellidos_usuario'];
-                $telefono_usuario = $_POST['telefono_usuario'];
-                $mail_usuario = $_POST['mail_usuario'];
-
-                // Hashing de la contraseña
-                $password_usuario_hash = password_hash($password_usuario, PASSWORD_DEFAULT);
-
-                // Preparamos la consulta SQL para insertar el hash de la contraseña
-                $sql_insert_usuario = "INSERT INTO usuario (username, password_usuario, nombre_usuario, apellidos_usuario, telefono_usuario, mail_usuario) 
-                                        VALUES (?, ?, ?, ?, ?, ?)";
-
-                // Preparar la sentencia
-                if ($stmt = $conexion->prepare($sql_insert_usuario)) {
-                    // Vinculamos los parámetros a la sentencia preparada
-                    $stmt->bind_param("ssssis", $username, $password_usuario_hash, $nombre_usuario, $apellidos_usuario, $telefono_usuario, $mail_usuario);
-
-                    // Ejecutamos la sentencia preparada
-                    if ($stmt->execute()) {
-                        $_SESSION["id"] = obtenerIdNewUsuario($username);
-                        header("Location: perfil.php");
-                        exit();
-                    } else {
-                        echo "Error al crear el usuario: " . $stmt->error;
-                    }
-
-                    // Cerramos la sentencia preparada
-                    $stmt->close();
-                } else {
-                    echo "Error al preparar la consulta: " . $conexion->error;
-                }
-
-                // Cerramos conexión
-                $conexion->close();
-            }
-            ?>
+        <!-- Registro -->
         <div id="registerPopup" class="popup">
             <div class="popup-content">
                 <div class="PanelIzquierdo"><img src="img/FondoLogin.jpg" alt="Fondo del Login"></div>
@@ -206,7 +148,7 @@ mysqli_close($conexion);
                     <div class="CuerpoSign">
                         <h1 class="tituloUnete">¡Prepárate para la aventura!</h1>
                         <h3 class="Subtitulo">Regístrate ahora y empieza a explorar un mundo de eventos</h3>
-                        <form class="FormularioRegistro" action="" method="POST" enctype="multipart/form-data">
+                        <form class="FormularioRegistro" action="insertar_datos_registro.php" method="POST" enctype="multipart/form-data">
                             <div class="formularioRegistroFlex">
                                 <div class="columnaPrimeraFormularioRegistro">
                                     <input type="text" class="inputLogin" name="nombre_usuario" placeholder="Nombre">
@@ -228,19 +170,6 @@ mysqli_close($conexion);
                             </div>
                             <div class="boton">
                                 <button class="botonAccederRegistro" type="submit">Acceder</button>
-                            </div>
-                            <!-- Modal Structure -->
-                            <div id="modal-backdrop" class="modal-backdrop" style="display:none;">
-                            <div id="modal" class="modal" style="display:none;">
-                                <div class="modal-content">
-                                    <h2>Atención ⚠️</h2>
-                                    <br>
-                                    <p id="modal-message">Mensaje del modal</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
-                                </div>
-                            </div>
                             </div>
                         </form>
                     </div>
@@ -265,21 +194,20 @@ mysqli_close($conexion);
         }
 
         function togglePasswordRegistro() {
-            var passwordInput = document.getElementById("passwordRegistro");
-            var passIcon = document.getElementById("pass-icon-registro");
+        var passwordInput = document.getElementById("passwordRegistro");
+        var passIcon = document.getElementById("pass-icon-registro");
 
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-                passIcon.src = "./img/ojo_abierto.png";
-                passIcon.alt = "Ocultar Contraseña";
-            } else {
-                passwordInput.type = "password";
-                passIcon.src = "./img/ojo_cerrado.png";
-                passIcon.alt = "Mostrar Contraseña";
-            }
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passIcon.src = "./img/ojo_abierto.png";
+            passIcon.alt = "Ocultar Contraseña";
+        } else {
+            passwordInput.type = "password";
+            passIcon.src = "./img/ojo_cerrado.png";
+            passIcon.alt = "Mostrar Contraseña";
         }
+    }
         </script>
         <script src="../eventium/scripts/validar_registro.js"></script>
-        <script src="../eventium/scripts/validar_duplicados.js"></script>
     </header>
     </header>

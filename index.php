@@ -48,7 +48,20 @@ $featuredEvents = getFeaturedEvents();
 </head>
 
 <body class="index">
-    <?php include('menu.php'); ?>
+<?php
+    // Inicia o continua una sesión existente
+    if (session_status() == PHP_SESSION_NONE) {
+        // Si no hay sesión activa, iniciar una nueva sesión
+        session_start();
+    }
+
+    // Verifica si la sesión está iniciada y si $id_usuario está definido
+    if (isset($_SESSION['id_usuario'])) {
+        include('menu_sesion_iniciada.php');
+    } else {
+        include('menu.php');
+    }
+    ?>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -142,7 +155,7 @@ $featuredEvents = getFeaturedEvents();
     <!-- js -->
     <script src="scripts/scriptPopUp.js"></script>
     <script src="scripts/index.js"></script>
-    <script src="scripts/validacionRegistro.js"></script>
+    <script src="scripts/validacion_registro.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 

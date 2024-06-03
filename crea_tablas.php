@@ -25,8 +25,8 @@ crearTablas($conexion);
 // Creamos tablas si no existen
 $sql_createUsuario = "CREATE TABLE IF NOT EXISTS usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    username VARCHAR(255) UNIQUE NOT NULL,
-    nombre_usuario VARCHAR(255)  NULL,
+    username VARCHAR(255) NULL,
+    nombre_usuario VARCHAR(255) NULL,
     apellidos_usuario VARCHAR(255) NULL,
     mail_usuario VARCHAR(255) NULL,
     telefono_usuario VARCHAR(255) NULL,
