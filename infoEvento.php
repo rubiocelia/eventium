@@ -26,6 +26,7 @@
     <?php require_once('menu.php'); ?>
     <div class="custom-container">
         <!-- Cabecera de la página -->
+        <a href="eventos.php" class="volver">⬅ Volver</a>
         <div class="cabecera">
             <!-- Imagen -->
             <div>
@@ -59,7 +60,7 @@
                 </iframe>
             </div>
             <div>
-                <?php include('./componentesEventos/calendarioEvento.php'); ?>
+                <?php require_once('./componentesEventos/calendarioEvento.php'); ?>
             </div>
         </div>
     </div>

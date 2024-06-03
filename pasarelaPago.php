@@ -161,6 +161,9 @@
                 <input type="hidden" id="usuario_id" name="usuario_id" value="<?php echo $idUsuario; ?>">
                 <input type="hidden" id="id_calendario" name="id_calendario" value="<?php echo $infoCalendario['id']; ?>">
                 <button id="btnPagar">Pagar 🛒</button>
+                <a href="infoEvento.php?evento=<?php echo $infoCalendario['id_evento']; ?>">
+                    <button id="btnCancelar">Cancelar ❌</button>
+                </a>
             </div>
         </div>
     </div>

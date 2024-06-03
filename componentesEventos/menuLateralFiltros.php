@@ -1,4 +1,5 @@
 <?php
+    require_once('./eventos.php');
     require_once('./conecta.php');
     $conexion = getConexion();
     $sql = "SELECT * FROM tipoevento";
@@ -32,5 +33,10 @@
             </ul>
         </div>
     </div>
+    <?php if ($filtrar==true) : ?>
+        <div class="seccion-boton-quitar-filtros">
+            <a href="eventos.php#filtro" class="btn-accion">Quitar Filtros</a>
+        </div>
+    <?php endif; ?>
     <script src="./componentesEventos/js/menuLateralFiltros.js"></script>
 </div>

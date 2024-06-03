@@ -17,7 +17,7 @@
 
 body {
     font-family: var(--texto);
-    background-color: var(--color-contraste-primario);
+    background-color: var(--color-primario-oscuro);
     margin: 0;
     padding: 0;
     display: flex;
@@ -179,6 +179,12 @@ button:hover {
 #btnPagar {
     width: 100%;
     margin-top: 20px;
+}
+#btnCancelar {
+    width: 100%;
+    margin-top: 20px;
+    background-color: rgb(252, 200, 200);
+    color: rgb(0, 0, 0);
 }
 
 span {
