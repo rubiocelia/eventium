@@ -76,7 +76,7 @@
                 <span class="plazas-disponibles">Entradas disponibles: <?php echo $item['plazas_disponibles'];?></span>
             </div>
             <div class="pago">
-                <a href="pasarelaPago.php?id=<?php echo $item['id']; ?>" class="boton-pago">COMPRAR</a>
+                <a href="pasarelaPago.php?id=<?php echo $item['id']; ?>" class="boton-pago"id="botonPago">COMPRAR</a>
             </div>
         </div>
       </div>

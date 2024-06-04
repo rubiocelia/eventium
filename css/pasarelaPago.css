@@ -187,7 +187,12 @@ button:hover {
     background-color: rgb(252, 200, 200);
     color: rgb(0, 0, 0);
 }
-
+#btnCancelar:hover {
+    background-color: rgb(252, 200, 200);
+}
+#btnCancelar:hover {
+    background-color: rgb(231, 135, 135);
+}
 span {
     font-size: 16px;
 }
