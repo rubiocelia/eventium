@@ -75,16 +75,16 @@ mysqli_close($conexion);
         </a>
 
         <nav>
-
-            <button class="hamburger" aria-label="Abrir menú">☰</button>
+            <div class="hamburger" aria-label="Abrir menú">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
 
             <ul class="menu">
                 <li> <a href="index.php">Inicio</a></li>
-
                 <li> <a href="nosotros.php">Nosotros</a></li>
-
                 <li> <a href="eventos.php">Eventos</a></li>
-
                 <li> <a href="contacto.php">Contacto</a></li>
             </ul>
 
@@ -93,7 +93,6 @@ mysqli_close($conexion);
                 <li class="iniciarSesion" id="loginBtn"><a>Iniciar sesión</a></li>
                 <li class="registro" id="registerBtn"><a>Registrarse</a></li>
             </div>
-
         </nav>
 
         <!-- Inicio de sesión -->
@@ -209,5 +208,6 @@ mysqli_close($conexion);
         </script>
         <script src="../eventium/scripts/validar_registro.js"></script>
         <script src="../eventium/scripts/validar_inicio_sesion.js"></script>
+        <script src="../eventium/scripts/hamburguesa.js"></script>
     </header>
     </header>
