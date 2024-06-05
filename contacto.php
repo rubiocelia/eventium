@@ -1,12 +1,58 @@
 <?php
-// Iniciar sesión
-session_start();
+// Iniciar sesión si no está iniciada
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Inicializar variables para los datos del usuario
 $nombre = "";
 $apellidos = "";
 $email = "";
 $telefono = "";
+$mensaje = "";
+$errores = [];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = trim($_POST['nombre']);
+    $apellidos = trim($_POST['apellidos']);
+    $email = trim($_POST['email']);
+    $telefono = trim($_POST['telefono']);
+    $mensaje = trim($_POST['mensaje']);
+
+    if (empty($nombre)) {
+        $errores[] = "El nombre es obligatorio.";
+    } elseif (!preg_match("/^[a-zA-Z\s]+$/", $nombre)) {
+        $errores[] = "El nombre solo debe contener letras y espacios.";
+    }
+
+    if (empty($apellidos)) {
+        $errores[] = "Los apellidos son obligatorios.";
+    } elseif (!preg_match("/^[a-zA-Z\s]+$/", $apellidos)) {
+        $errores[] = "Los apellidos solo deben contener letras y espacios.";
+    }
+
+    if (empty($email)) {
+        $errores[] = "El correo electrónico es obligatorio.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errores[] = "El correo electrónico es inválido.";
+    }
+
+    if (empty($telefono)) {
+        $errores[] = "El teléfono es obligatorio.";
+    } elseif (!preg_match("/^[0-9]{9,11}$/", $telefono)) {
+        $errores[] = "El teléfono solo debe contener números y tener entre 9 y 11 dígitos.";
+    }
+
+    if (empty($mensaje)) {
+        $errores[] = "El mensaje es obligatorio.";
+    }
+
+    if (empty($errores)) {
+        // Redirigir a una página de confirmación
+        header("Location: confirmacion.php");
+        exit();
+    }
+}
 
 // Verificar si el ID de usuario está almacenado en la sesión
 if (isset($_SESSION['idUsuarioLogin'])) {
@@ -41,6 +87,7 @@ if (isset($_SESSION['idUsuarioLogin'])) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -52,11 +99,24 @@ if (isset($_SESSION['idUsuarioLogin'])) {
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="css/contacto.css">
+    <style>
+    .error {
+        color: red;
+        margin-bottom: 1em;
+        list-style: none;
+    }
+
+    .error li {
+        list-style: none;
+    }
+    </style>
+
+
 </head>
 
 <body class="contacto">
     <header>
-    <?php
+        <?php
     // Inicia o continua una sesión existente
     if (session_status() == PHP_SESSION_NONE) {
         // Si no hay sesión activa, iniciar una nueva sesión
@@ -69,7 +129,7 @@ if (isset($_SESSION['idUsuarioLogin'])) {
     } else {
         include('menu.php');
     }
-    ?> 
+    ?>
     </header>
 
     <main class="contacto-main">
@@ -85,7 +145,16 @@ if (isset($_SESSION['idUsuarioLogin'])) {
         </section>
 
         <section class="contacto-formulario">
-            <form action="procesar_contacto.php" method="post">
+            <?php if (!empty($errores)) : ?>
+            <div class="error">
+                <ul>
+                    <?php foreach ($errores as $error) : ?>
+                    <li><?php echo htmlspecialchars($error); ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <?php endif; ?>
+            <form action="contacto.php" method="post">
                 <div class="form-group">
                     <input type="text" id="nombre" name="nombre" placeholder="Nombre..." value="<?php echo $nombre; ?>"
                         required>
