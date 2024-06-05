@@ -167,7 +167,7 @@ form {
 
 .btnContacto:hover {
   background-color: var(--color-contraste-primario);
-  color: var(--azulQQ);
+  color: black;
   cursor: pointer;
 }
 
