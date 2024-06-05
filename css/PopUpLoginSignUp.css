@@ -306,3 +306,123 @@
   gap: 5px;
 }
 
+/* Media Queries para movil */
+@media screen and (max-width: 575px) {
+  .popup-content {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .PanelIzquierdo {
+    width: 0%;
+    height: 0%;
+  }
+
+  .PanelDerecho {
+    width: 100%;
+    height: 150%;
+  }
+
+  .FormularioLogin,
+  .FormularioRegistro {
+    width: 80%;
+  }
+
+  .inputLogin{
+    height: 30px;
+  }
+
+  .formularioRegistroFlex {
+    flex-direction: column;
+  }
+
+  .columnaPrimeraFormularioRegistro,
+  .columnaSegundaFormularioRegistro {
+    width: 90%;
+  }
+  .tituloBienvenido{
+    font-size: 25px;
+  }
+  .Subtitulo{
+    font-size: 16px;
+  }
+  .tituloUnete{
+    font-size: 25px;
+  }
+  .pass-icon{
+    margin-top: -7px;
+  }
+  .pass-icon-registro{
+    margin-top: -7px;
+  }
+  .boton{
+    text-align: center;
+    justify-content: center;
+  }
+  .botonAccederRegistro{
+    width: 75%;
+  }
+  .botonAcceder{
+    width: 75%;
+  }
+  #loginRedireccion{
+    font-size: 15px;
+    white-space: wrap;
+  }
+  #volverBtnRegistrarse{
+    font-size: 15px;
+  }
+  #volverBtn{
+    font-size: 15px;
+  }
+  #JoinNow{
+    font-size: 15px;
+  }
+  .CuerpoLogin{
+    margin-top: 120px;
+  }
+  .close{
+    visibility: hidden;
+  }
+}
+
+/* Media Queries para tablets */
+@media screen and (max-width: 1096px) and (min-width: 576px) {
+  .popup-content {
+    flex-direction: column;
+    height: 90%;
+  }
+
+  .PanelIzquierdo {
+    width: 0%;
+    height: 0%;
+  }
+
+  .PanelDerecho {
+    width: 100%;
+    height: 300px;
+  }
+
+  .FormularioLogin,
+  .FormularioRegistro {
+    width: 60%;
+  }
+
+  .formularioRegistroFlex {
+    flex-direction: row;
+  }
+
+  .columnaPrimeraFormularioRegistro,
+  .columnaSegundaFormularioRegistro {
+    width: 50%;
+  }
+  .CuerpoLogin{
+    margin-top: 80px;
+  }
+  .CuerpoSign{
+    margin-top: 30px;
+  }
+  .close{
+    visibility: hidden;
+  }
+}

@@ -37,7 +37,11 @@
 
         <nav>
 
-            <button class="hamburger" aria-label="Abrir menú">☰</button>
+        <div class="hamburger" aria-label="Abrir menú">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
             <ul class="menu">
                 <li> <a href="index.php">Inicio</a></li>
