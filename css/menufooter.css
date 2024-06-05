@@ -116,6 +116,7 @@ nav {
   padding-right: 15px;
 }
 
+
 .iniciarSesion a {
   background-color: transparent;
   border: 2px solid var(--color-contraste-primario);
@@ -385,7 +386,7 @@ nav {
     left: -20px;
     width: 100%;
     background-color: var(--color-primario);
-    z-index: 1000;
+    z-index: 1001;
     padding: 1em 0;
   }
 

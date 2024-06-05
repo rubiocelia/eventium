@@ -140,7 +140,7 @@ mysqli_close($conexion);
                                 ← Atrás</a>
                         </div>
                         <div class="loginJoin">
-                            <a id="loginRedireccion"> Inicia sesión aquí si ya tienes una cuenta</a>
+                            <a id="loginRedireccion"> ¡Inicia sesión aquí!</a>
                         </div>
                     </div>
                     <div class="CuerpoSign">

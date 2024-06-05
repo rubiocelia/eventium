@@ -496,12 +496,14 @@ main {
   #menu2 ul {
     flex-direction: column;
     justify-content: center;
+    z-index: -1000;
   }
 
   #menu2 li {
     flex: none;
     margin: 5px 0;
     border-right: none;
+    z-index: -1000;
   }
 
   #contenido {

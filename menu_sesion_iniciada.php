@@ -36,16 +36,16 @@
         </a>
 
         <nav>
-
-            <button class="hamburger" aria-label="Abrir menú">☰</button>
+            <div class="hamburger" aria-label="Abrir menú">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
 
             <ul class="menu">
                 <li> <a href="index.php">Inicio</a></li>
-
                 <li> <a href="nosotros.php">Nosotros</a></li>
-
                 <li> <a href="eventos.php">Eventos</a></li>
-
                 <li> <a href="contacto.php">Contacto</a></li>
             </ul>
 
@@ -56,3 +56,5 @@
 
     </nav>
 </header>
+
+<script src="../eventium/scripts/hamburguesa.js"></script>
