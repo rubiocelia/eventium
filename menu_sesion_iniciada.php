@@ -31,23 +31,27 @@
 ?>
 
 <header class="header">
-        <a href="index.php">
-            <img class="logo" src="img/EventiumLogo.png" alt="logo Eventium">
-        </a>
+    <a href="index.php">
+        <img class="logo" src="img/EventiumLogo.png" alt="logo Eventium">
+    </a>
 
-        <nav>
+    <nav>
 
-            <button class="hamburger" aria-label="Abrir menú">☰</button>
+        <div class="hamburger" aria-label="Abrir menú">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-            <ul class="menu">
-                <li> <a href="index.php">Inicio</a></li>
+        <ul class="menu">
+            <li> <a href="index.php">Inicio</a></li>
 
-                <li> <a href="nosotros.php">Nosotros</a></li>
+            <li> <a href="nosotros.php">Nosotros</a></li>
 
-                <li> <a href="eventos.php">Eventos</a></li>
+            <li> <a href="eventos.php">Eventos</a></li>
 
-                <li> <a href="contacto.php">Contacto</a></li>
-            </ul>
+            <li> <a href="contacto.php">Contacto</a></li>
+        </ul>
 
         <!-- Botones -->
         <div class="inicioRegistro">
