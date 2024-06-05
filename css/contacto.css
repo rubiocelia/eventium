@@ -300,3 +300,110 @@ form {
 .faq-question.active + .faq-answer {
   display: block;
 }
+
+/* Estilos para tablets (pantallas de 768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contacto-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contacto-hero p {
+    font-size: 1.3rem;
+    padding: 0 50px;
+  }
+
+  .logoContacto {
+    width: 80px;
+  }
+}
+
+/* Estilos para móviles (pantallas de menos de 768px) */
+@media (max-width: 767px) {
+  .contacto-hero {
+    padding: 1rem;
+  }
+
+  .contacto-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contacto-hero p {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+
+  .logoContacto {
+    width: 70px;
+  }
+}
+
+/* Estilos para tablets (pantallas de 768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contacto-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .contacto-hero p {
+    font-size: 1.3rem;
+    padding: 0 50px;
+  }
+
+  .logoContacto {
+    width: 80px;
+  }
+
+  .contacto-formulario {
+    padding: 40px 80px;
+    width: 75%;
+  }
+
+  .contacto-info {
+    margin: 40px 80px;
+  }
+
+  .category {
+    width: 200px;
+  }
+
+  .faq-category {
+    width: 70%;
+  }
+}
+
+/* Estilos para móviles (pantallas de menos de 768px) */
+@media (max-width: 767px) {
+  .contacto-hero {
+    padding: 1rem;
+  }
+
+  .contacto-hero h1 {
+    font-size: 2rem;
+  }
+
+  .contacto-hero p {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+
+  .logoContacto {
+    width: 70px;
+  }
+
+  .contacto-formulario {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .contacto-info {
+    margin: 20px;
+  }
+
+  .category {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .faq-category {
+    width: 90%;
+  }
+}

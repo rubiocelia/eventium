@@ -23,7 +23,20 @@
 </head>
 
 <body class="bodyInfoEvento">
-    <?php require_once('menu.php'); ?>
+    <?php
+    // Inicia o continua una sesión existente
+    if (session_status() == PHP_SESSION_NONE) {
+        // Si no hay sesión activa, iniciar una nueva sesión
+        session_start();
+    }
+
+    // Verifica si la sesión está iniciada y si $id_usuario está definido
+    if (isset($_SESSION['id_usuario'])) {
+        include('menu_sesion_iniciada.php');
+    } else {
+        include('menu.php');
+    }
+    ?>
     <div class="custom-container">
         <!-- Cabecera de la página -->
         <a href="eventos.php" class="volver">⬅ Volver</a>

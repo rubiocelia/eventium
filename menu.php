@@ -19,7 +19,7 @@ if (isset($_GET['sendTo'])) {
 // Verificamos el inicio de sesión del paciente
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recuperamos la url de destino al hacer login
-    $urlDestino= $_POST['sendTo'];
+    $urlDestino = isset($_POST['sendTo']) ? $_POST['sendTo'] : ''; // Verificamos si 'sendTo' está definido
     // Validamos que llamada al metodo POST venga del boton login para realizar el inicio de sesión
     if (isset($_POST['Login'])) {
         // Obtenemos los datos del formulario
@@ -69,31 +69,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Cerramos conexión
 mysqli_close($conexion);
 ?>
-    <header class="header">
-        <a href="index.php">
-            <img class="logo" src="img/EventiumLogo.png" alt="logo Eventium">
-        </a>
+<header class="header">
+    <a href="index.php">
+        <img class="logo" src="img/EventiumLogo.png" alt="logo Eventium">
+    </a>
 
-        <nav>
-            <div class="hamburger" aria-label="Abrir menú">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+    <nav>
+        <div class="hamburger" aria-label="Abrir menú">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-            <ul class="menu">
-                <li> <a href="index.php">Inicio</a></li>
-                <li> <a href="nosotros.php">Nosotros</a></li>
-                <li> <a href="eventos.php">Eventos</a></li>
-                <li> <a href="contacto.php">Contacto</a></li>
-            </ul>
+        <ul class="menu">
+            <li> <a href="index.php">Inicio</a></li>
+            <li> <a href="nosotros.php">Nosotros</a></li>
+            <li> <a href="eventos.php">Eventos</a></li>
+            <li> <a href="contacto.php">Contacto</a></li>
+        </ul>
 
-            <!-- Botones -->
-            <div class="inicioRegistro">
-                <li class="iniciarSesion" id="loginBtn"><a>Iniciar sesión</a></li>
-                <li class="registro" id="registerBtn"><a>Registrarse</a></li>
-            </div>
-        </nav>
+        <!-- Botones -->
+        <div class="inicioRegistro">
+            <li class="iniciarSesion" id="loginBtn"><a>Iniciar sesión</a></li>
+            <li class="registro" id="registerBtn"><a>Registrarse</a></li>
+        </div>
+    </nav>
 
         <!-- Inicio de sesión -->
         <div id="loginPopup" class="popup">
@@ -140,7 +140,7 @@ mysqli_close($conexion);
                                 ← Atrás</a>
                         </div>
                         <div class="loginJoin">
-                            <a id="loginRedireccion"> ¡Inicia sesión aquí!</a>
+                            <a id="loginRedireccion"> Inicia sesión aquí si ya tienes una cuenta</a>
                         </div>
                     </div>
                     <div class="CuerpoSign">
@@ -180,18 +180,18 @@ mysqli_close($conexion);
             var passwordInput = document.getElementById("password_usuario");
             var passIcon = document.getElementById("pass-icon");
 
-            if (passwordInput.type === "password") {
-                passwordInput.type = "text";
-                passIcon.src = "./img/ojo_abierto.png";
-                passIcon.alt = "Ocultar Contraseña";
-            } else {
-                passwordInput.type = "password";
-                passIcon.src = "./img/ojo_cerrado.png";
-                passIcon.alt = "Mostrar Contraseña";
-            }
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            passIcon.src = "./img/ojo_abierto.png";
+            passIcon.alt = "Ocultar Contraseña";
+        } else {
+            passwordInput.type = "password";
+            passIcon.src = "./img/ojo_cerrado.png";
+            passIcon.alt = "Mostrar Contraseña";
         }
+    }
 
-        function togglePasswordRegistro() {
+    function togglePasswordRegistro() {
         var passwordInput = document.getElementById("passwordRegistro");
         var passIcon = document.getElementById("pass-icon-registro");
 
@@ -205,9 +205,9 @@ mysqli_close($conexion);
             passIcon.alt = "Mostrar Contraseña";
         }
     }
-        </script>
-        <script src="../eventium/scripts/validar_registro.js"></script>
-        <script src="../eventium/scripts/validar_inicio_sesion.js"></script>
-        <script src="../eventium/scripts/hamburguesa.js"></script>
-    </header>
-    </header>
+    </script>
+    <script src="../eventium/scripts/validar_registro.js"></script>
+    <script src="../eventium/scripts/validar_inicio_sesion.js"></script>
+    <script src="../eventium/scripts/hamburguesa.js"></script>
+</header>
+</header>

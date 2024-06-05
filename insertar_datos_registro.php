@@ -14,13 +14,16 @@ $mail_usuario = $_POST['mail_usuario'];
 // Hashing de la contraseña
 $password_usuario_hash = password_hash($password_usuario, PASSWORD_DEFAULT);
 
-// Preparamos la consulta SQL para insertar el hash de la contraseña y otros datos
-$sql_insert_usuario = "INSERT INTO usuario (username, password_usuario, nombre_usuario, apellidos_usuario, telefono_usuario, mail_usuario) 
-                        VALUES (?, ?, ?, ?, ?, ?)";
+// Ruta de la foto por defecto
+$foto_usuario = 'archivos/fotosPerfil/foto1.jpg';
+
+// Preparamos la consulta SQL para insertar el hash de la contraseña, otros datos y la foto por defecto
+$sql_insert_usuario = "INSERT INTO usuario (username, password_usuario, nombre_usuario, apellidos_usuario, telefono_usuario, mail_usuario, foto_usuario) 
+                        VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conexion->prepare($sql_insert_usuario); // Preparar la sentencia
 
 // Vincular los parámetros a la sentencia
-$stmt->bind_param("ssssss", $username, $password_usuario_hash, $nombre_usuario, $apellidos_usuario, $telefono_usuario, $mail_usuario);
+$stmt->bind_param("sssssss", $username, $password_usuario_hash, $nombre_usuario, $apellidos_usuario, $telefono_usuario, $mail_usuario, $foto_usuario);
 
 // Ejecutar la consulta preparada
 if ($stmt->execute()) {
