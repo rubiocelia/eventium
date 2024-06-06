@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
       .getElementById("fechaNacimiento")
       .value.trim();
 
-    const nombreValido = /^[a-zA-Z\s]+$/.test(nombre);
-    const apellidosValido = /^[a-zA-Z\s]+$/.test(apellidos);
+    const nombreValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre);
+    const apellidosValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(apellidos);
     const emailValido = /^\S+@\S+\.\S+$/.test(email);
     const telefonoValido = /^\d{9}$/.test(telefono);
     const fechaNacimientoValida = new Date(fechaNacimiento) < new Date();
