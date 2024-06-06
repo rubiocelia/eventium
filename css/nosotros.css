@@ -77,32 +77,24 @@ body {
 }
 
 .mision-vision-valores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   padding: 0 65px;
   gap: 65px;
   margin-top: 25px;
-  display: flex;
-  flex-direction: row;
 }
 
-.mision {
-  font-family: var(--texto);
-  font-size: 1.2em;
-  color: white;
-  width: 33%;
-}
-
-.vision {
-  font-family: var(--texto);
-  font-size: 1.2em;
-  color: white;
-  width: 33%;
-}
-
+.mision,
+.vision,
 .valores {
   font-family: var(--texto);
   font-size: 1.2em;
   color: white;
-  width: 33%;
+  width: 30%;
+  min-width: 250px;
+  box-sizing: border-box;
 }
 
 .logoMisVisVal {
@@ -298,5 +290,32 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+  }
+}
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+  .mision-vision-valores {
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .mision,
+  .vision,
+  .valores {
+    width: 45%; /* Ajustar el ancho para que puedan caber dos en una fila en pantallas pequeñas */
+    min-width: unset;
+    text-align: center; /* Centra el texto dentro de cada sección */
+  }
+
+  .logoMisVisVal {
+    width: 50px; /* Ajusta el tamaño del logo para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .mision,
+  .vision,
+  .valores {
+    width: 100%; /* Asegura que cada elemento ocupe el ancho completo en pantallas muy pequeñas */
   }
 }

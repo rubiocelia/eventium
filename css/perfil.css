@@ -446,7 +446,7 @@ main {
     top: 0;
     left: 0;
     background-color: var(--color-primario);
-    z-index: 1000;
+    z-index: 100;
     padding: 10px 0;
     border-radius: 8px;
   }
