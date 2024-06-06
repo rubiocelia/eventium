@@ -1,8 +1,9 @@
 <?php
 function getConexion() {
-    $host = "localhost";
-    $usuario = "root";
-    $contrasena = "";
+    $host = "sql109.infinityfree.com"; // Cambia esto al servidor de tu base de datos
+    $usuario = "si0_36685265"; // Tu nombre de usuario de la base de datos
+    $contrasena = "EventiumMuditos"; // Tu contraseña de la base de datos
+    $dbname = "if0_36685265_Eventium"; // El nombre de tu base de datos
 
     // Realizamos la conexión a MySQL server
     $conexion = new mysqli($host, $usuario, $contrasena);
@@ -11,18 +12,11 @@ function getConexion() {
         die("Error de conexión: " . $conexion->connect_error);
     }
 
-    // Comprobamos si existe la BBDD "Equilibria"
-    $verificarBD = $conexion->query("SHOW DATABASES LIKE 'Eventium'");
-    if ($verificarBD->num_rows > 0) {
-        // Conectamos con la BBDD
-        $conexion->select_db("Eventium");
-    } else {
-        if (!$conexion->query("CREATE DATABASE Eventium")) {
-            die("Error al crear la base de datos: " . $conexion->error);
-        }
-        //agrega la conexión a la base de datos
-        $conexion->select_db("Eventium");
+    // Conectamos con la base de datos
+    if (!$conexion->select_db($dbname)) {
+        die("Error al seleccionar la base de datos: " . $conexion->error);
     }
+
     return $conexion;
 }
 ?>
