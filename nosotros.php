@@ -10,7 +10,7 @@
 
 <body>
 
-<?php
+    <?php
     // Inicia o continua una sesión existente
     if (session_status() == PHP_SESSION_NONE) {
         // Si no hay sesión activa, iniciar una nueva sesión
@@ -86,7 +86,7 @@
         <div class="llamado-accion">
             <h1 class="titulo-accion">Deja que nuestro equipo cree momentos inolvidables para ti</h1>
             <p class="subtitulo-accion">¡No esperes más! Haz que tu próximo evento sea épico.</p>
-            <a href="contacto.html" class="btn-accion">Contáctanos</a>
+            <a href="contacto.php" class="btn-accion">Contáctanos</a>
         </div>
 
 

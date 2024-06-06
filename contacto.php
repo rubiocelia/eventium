@@ -1,8 +1,7 @@
 <?php
-// Iniciar sesión si no está iniciada
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+session_start();
+
+require_once("conecta.php");
 
 // Inicializar variables para los datos del usuario
 $nombre = "";
@@ -11,6 +10,34 @@ $email = "";
 $telefono = "";
 $mensaje = "";
 $errores = [];
+
+// Función para obtener la información del usuario actual
+function obtenerInfoUsuario(int $id_usuario) {
+    $conexion = getConexion();
+    $sql = "SELECT * FROM usuario WHERE id = ?";
+    $stmt = $conexion->prepare($sql);
+    $stmt->bind_param("i", $id_usuario);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+    if ($resultado->num_rows == 0) {
+        echo "No se encontró información para el usuario con el ID proporcionado.";
+        $conexion->close();
+        exit;
+    }
+    $usuario = $resultado->fetch_assoc();
+    $conexion->close();
+    return $usuario;
+}
+
+// Verificar si el ID de usuario está almacenado en la sesión
+if (isset($_SESSION['id_usuario'])) {
+    $idUsuario = $_SESSION['id_usuario'];
+    $usuario = obtenerInfoUsuario($idUsuario);
+    $nombre = htmlspecialchars($usuario['nombre_usuario']);
+    $apellidos = htmlspecialchars($usuario['apellidos_usuario']);
+    $email = htmlspecialchars($usuario['mail_usuario']);
+    $telefono = htmlspecialchars($usuario['telefono_usuario']);
+}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = trim($_POST['nombre']);
@@ -21,14 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($nombre)) {
         $errores[] = "El nombre es obligatorio.";
-    } elseif (!preg_match("/^[a-zA-Z\s]+$/", $nombre)) {
-        $errores[] = "El nombre solo debe contener letras y espacios.";
+    } elseif (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/", $nombre)) {
+        $errores[] = "El nombre solo debe contener letras, espacios y tildes.";
     }
 
     if (empty($apellidos)) {
         $errores[] = "Los apellidos son obligatorios.";
-    } elseif (!preg_match("/^[a-zA-Z\s]+$/", $apellidos)) {
-        $errores[] = "Los apellidos solo deben contener letras y espacios.";
+    } elseif (!preg_match("/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/", $apellidos)) {
+        $errores[] = "Los apellidos solo deben contener letras, espacios y tildes.";
     }
 
     if (empty($email)) {
@@ -53,38 +80,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-
-// Verificar si el ID de usuario está almacenado en la sesión
-if (isset($_SESSION['idUsuarioLogin'])) {
-    // El ID de usuario está definido en la sesión
-    $idUsuario = $_SESSION['idUsuarioLogin'];
-
-    // Obtener los datos del usuario
-    require_once("conecta.php");
-    $conexion = getConexion();
-    $sql = "SELECT * FROM usuario WHERE id = ?";
-    $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("i", $idUsuario); // 'i' para indicar que es un entero (ID)
-    $stmt->execute();
-    $resultado = $stmt->get_result();
-
-    if ($resultado->num_rows > 0) {
-        // Obtener los datos del usuario
-        $usuario = $resultado->fetch_assoc();
-        $nombre = htmlspecialchars($usuario['nombre_usuario']);
-        $apellidos = htmlspecialchars($usuario['apellidos_usuario']);
-        $email = htmlspecialchars($usuario['mail_usuario']);
-        $telefono = htmlspecialchars($usuario['telefono_usuario']);
-    } else {
-        // No se encontraron resultados, posible manejo de error o redirección
-        echo "No se encontró información para el usuario con el ID proporcionado.";
-        $conexion->close();
-        exit();
-    }
-
-    $conexion->close();
-}
 ?>
+
+
 
 
 
@@ -132,6 +130,7 @@ if (isset($_SESSION['idUsuarioLogin'])) {
     ?>
     </header>
 
+
     <main class="contacto-main">
         <section class="contacto-hero">
             <img src="./archivos/contacto/llamar.png" alt="Logo contacto" class="logoContacto">
@@ -154,29 +153,32 @@ if (isset($_SESSION['idUsuarioLogin'])) {
                 </ul>
             </div>
             <?php endif; ?>
+
+
             <form action="contacto.php" method="post">
                 <div class="form-group">
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre..." value="<?php echo $nombre; ?>"
-                        required>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre..."
+                        value="<?php echo htmlspecialchars($nombre); ?>" required>
                 </div>
                 <div class="form-group">
                     <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos..."
-                        value="<?php echo $apellidos; ?>" required>
+                        value="<?php echo htmlspecialchars($apellidos); ?>" required>
                 </div>
                 <div class="form-group">
                     <input type="email" id="email" name="email" placeholder="Correo electrónico..."
-                        value="<?php echo $email; ?>" required>
+                        value="<?php echo htmlspecialchars($email); ?>" required>
                 </div>
                 <div class="form-group">
                     <input type="tel" id="telefono" name="telefono" placeholder="Teléfono..."
-                        value="<?php echo $telefono; ?>" required>
+                        value="<?php echo htmlspecialchars($telefono); ?>" required>
                 </div>
                 <div class="form-group">
-                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en que podemos ayudarte..."
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..."
                         required></textarea>
                 </div>
                 <button class="btnContacto" type="submit">Enviar</button>
             </form>
+
         </section>
 
         <div class="titFaqs-container">

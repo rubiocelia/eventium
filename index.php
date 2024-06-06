@@ -129,9 +129,6 @@ $featuredEvents = getFeaturedEvents();
                     <p>Conferencia</p>
                 </a>
             </div>
-
-
-
         </div>
     </section>
 
