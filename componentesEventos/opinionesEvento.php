@@ -36,22 +36,25 @@
 <?php echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">'; ?>
 <?php if (!empty($listaOpiniones)) : ?>
 <div class="bodyOpiniones">
-    
+
     <div id="TestC" class="carousel slide" data-ride="carousel">
         <div class="redz">
-            <h1>Testimonios <?php echo ' - '.$mediaOpiniones['media'].'/5'; ?> ⭐</h1>
+            <h1>Opiniones <?php echo ' - '.$mediaOpiniones['media'].'/5'; ?> ⭐</h1>
             <!--Contenedor slides -->
             <div class="carousel-inner" role="listbox">
                 <?php foreach ($listaOpiniones as $opinion) : ?>
-                    <div class="<?= $primerElemento === true ? 'item active' : 'item'; ?>">
-                        <div class="quote-section">
-                            <i class="fa fa-quote-left" id="ql"></i><?php echo $opinion['txt_opinion']; ?><i class="fa fa-quote-right" id="qr"></i>
-                        </div>
-                        <div class="autor-section">
-                            <i class="fa fa-user"></i><?php echo ' '.$opinion['nombre_usuario'].' '.$opinion['apellidos_usuario']; ?> || <?php echo $opinion['numPuntuacion']; ?> <i class="fa fa-star"></i>
-                        </div>
+                <div class="<?= $primerElemento === true ? 'item active' : 'item'; ?>">
+                    <div class="quote-section">
+                        <i class="fa fa-quote-left" id="ql"></i><?php echo $opinion['txt_opinion']; ?><i
+                            class="fa fa-quote-right" id="qr"></i>
                     </div>
-                    <?php $primerElemento=false; ?>
+                    <div class="autor-section">
+                        <i
+                            class="fa fa-user"></i><?php echo ' '.$opinion['nombre_usuario'].' '.$opinion['apellidos_usuario']; ?>
+                        || <?php echo $opinion['numPuntuacion']; ?> <i class="fa fa-star"></i>
+                    </div>
+                </div>
+                <?php $primerElemento=false; ?>
                 <?php endforeach; ?>
             </div>
         </div>
