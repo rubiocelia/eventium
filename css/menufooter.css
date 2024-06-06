@@ -83,6 +83,12 @@ nav {
   margin-right: 15px;
 }
 
+.sesionIniciada {
+  list-style: none;
+  display: flex;
+  margin-right: 15px;
+}
+
 .menu {
   list-style: none;
   display: flex;
@@ -108,11 +114,20 @@ nav {
   padding: 8px 15px;
 }
 
+.sesionIniciada li a {
+  text-decoration: none;
+  padding: 8px 15px;
+}
+
 .menu a:hover {
   border-bottom: 3px solid var(--color-contraste-primario-oscuro);
 }
 
 .iniciarSesion {
+  padding-right: 15px;
+}
+
+.btnSesionIniciada {
   padding-right: 15px;
 }
 
@@ -124,8 +139,22 @@ nav {
   color: white;
   transition: background-color 0.3s ease;
 }
+.btnSesionIniciada a {
+  background-color: transparent;
+  border: 2px solid var(--color-contraste-primario);
+  border-radius: 10px;
+  color: white;
+  transition: background-color 0.3s ease;
+}
 
 .iniciarSesion a:hover {
+  background-color: var(--color-contraste-primario-oscuro);
+  border: 2px solid white;
+  color: black;
+  cursor: pointer;
+}
+
+.btnSesionIniciada a:hover {
   background-color: var(--color-contraste-primario-oscuro);
   border: 2px solid white;
   color: black;
@@ -326,8 +355,21 @@ nav {
     margin-right: 170px;
   }
 
-  .inicioRegistro li {
+  .inicioRegistro li, .sesionIniciada li {
     margin: 0 0.5em;
+  }
+  .sesionIniciada{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-self: center;
+    margin-left: 250px;
+    flex-grow: 1;
+  }
+  .btnSesionIniciada{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
   }
 }
 
@@ -372,12 +414,20 @@ nav {
   }
 
   .iniciarSesion a,
-  .registro a {
+  .registro a, 
+  .btnSesionIniciada a{
     padding: 0px 0px; /* Ajustar tamaño de los botones */
     font-size: 13px;
     white-space: nowrap;
   }
 
+  .btnSesionIniciada{
+    margin-left: 70px;
+    text-align: center;
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+  }
   .menu.active {
     display: flex;
     flex-direction: column;

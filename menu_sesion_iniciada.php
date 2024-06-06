@@ -54,8 +54,8 @@
             </ul>
 
         <!-- Botones -->
-        <div class="inicioRegistro">
-            <li class="iniciarSesion" id="loginBtn"><a href="<?php echo $redirectURL; ?>">Mi Cuenta</a></li>
+        <div class="sesionIniciada">
+            <li class="btnSesionIniciada" id="loginBtn"><a href="<?php echo $redirectURL; ?>">Mi Cuenta</a></li>
         </div>
 
     </nav>
