@@ -170,12 +170,12 @@ $passUser6= password_hash('12345678', PASSWORD_DEFAULT);
 
 // Sentencia INSERT - Tabla [usuario]
 $sql_ins_usuario = "INSERT INTO usuario (username, nombre_usuario, apellidos_usuario, mail_usuario, telefono_usuario, fecha_nacimiento, password_usuario, foto_usuario) VALUES
-( 'juanpg', 'Juan', 'González Pérez', 'juan.gonzalez@gmail.com', '654123456', '1990-05-15', '$passUser1','./archivos/fotosPerfil/foto1.jpg' ),
-( 'mariaml', 'María', 'Martínez López', 'maria.martinez@hotmail.com', '612345678', '1985-08-22', '$passUser2','./archivos/fotosPerfil/foto1.jpg' ),
-( 'pedroSanchez', 'Pedro', 'Sánchez García', 'pedro.sanchez@outlook.es', '634567891', '1993-02-10', '$passUser3','./archivos/fotosPerfil/foto1.jpg' ),
-( 'aanarodrig', 'Ana', 'Rodríguez Martín', 'ana.rodriguez@gmail.com', '678912345', '1988-11-30', '$passUser4','./archivos/fotosPerfil/foto1.jpg' ),
-( 'lauFern', 'Laura', 'Fernández Ruiz', 'laura.fernandez@hotmail.com', '678345678', '1997-07-05', '$passUser5' ,'./archivos/fotosPerfil/foto1.jpg'),
-( 'carlopz', 'Carlos', 'López Hernández', 'carlos.lopez@outlook.es', '612345678', '1983-04-18', '$passUser6','./archivos/fotosPerfil/foto1.jpg' )";
+( 'juanpg', 'Juan', 'González Pérez', 'juan.gonzalez@gmail.com', '654123456', '1990-05-15', '$passUser1','./archivos/fotosPerfil/juan.jpg' ),
+( 'mariaml', 'María', 'Martínez López', 'maria.martinez@hotmail.com', '612345678', '1985-08-22', '$passUser2','./archivos/fotosPerfil/maria.jpg' ),
+( 'pedroSanchez', 'Pedro', 'Sánchez García', 'pedro.sanchez@outlook.es', '634567891', '1993-02-10', '$passUser3','./archivos/fotosPerfil/pedro.jpg' ),
+( 'aanarodrig', 'Ana', 'Rodríguez Martín', 'ana.rodriguez@gmail.com', '678912345', '1988-11-30', '$passUser4','./archivos/fotosPerfil/ana.jpg' ),
+( 'lauFern', 'Laura', 'Fernández Ruiz', 'laura.fernandez@hotmail.com', '678345678', '1997-07-05', '$passUser5' ,'./archivos/fotosPerfil/laura.jpg'),
+( 'carlopz', 'Carlos', 'López Hernández', 'carlos.lopez@outlook.es', '612345678', '1983-04-18', '$passUser6','./archivos/fotosPerfil/carlos.jpg' )";
 // Sentencia INSERT - Tabla [tipoEvento]
 $sql_ins_tipoEvento = "INSERT INTO tipoEvento (id,nombre_tipoEvento) VALUES
 ( 1, 'Musical' ),
