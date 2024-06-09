@@ -1,9 +1,12 @@
 <?php
     require_once("conecta.php");
     require_once("./eventos.php");
+    //obtenemso la conexion a la bbdd
     $conexion = getConexion();
 
     $sql="";
+    //se verifica si al filtrar por tipos se selecciona eventos filtrados por id_tipoEvento
+    //o por el contrario se filtra por id_categoria para las categorias
     if($filtrar==true){
         if($filtrarPor=="Tipo"){
             $sql="SELECT * FROM evento WHERE id_tipoEvento='$idFiltro'";    
@@ -39,15 +42,18 @@
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <!-- foreach sobre cada eventos obtenido de la bbdd -->
                 <?php foreach ($eventos as $evento) : ?>
                     <div class="col">
                         <div class="card shadow-sm">
+                            <!-- mostrar img del evento -->
                             <img src="<?php echo $evento['url_img']; ?>" style="object-fit: cover; max-height: 200px;" loading="lazy" alt="">
                             <div class="card-body">
                                 <h6><?php echo $evento['nombre_evento']; ?></h6>
                                 <!--<p class="card-text"><?php //echo $evento['descripcion_evento']; ?></p>-->
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
+                                        <!-- Enlace para mas informacion del evento -->
                                         <a href="infoEvento.php?evento=<?php echo $evento['id_evento']; ?>" class="btn btn-sm btn-outline-secondary">MÁS INFO</a>
                                     </div>
                                 </div>

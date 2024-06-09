@@ -58,8 +58,11 @@ $sql_Calendario = "SELECT
         calen.fecha>CURRENT_DATE()
       )
       AND calen.totalPlazas>calen.plazasOcupadas
-    ORDER BY fecha ASC";
+    ORDER BY fecha ASC"; //ordenar por fecha ascendente 
+
+    //ejecutar la consulta
 $consulta = $conexion->query($sql_Calendario);
+//obtener los resultados
 $calendario = $consulta->fetch_all(MYSQLI_ASSOC);
 $conexion->close();
 ?>
@@ -74,6 +77,7 @@ $conexion->close();
                 <span class="sty-dia"><?php echo $item['dia_evento'];?></span>
                 <span class="sty-hora"><?php echo ' '.$item['hora'];?></span>
             </div>
+            <!-- información y opciones de pago -->
             <div class="column-info-pago">
                 <div class="info">
                     <span class="sty-mes"><?php echo $item['nom_mes'].' '.$item['year_evento'];?></span>
@@ -85,6 +89,7 @@ $conexion->close();
                         <?php echo $item['plazas_disponibles'];?></span>
                 </div>
                 <div class="pago">
+                    <!-- botón para comprar las entradas -->
                     <button class="boton-pago" data-id="<?php echo $item['id']; ?>">COMPRAR</button>
                 </div>
             </div>
@@ -95,15 +100,18 @@ $conexion->close();
 <script src="./componentesEventos/js/calendarioEvento.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    //obtener el estado de inicio de sesión del usuario
     var isLoggedIn = <?php echo json_encode($isLoggedIn); ?>;
     var botonesPago = document.querySelectorAll('.boton-pago');
     var loginPopup = document.getElementById("loginPopup");
 
     botonesPago.forEach(function(boton) {
         boton.addEventListener('click', function() {
+            //si el usuario no está loguedado, mostrar el popup de login
             if (!isLoggedIn) {
                 mostrarPopup(loginPopup);
             } else {
+                //si esta logeado, redirigir a la pasarela de pago
                 var idEvento = boton.getAttribute('data-id');
                 window.location.href = 'pasarelaPago.php?id=' + idEvento;
             }
@@ -112,26 +120,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var formLogin = document.querySelector('.FormularioLogin');
     if (formLogin) {
+        //manejar el envio de formulario de login
         formLogin.addEventListener('submit', function(event) {
             var actionUrl = formLogin.action;
             var formData = new FormData(formLogin);
             formData.append('sendTo', 'pasarelaPago.php?id=<?php echo $idEvento; ?>');
 
+            //enviar el formulario usando fetch
             fetch(actionUrl, {
                     method: 'POST',
                     body: formData
                 }).then(response => response.text())
                 .then(data => {
                     if (data.includes(
-                        'success')) { // Assuming your login.php returns 'success' on successful login
+                        'success')) { 
+                            //si el login es exitoso redigir a la pasarela de pago
                         window.location.href = 'pasarelaPago.php?id=<?php echo $idEvento; ?>';
                     } else {
-                        // Handle error
+                      //si falla, mopstrar un error.
                         document.querySelector('.mensajeError').innerHTML =
                             'Error en el inicio de sesión';
                     }
                 });
 
+                //prevenir el envio normal del formulario
             event.preventDefault();
         });
     }

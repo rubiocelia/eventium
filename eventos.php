@@ -1,7 +1,10 @@
 <?php
+
+    //// Inicializa variables de filtro
     $filtrar=false;
     $filtrarPor=null;
     $idFiltro=0;
+    // Verifica si los parámetros 'filtrarPor' y 'idFiltro' están establecidos en la URL
     if(isset($_GET['filtrarPor'], $_GET['idFiltro'])){
         $filtrar=true;
         $filtrarPor=$_GET['filtrarPor'];
@@ -43,10 +46,13 @@
     ?>  
     <?php require_once('carouselEventos.php'); ?>
     <div class="busquedaEventos" id="filtro">
+        <!-- Incluir el menú lateral de filtros -->
         <div><?php require_once('componentesEventos/menuLateralFiltros.php'); ?></div>
+        <!-- Incluir el álbum de eventos -->
         <div><?php require_once('componentesEventos/albumEventos.php'); ?></div>
     </div>
     <?php require_once('footer.php'); ?>
+       <!-- Enlace al script para manejar el popup -->
     <script src="scripts/scriptPopUp.js"></script>
 
 </body>

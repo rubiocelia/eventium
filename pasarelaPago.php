@@ -151,17 +151,23 @@
         <div class="seccion-pago">
             <h4>Selecciona tus entradas</h4>
             <div class="contador">
+                  <!-- Botón para decrementar el contador de entradas -->
                 <button id="decrementar">-</button>
                     <span id="contador" max="<?php echo $entradasDisponibles; ?>">1</span>
+                    <!-- Botón para incrementar el contador de entradas -->
                 <button id="incrementar">+</button>
             </div>
             <div class="resumen-pago">
+                <!-- Muestra el precio por entrada -->
                 <span>Precio por entrada: </span><span id="precioEvento"><?php echo $infoCalendario['precio'].'€'; ?></span><br>
+                <!-- Muestra el total a pagar -->
                 <span>Total a pagar: <span id="totalPagar"></span></span><br>
                 <input type="hidden" id="id_evento" name="id_evento" value="<?php echo $infoCalendario['id_evento']; ?>">
                 <input type="hidden" id="usuario_id" name="usuario_id" value="<?php echo $idUsuario; ?>">
                 <input type="hidden" id="id_calendario" name="id_calendario" value="<?php echo $infoCalendario['id']; ?>">
+                 <!-- Botón para proceder al pago -->
                 <button id="btnPagar">Pagar 🛒</button>
+                <!-- Enlace para cancelar y volver a la página de información del evento -->
                 <a href="infoEvento.php?evento=<?php echo $infoCalendario['id_evento']; ?>">
                     <button id="btnCancelar">Cancelar ❌</button>
                 </a>
