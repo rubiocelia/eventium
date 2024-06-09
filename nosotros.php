@@ -10,7 +10,7 @@
 
 <body>
 
-<?php
+    <?php
     // Inicia o continua una sesión existente
     if (session_status() == PHP_SESSION_NONE) {
         // Si no hay sesión activa, iniciar una nueva sesión

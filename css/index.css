@@ -454,3 +454,89 @@ form#searchForm {
     gap: 8px;
   }
 }
+
+@media (max-width: 1268px) {
+  .featured-events {
+    padding: 20px 10px;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .event-card {
+    flex: 0 0 auto; /* Asegura que las tarjetas no se redimensionen */
+    scroll-snap-align: start; /* Alinea cada tarjeta al principio del contenedor */
+    width: 280px; /* Mantiene un tamaño consistente para las tarjetas */
+    margin: 0 10px;
+  }
+
+  .carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .carousel::-webkit-scrollbar-thumb {
+    background-color: var(--color-primario-claro);
+    border-radius: 10px;
+  }
+
+  .carousel::-webkit-scrollbar-track {
+    background: var(--color-primario-oscuro);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh; /* Mantener la altura en 100vh */
+    padding: 20px;
+    text-align: center;
+  }
+
+  .hero-content {
+    width: 90%;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+  }
+
+  .search-container {
+    width: 80%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  #searchQuery {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  #searchResults {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .categories h2 {
+    font-size: 2em;
+  }
+
+  .category-icons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category {
+    width: 90%;
+    height: 120px;
+    font-size: 1em;
+    margin: 10px 15px;
+  }
+}
